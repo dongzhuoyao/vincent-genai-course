@@ -5,3 +5,8 @@ Read the book online: [https://taohu.me/vincent-ai-course/](https://taohu.me/vin
 # How to contribute
 
 see: [https://github.com/rust-lang/mdBook](https://github.com/rust-lang/mdBook)
+
+
+# Star History
+
+ [![Star History Chart](https://api.star-history.com/svg?repos=dongzhuoyao/vincent-ai-course&type=Date)](https://star-history.com/#dongzhuoyao/vincent-ai-course&Date)
