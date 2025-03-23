@@ -7,6 +7,10 @@ Welcome to the AI Generative Models guide. This book serves as a comprehensive r
 This guide aims to provide a clear and concise overview of key generative AI models, with a focus on:
 
 - **Diffusion Models**: Including DDPM, Stable Diffusion, and Consistency Models
+- **Normalizing Flows**: Models that use invertible transformations
+- **Flow Matching**: Continuous-time flow-based generative models
+- **Variational Autoencoders (VAEs)**: Latent variable models with probabilistic encoders and decoders
+- **Generative Adversarial Networks (GANs)**: Adversarial framework with generator and discriminator networks
 - **Auto-regressive Models**: Such as transformers used in large language models
 
 Each section explores the theoretical foundations, architectures, and practical applications of these models, making complex concepts accessible to readers with varying levels of technical expertise.
