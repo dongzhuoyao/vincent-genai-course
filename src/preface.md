@@ -1,26 +1,26 @@
-# Preface
+# 前言
 
-Welcome to the AI Generative Models guide. This book serves as a comprehensive resource for understanding various generative AI models that have revolutionized the field of artificial intelligence in recent years.
+欢迎阅读生成式AI模型指南。本教程为中国研究人员提供了一个全面的资源，以了解近年来革新人工智能领域的各种生成式AI模型。
 
-## Purpose of This Book
+## 本教程的目的
 
-This guide aims to provide a clear and concise overview of key generative AI models, with a focus on:
+本指南旨在提供对关键生成式AI模型的清晰而简明的概述，重点关注：
 
-- **Diffusion Models**: Including DDPM, Stable Diffusion, and Consistency Models
-- **Normalizing Flows**: Models that use invertible transformations
-- **Flow Matching**: Continuous-time flow-based generative models
-- **Variational Autoencoders (VAEs)**: Latent variable models with probabilistic encoders and decoders
-- **Generative Adversarial Networks (GANs)**: Adversarial framework with generator and discriminator networks
-- **Auto-regressive Models**: Such as transformers used in large language models
+- **扩散模型**：包括DDPM、Stable Diffusion和一致性模型
+- **标准化流**：使用可逆变换的模型
+- **流匹配**：基于连续时间流的生成模型
+- **变分自编码器(VAE)**：具有概率编码器和解码器的潜变量模型
+- **生成对抗网络(GAN)**：具有生成器和判别器网络的对抗框架
+- **自回归模型**：如用于大型语言模型的Transformer架构
 
-Each section explores the theoretical foundations, architectures, and practical applications of these models, making complex concepts accessible to readers with varying levels of technical expertise.
+每个部分都探讨了这些模型的理论基础、架构和实际应用，使不同技术专业水平的读者都能理解复杂的概念。
 
-## How to Use This Guide
+## 如何使用本指南
 
-The book is structured to allow both sequential reading and targeted exploration of specific models. You can:
+本书的结构允许顺序阅读和针对特定模型的探索。您可以：
 
-1. Follow the chapters in order for a complete understanding of the landscape
-2. Jump directly to specific model types that interest you
-3. Use the reference sections to find original papers and additional resources
+1. 按顺序阅读各章节，全面了解生成模型的全景
+2. 直接跳到您感兴趣的特定模型类型
+3. 使用参考部分查找原始论文和其他资源
 
-We hope this guide enhances your understanding of generative AI and inspires your own experiments and applications in this exciting field. 
+我们希望本指南能增强您对生成式AI的理解，并在这一激动人心的领域中启发您自己的实验和应用。 

@@ -1,48 +1,48 @@
-# Variational Autoencoder (VAE)
+# 变分自编码器 (VAE)
 
-Variational Autoencoders (VAEs) are a class of generative models that combine elements of neural networks with variational inference to learn latent representations of data.
+变分自编码器(VAE)是一类将神经网络与变分推断相结合来学习数据潜在表示的生成模型。
 
-## Architecture
+## 架构
 
-VAEs consist of two main components:
-- **Encoder Network**: Maps input data to a distribution in latent space
-- **Decoder Network**: Maps points from the latent space back to the data space
+VAE由两个主要组件组成：
+- **编码器网络**：将输入数据映射到潜在空间中的分布
+- **解码器网络**：将潜在空间中的点映射回数据空间
 
-## Mathematical Framework
+## 数学框架
 
-- **Variational Inference**: Approximating intractable posterior distributions
-- **Evidence Lower Bound (ELBO)**: Objective function combining reconstruction and regularization
-- **Reparameterization Trick**: Enabling backpropagation through the sampling process
+- **变分推断**：近似不可处理的后验分布
+- **证据下界(ELBO)**：结合重建和正则化的目标函数
+- **重参数化技巧**：使得反向传播可以通过采样过程进行
 
-## Key Variants
+## 主要变体
 
-- **β-VAE**: Introduces a weighting factor for the KL divergence term
-- **Conditional VAE**: Incorporates conditional information into generation
-- **VQ-VAE**: Uses vector quantization in the latent space
-- **Hierarchical VAE**: Employs multiple levels of latent variables
+- **β-VAE**：为KL散度项引入权重因子
+- **条件VAE**：将条件信息纳入生成过程
+- **VQ-VAE**：在潜在空间中使用向量量化
+- **层次VAE**：采用多层潜变量
 
-## Advantages
+## 优势
 
-- **Structured Latent Space**: Creates a continuous and meaningful latent space
-- **Generative Capabilities**: Can generate new samples from the learned distribution
-- **Unsupervised Learning**: Doesn't require labeled data
-- **Probabilistic Framework**: Provides uncertainty estimates
+- **结构化潜在空间**：创建连续且有意义的潜在空间
+- **生成能力**：能够从学习的分布中生成新样本
+- **无监督学习**：不需要标记数据
+- **概率框架**：提供不确定性估计
 
-## Limitations
+## 局限性
 
-- **Blurry Outputs**: Often produces blurrier results than GANs
-- **Posterior Collapse**: Can ignore some latent variables
-- **Approximation Gap**: The true and approximate posterior may differ significantly
+- **模糊输出**：通常比GANs产生更模糊的结果
+- **后验崩塌**：可能忽略一些潜变量
+- **近似差距**：真实后验和近似后验可能有显著差异
 
-## Applications
+## 应用
 
-- **Image Generation**: Creating new realistic images
-- **Representation Learning**: Finding meaningful data representations
-- **Anomaly Detection**: Identifying unusual patterns
-- **Data Compression**: Efficient encoding of complex data
+- **图像生成**：创建新的真实图像
+- **表示学习**：寻找有意义的数据表示
+- **异常检测**：识别异常模式
+- **数据压缩**：复杂数据的高效编码
 
-## References
+## 参考文献
 
-- [Kingma & Welling (2014), "Auto-Encoding Variational Bayes"](https://arxiv.org/abs/1312.6114)
-- [Rezende et al. (2014), "Stochastic Backpropagation and Approximate Inference in Deep Generative Models"](https://arxiv.org/abs/1401.4082)
-- [Higgins et al. (2017), "beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework"](https://openreview.net/pdf?id=Sy2fzU9gl)
+- [Kingma & Welling (2014), "自编码变分贝叶斯"](https://arxiv.org/abs/1312.6114)
+- [Rezende et al. (2014), "随机反向传播与深度生成模型中的近似推断"](https://arxiv.org/abs/1401.4082)
+- [Higgins et al. (2017), "beta-VAE: 使用约束变分框架学习基本视觉概念"](https://openreview.net/pdf?id=Sy2fzU9gl)

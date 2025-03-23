@@ -1,17 +1,17 @@
-# Denoising Diffusion Probabilistic Models (DDPM)
+# 去噪扩散概率模型 (DDPM)
 
-Denoising Diffusion Probabilistic Models (DDPM) are a class of generative models that learn to generate data by reversing a gradual noising process.
+去噪扩散概率模型(DDPM)是一类通过逆转渐进噪声过程来学习生成数据的生成模型。
 
-## Key Concepts
+## 关键概念
 
-- Forward diffusion process: gradually adds Gaussian noise to data
-- Reverse diffusion process: learns to denoise images step by step
-- U-Net architecture: commonly used as the denoising network
+- 前向扩散过程：逐渐向数据添加高斯噪声
+- 反向扩散过程：学习逐步对图像去噪
+- U-Net架构：常用作去噪网络
 
-## Mathematical Formulation
+## 数学公式
 
-DDPMs operate by defining a forward diffusion process that gradually adds noise to data until it becomes pure noise, and then training a model to reverse this process.
+DDPM通过定义一个逐渐向数据添加噪声直至变成纯噪声的前向扩散过程，然后训练模型来逆转这一过程。
 
-## References
+## 参考文献
 
-- [Ho et al. (2020), "Denoising Diffusion Probabilistic Models"](https://arxiv.org/abs/2006.11239)
+- [Ho et al. (2020), "去噪扩散概率模型"](https://arxiv.org/abs/2006.11239)

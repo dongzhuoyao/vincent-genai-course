@@ -1,27 +1,27 @@
-# Diffusion Model
+# 扩散模型
 
-Diffusion models are a class of generative models that have revolutionized AI-based content creation. These models work by gradually adding noise to data and then learning to reverse this process to generate new samples.
+扩散模型是一类已经彻底改变了基于AI的内容创作的生成模型。这些模型通过逐渐向数据添加噪声，然后学习逆转这一过程来生成新样本。
 
-## Overview
+## 概述
 
-Diffusion models have emerged as one of the most powerful approaches for generative AI, particularly for images, but increasingly for other modalities like audio, video, and 3D content. They work by:
+扩散模型已成为生成式AI中最强大的方法之一，特别是对于图像，但也越来越多地应用于音频、视频和3D内容等其他模态。它们的工作原理是：
 
-1. Forward process: Gradually adding noise to data until it becomes pure noise
-2. Reverse process: Learning to iteratively denoise to generate new data
+1. 前向过程：逐渐向数据添加噪声，直到变成纯噪声
+2. 反向过程：学习迭代去噪以生成新数据
 
-## Key Advantages
+## 主要优势
 
-- High-quality generation
-- Flexible conditioning mechanisms
-- Stable training compared to GANs
-- Strong theoretical foundation
+- 高质量生成
+- 灵活的条件机制
+- 与GANs相比训练更稳定
+- 强大的理论基础
 
-## Types of Diffusion Models
+## 扩散模型的类型
 
-This section covers several important variants of diffusion models:
+本节介绍扩散模型的几个重要变体：
 
-- [DDPM](./diffusion/ddpm.md): The original denoising diffusion probabilistic models
-- [Stable Diffusion](./diffusion/stable-diffusion.md): Latent diffusion models for text-to-image generation
-- [Consistency Models](./diffusion/consistency.md): Fast sampling diffusion variants
+- [DDPM](./diffusion/ddpm.md)：原始的去噪扩散概率模型
+- [Stable Diffusion](./diffusion/stable-diffusion.md)：用于文本到图像生成的潜在扩散模型
+- [一致性模型](./diffusion/consistency.md)：快速采样扩散变体
 
-Each sub-chapter provides detailed explanations of the model architecture, training process, and applications.
+每个子章节都提供了关于模型架构、训练过程和应用的详细解释。
