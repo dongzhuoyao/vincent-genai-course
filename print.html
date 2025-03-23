@@ -174,63 +174,63 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
-<p>Welcome to the AI Generative Models guide. This book serves as a comprehensive resource for understanding various generative AI models that have revolutionized the field of artificial intelligence in recent years.</p>
-<h2 id="purpose-of-this-book"><a class="header" href="#purpose-of-this-book">Purpose of This Book</a></h2>
-<p>This guide aims to provide a clear and concise overview of key generative AI models, with a focus on:</p>
+                        <h1 id="前言"><a class="header" href="#前言">前言</a></h1>
+<p>欢迎阅读生成式AI模型指南。本教程为中国研究人员提供了一个全面的资源，以了解近年来革新人工智能领域的各种生成式AI模型。</p>
+<h2 id="本教程的目的"><a class="header" href="#本教程的目的">本教程的目的</a></h2>
+<p>本指南旨在提供对关键生成式AI模型的清晰而简明的概述，重点关注：</p>
 <ul>
-<li><strong>Diffusion Models</strong>: Including DDPM, Stable Diffusion, and Consistency Models</li>
-<li><strong>Normalizing Flows</strong>: Models that use invertible transformations</li>
-<li><strong>Flow Matching</strong>: Continuous-time flow-based generative models</li>
-<li><strong>Variational Autoencoders (VAEs)</strong>: Latent variable models with probabilistic encoders and decoders</li>
-<li><strong>Generative Adversarial Networks (GANs)</strong>: Adversarial framework with generator and discriminator networks</li>
-<li><strong>Auto-regressive Models</strong>: Such as transformers used in large language models</li>
+<li><strong>扩散模型</strong>：包括DDPM、Stable Diffusion和一致性模型</li>
+<li><strong>标准化流</strong>：使用可逆变换的模型</li>
+<li><strong>流匹配</strong>：基于连续时间流的生成模型</li>
+<li><strong>变分自编码器(VAE)</strong>：具有概率编码器和解码器的潜变量模型</li>
+<li><strong>生成对抗网络(GAN)</strong>：具有生成器和判别器网络的对抗框架</li>
+<li><strong>自回归模型</strong>：如用于大型语言模型的Transformer架构</li>
 </ul>
-<p>Each section explores the theoretical foundations, architectures, and practical applications of these models, making complex concepts accessible to readers with varying levels of technical expertise.</p>
-<h2 id="how-to-use-this-guide"><a class="header" href="#how-to-use-this-guide">How to Use This Guide</a></h2>
-<p>The book is structured to allow both sequential reading and targeted exploration of specific models. You can:</p>
+<p>每个部分都探讨了这些模型的理论基础、架构和实际应用，使不同技术专业水平的读者都能理解复杂的概念。</p>
+<h2 id="如何使用本指南"><a class="header" href="#如何使用本指南">如何使用本指南</a></h2>
+<p>本书的结构允许顺序阅读和针对特定模型的探索。您可以：</p>
 <ol>
-<li>Follow the chapters in order for a complete understanding of the landscape</li>
-<li>Jump directly to specific model types that interest you</li>
-<li>Use the reference sections to find original papers and additional resources</li>
+<li>按顺序阅读各章节，全面了解生成模型的全景</li>
+<li>直接跳到您感兴趣的特定模型类型</li>
+<li>使用参考部分查找原始论文和其他资源</li>
 </ol>
-<p>We hope this guide enhances your understanding of generative AI and inspires your own experiments and applications in this exciting field.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="diffusion-model"><a class="header" href="#diffusion-model">Diffusion Model</a></h1>
-<p>Diffusion models are a class of generative models that have revolutionized AI-based content creation. These models work by gradually adding noise to data and then learning to reverse this process to generate new samples.</p>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>Diffusion models have emerged as one of the most powerful approaches for generative AI, particularly for images, but increasingly for other modalities like audio, video, and 3D content. They work by:</p>
+<p>我们希望本指南能增强您对生成式AI的理解，并在这一激动人心的领域中启发您自己的实验和应用。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="扩散模型"><a class="header" href="#扩散模型">扩散模型</a></h1>
+<p>扩散模型是一类已经彻底改变了基于AI的内容创作的生成模型。这些模型通过逐渐向数据添加噪声，然后学习逆转这一过程来生成新样本。</p>
+<h2 id="概述"><a class="header" href="#概述">概述</a></h2>
+<p>扩散模型已成为生成式AI中最强大的方法之一，特别是对于图像，但也越来越多地应用于音频、视频和3D内容等其他模态。它们的工作原理是：</p>
 <ol>
-<li>Forward process: Gradually adding noise to data until it becomes pure noise</li>
-<li>Reverse process: Learning to iteratively denoise to generate new data</li>
+<li>前向过程：逐渐向数据添加噪声，直到变成纯噪声</li>
+<li>反向过程：学习迭代去噪以生成新数据</li>
 </ol>
-<h2 id="key-advantages"><a class="header" href="#key-advantages">Key Advantages</a></h2>
+<h2 id="主要优势"><a class="header" href="#主要优势">主要优势</a></h2>
 <ul>
-<li>High-quality generation</li>
-<li>Flexible conditioning mechanisms</li>
-<li>Stable training compared to GANs</li>
-<li>Strong theoretical foundation</li>
+<li>高质量生成</li>
+<li>灵活的条件机制</li>
+<li>与GANs相比训练更稳定</li>
+<li>强大的理论基础</li>
 </ul>
-<h2 id="types-of-diffusion-models"><a class="header" href="#types-of-diffusion-models">Types of Diffusion Models</a></h2>
-<p>This section covers several important variants of diffusion models:</p>
+<h2 id="扩散模型的类型"><a class="header" href="#扩散模型的类型">扩散模型的类型</a></h2>
+<p>本节介绍扩散模型的几个重要变体：</p>
 <ul>
-<li><a href="./diffusion/ddpm.html">DDPM</a>: The original denoising diffusion probabilistic models</li>
-<li><a href="./diffusion/stable-diffusion.html">Stable Diffusion</a>: Latent diffusion models for text-to-image generation</li>
-<li><a href="./diffusion/consistency.html">Consistency Models</a>: Fast sampling diffusion variants</li>
+<li><a href="./diffusion/ddpm.html">DDPM</a>：原始的去噪扩散概率模型</li>
+<li><a href="./diffusion/stable-diffusion.html">Stable Diffusion</a>：用于文本到图像生成的潜在扩散模型</li>
+<li><a href="./diffusion/consistency.html">一致性模型</a>：快速采样扩散变体</li>
 </ul>
-<p>Each sub-chapter provides detailed explanations of the model architecture, training process, and applications.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="denoising-diffusion-probabilistic-models-ddpm"><a class="header" href="#denoising-diffusion-probabilistic-models-ddpm">Denoising Diffusion Probabilistic Models (DDPM)</a></h1>
-<p>Denoising Diffusion Probabilistic Models (DDPM) are a class of generative models that learn to generate data by reversing a gradual noising process.</p>
-<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
+<p>每个子章节都提供了关于模型架构、训练过程和应用的详细解释。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="去噪扩散概率模型-ddpm"><a class="header" href="#去噪扩散概率模型-ddpm">去噪扩散概率模型 (DDPM)</a></h1>
+<p>去噪扩散概率模型(DDPM)是一类通过逆转渐进噪声过程来学习生成数据的生成模型。</p>
+<h2 id="关键概念"><a class="header" href="#关键概念">关键概念</a></h2>
 <ul>
-<li>Forward diffusion process: gradually adds Gaussian noise to data</li>
-<li>Reverse diffusion process: learns to denoise images step by step</li>
-<li>U-Net architecture: commonly used as the denoising network</li>
+<li>前向扩散过程：逐渐向数据添加高斯噪声</li>
+<li>反向扩散过程：学习逐步对图像去噪</li>
+<li>U-Net架构：常用作去噪网络</li>
 </ul>
-<h2 id="mathematical-formulation"><a class="header" href="#mathematical-formulation">Mathematical Formulation</a></h2>
-<p>DDPMs operate by defining a forward diffusion process that gradually adds noise to data until it becomes pure noise, and then training a model to reverse this process.</p>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
+<h2 id="数学公式"><a class="header" href="#数学公式">数学公式</a></h2>
+<p>DDPM通过定义一个逐渐向数据添加噪声直至变成纯噪声的前向扩散过程，然后训练模型来逆转这一过程。</p>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
 <ul>
-<li><a href="https://arxiv.org/abs/2006.11239">Ho et al. (2020), "Denoising Diffusion Probabilistic Models"</a></li>
+<li><a href="https://arxiv.org/abs/2006.11239">Ho et al. (2020), "去噪扩散概率模型"</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stable-diffusion"><a class="header" href="#stable-diffusion">Stable Diffusion</a></h1>
 <p>Stable Diffusion is a latent diffusion model developed by Stability AI that generates detailed images from text descriptions.</p>
@@ -255,7 +255,7 @@
 <li>Content creation</li>
 <li>Image editing</li>
 </ul>
-<h2 id="references-1"><a class="header" href="#references-1">References</a></h2>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/2112.10752">Rombach et al. (2022), "High-Resolution Image Synthesis with Latent Diffusion Models"</a></li>
 </ul>
@@ -279,13 +279,13 @@
 <li>Consistency distillation: training technique to learn consistency functions</li>
 <li>Self-conditioning: improves generation quality</li>
 </ul>
-<h2 id="references-2"><a class="header" href="#references-2">References</a></h2>
+<h2 id="references-1"><a class="header" href="#references-1">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/2303.01469">Song et al. (2023), "Consistency Models"</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="normalizing-flow"><a class="header" href="#normalizing-flow">Normalizing Flow</a></h1>
 <p>Normalizing Flows are a family of generative models that use invertible transformations to map between a simple base distribution and a complex target distribution.</p>
-<h2 id="key-concepts-1"><a class="header" href="#key-concepts-1">Key Concepts</a></h2>
+<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
 <ul>
 <li><strong>Invertible Transformations</strong>: Bijective mappings between spaces</li>
 <li><strong>Change of Variables Formula</strong>: Mathematical foundation that allows exact likelihood computation</li>
@@ -318,7 +318,7 @@
 <li><strong>Computational Cost</strong>: Some flows can be computationally expensive</li>
 <li><strong>High-dimensional Data</strong>: Scaling to very high dimensions can be challenging</li>
 </ul>
-<h2 id="references-3"><a class="header" href="#references-3">References</a></h2>
+<h2 id="references-2"><a class="header" href="#references-2">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1505.05770">Rezende &amp; Mohamed (2015), "Variational Inference with Normalizing Flows"</a></li>
 <li><a href="https://arxiv.org/abs/1605.08803">Dinh et al. (2016), "Density estimation using Real NVP"</a></li>
@@ -326,9 +326,9 @@
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flow-matching"><a class="header" href="#flow-matching">Flow Matching</a></h1>
 <p>Flow Matching is a generative modeling technique that builds upon the ideas of continuous normalizing flows and probability flow ODEs, offering an alternative training approach for generative models.</p>
-<h2 id="overview-1"><a class="header" href="#overview-1">Overview</a></h2>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
 <p>Flow Matching defines a continuous-time transformation from a simple distribution (like a Gaussian) to a complex target distribution. Unlike traditional normalizing flows, flow matching doesn't require computing the Jacobian determinant, making it more flexible and computationally efficient.</p>
-<h2 id="key-concepts-2"><a class="header" href="#key-concepts-2">Key Concepts</a></h2>
+<h2 id="key-concepts-1"><a class="header" href="#key-concepts-1">Key Concepts</a></h2>
 <ul>
 <li><strong>Vector Fields</strong>: Learning a vector field to represent the continuous-time flow</li>
 <li><strong>Straight-line Paths</strong>: Using simple paths between distributions</li>
@@ -355,58 +355,58 @@
 <li><strong>Audio Synthesis</strong>: Generating audio waveforms</li>
 <li><strong>Density Estimation</strong>: Learning complex distributions</li>
 </ul>
-<h2 id="references-4"><a class="header" href="#references-4">References</a></h2>
+<h2 id="references-3"><a class="header" href="#references-3">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/2210.02747">Lipman et al. (2022), "Flow Matching for Generative Modeling"</a></li>
 <li><a href="https://arxiv.org/abs/2209.03003">Liu et al. (2022), "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow"</a></li>
 <li><a href="https://arxiv.org/abs/2302.00482">Tong et al. (2023), "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport"</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="variational-autoencoder-vae"><a class="header" href="#variational-autoencoder-vae">Variational Autoencoder (VAE)</a></h1>
-<p>Variational Autoencoders (VAEs) are a class of generative models that combine elements of neural networks with variational inference to learn latent representations of data.</p>
-<h2 id="architecture-1"><a class="header" href="#architecture-1">Architecture</a></h2>
-<p>VAEs consist of two main components:</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="变分自编码器-vae"><a class="header" href="#变分自编码器-vae">变分自编码器 (VAE)</a></h1>
+<p>变分自编码器(VAE)是一类将神经网络与变分推断相结合来学习数据潜在表示的生成模型。</p>
+<h2 id="架构"><a class="header" href="#架构">架构</a></h2>
+<p>VAE由两个主要组件组成：</p>
 <ul>
-<li><strong>Encoder Network</strong>: Maps input data to a distribution in latent space</li>
-<li><strong>Decoder Network</strong>: Maps points from the latent space back to the data space</li>
+<li><strong>编码器网络</strong>：将输入数据映射到潜在空间中的分布</li>
+<li><strong>解码器网络</strong>：将潜在空间中的点映射回数据空间</li>
 </ul>
-<h2 id="mathematical-framework"><a class="header" href="#mathematical-framework">Mathematical Framework</a></h2>
+<h2 id="数学框架"><a class="header" href="#数学框架">数学框架</a></h2>
 <ul>
-<li><strong>Variational Inference</strong>: Approximating intractable posterior distributions</li>
-<li><strong>Evidence Lower Bound (ELBO)</strong>: Objective function combining reconstruction and regularization</li>
-<li><strong>Reparameterization Trick</strong>: Enabling backpropagation through the sampling process</li>
+<li><strong>变分推断</strong>：近似不可处理的后验分布</li>
+<li><strong>证据下界(ELBO)</strong>：结合重建和正则化的目标函数</li>
+<li><strong>重参数化技巧</strong>：使得反向传播可以通过采样过程进行</li>
 </ul>
-<h2 id="key-variants"><a class="header" href="#key-variants">Key Variants</a></h2>
+<h2 id="主要变体"><a class="header" href="#主要变体">主要变体</a></h2>
 <ul>
-<li><strong>β-VAE</strong>: Introduces a weighting factor for the KL divergence term</li>
-<li><strong>Conditional VAE</strong>: Incorporates conditional information into generation</li>
-<li><strong>VQ-VAE</strong>: Uses vector quantization in the latent space</li>
-<li><strong>Hierarchical VAE</strong>: Employs multiple levels of latent variables</li>
+<li><strong>β-VAE</strong>：为KL散度项引入权重因子</li>
+<li><strong>条件VAE</strong>：将条件信息纳入生成过程</li>
+<li><strong>VQ-VAE</strong>：在潜在空间中使用向量量化</li>
+<li><strong>层次VAE</strong>：采用多层潜变量</li>
 </ul>
-<h2 id="advantages-3"><a class="header" href="#advantages-3">Advantages</a></h2>
+<h2 id="优势"><a class="header" href="#优势">优势</a></h2>
 <ul>
-<li><strong>Structured Latent Space</strong>: Creates a continuous and meaningful latent space</li>
-<li><strong>Generative Capabilities</strong>: Can generate new samples from the learned distribution</li>
-<li><strong>Unsupervised Learning</strong>: Doesn't require labeled data</li>
-<li><strong>Probabilistic Framework</strong>: Provides uncertainty estimates</li>
+<li><strong>结构化潜在空间</strong>：创建连续且有意义的潜在空间</li>
+<li><strong>生成能力</strong>：能够从学习的分布中生成新样本</li>
+<li><strong>无监督学习</strong>：不需要标记数据</li>
+<li><strong>概率框架</strong>：提供不确定性估计</li>
 </ul>
-<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<h2 id="局限性"><a class="header" href="#局限性">局限性</a></h2>
 <ul>
-<li><strong>Blurry Outputs</strong>: Often produces blurrier results than GANs</li>
-<li><strong>Posterior Collapse</strong>: Can ignore some latent variables</li>
-<li><strong>Approximation Gap</strong>: The true and approximate posterior may differ significantly</li>
+<li><strong>模糊输出</strong>：通常比GANs产生更模糊的结果</li>
+<li><strong>后验崩塌</strong>：可能忽略一些潜变量</li>
+<li><strong>近似差距</strong>：真实后验和近似后验可能有显著差异</li>
 </ul>
-<h2 id="applications-3"><a class="header" href="#applications-3">Applications</a></h2>
+<h2 id="应用"><a class="header" href="#应用">应用</a></h2>
 <ul>
-<li><strong>Image Generation</strong>: Creating new realistic images</li>
-<li><strong>Representation Learning</strong>: Finding meaningful data representations</li>
-<li><strong>Anomaly Detection</strong>: Identifying unusual patterns</li>
-<li><strong>Data Compression</strong>: Efficient encoding of complex data</li>
+<li><strong>图像生成</strong>：创建新的真实图像</li>
+<li><strong>表示学习</strong>：寻找有意义的数据表示</li>
+<li><strong>异常检测</strong>：识别异常模式</li>
+<li><strong>数据压缩</strong>：复杂数据的高效编码</li>
 </ul>
-<h2 id="references-5"><a class="header" href="#references-5">References</a></h2>
+<h2 id="参考文献-1"><a class="header" href="#参考文献-1">参考文献</a></h2>
 <ul>
-<li><a href="https://arxiv.org/abs/1312.6114">Kingma &amp; Welling (2014), "Auto-Encoding Variational Bayes"</a></li>
-<li><a href="https://arxiv.org/abs/1401.4082">Rezende et al. (2014), "Stochastic Backpropagation and Approximate Inference in Deep Generative Models"</a></li>
-<li><a href="https://openreview.net/pdf?id=Sy2fzU9gl">Higgins et al. (2017), "beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework"</a></li>
+<li><a href="https://arxiv.org/abs/1312.6114">Kingma &amp; Welling (2014), "自编码变分贝叶斯"</a></li>
+<li><a href="https://arxiv.org/abs/1401.4082">Rezende et al. (2014), "随机反向传播与深度生成模型中的近似推断"</a></li>
+<li><a href="https://openreview.net/pdf?id=Sy2fzU9gl">Higgins et al. (2017), "beta-VAE: 使用约束变分框架学习基本视觉概念"</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="generative-adversarial-network-gan"><a class="header" href="#generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></h1>
 <p>Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.</p>
@@ -416,7 +416,7 @@
 <li><strong>Discriminator Network</strong>: Attempts to distinguish between real and generated samples</li>
 <li><strong>Adversarial Training</strong>: The two networks are trained in a competitive minimax game</li>
 </ul>
-<h2 id="mathematical-framework-1"><a class="header" href="#mathematical-framework-1">Mathematical Framework</a></h2>
+<h2 id="mathematical-framework"><a class="header" href="#mathematical-framework">Mathematical Framework</a></h2>
 <ul>
 <li><strong>Minimax Game</strong>: Formulation as a two-player zero-sum game</li>
 <li><strong>Nash Equilibrium</strong>: Theoretical solution point where neither network can improve</li>
@@ -431,7 +431,7 @@
 <li><strong>BigGAN</strong>: Scaled-up architecture for high-fidelity image generation</li>
 <li><strong>WGAN</strong>: Wasserstein GAN with improved training stability</li>
 </ul>
-<h2 id="advantages-4"><a class="header" href="#advantages-4">Advantages</a></h2>
+<h2 id="advantages-3"><a class="header" href="#advantages-3">Advantages</a></h2>
 <ul>
 <li><strong>Sharp, Realistic Outputs</strong>: Produces crisp, high-quality samples</li>
 <li><strong>Implicit Density Modeling</strong>: No need to explicitly define a likelihood function</li>
@@ -445,7 +445,7 @@
 <li><strong>Lack of Inference</strong>: Standard GANs don't provide inference capabilities</li>
 <li><strong>Requires Careful Tuning</strong>: Sensitive to hyperparameters and architecture choices</li>
 </ul>
-<h2 id="applications-4"><a class="header" href="#applications-4">Applications</a></h2>
+<h2 id="applications-3"><a class="header" href="#applications-3">Applications</a></h2>
 <ul>
 <li><strong>Image Generation</strong>: Creating photorealistic images</li>
 <li><strong>Image Translation</strong>: Converting between image domains</li>
@@ -453,7 +453,7 @@
 <li><strong>Super-resolution</strong>: Enhancing low-resolution images</li>
 <li><strong>Art Generation</strong>: Creating novel artistic content</li>
 </ul>
-<h2 id="references-6"><a class="header" href="#references-6">References</a></h2>
+<h2 id="references-4"><a class="header" href="#references-4">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1406.2661">Goodfellow et al. (2014), "Generative Adversarial Networks"</a></li>
 <li><a href="https://arxiv.org/abs/1511.06434">Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"</a></li>
