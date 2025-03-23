@@ -12,4 +12,6 @@
 - [变分自编码器 (VAE)](./vae.md)
 - [生成对抗网络 (GAN)](./gan.md)
 - [自回归模型(Auto-regressive Model)](./auto-regressive.md)
-- [掩码语言模型(Masked Discrete-State Model)](./masked-discrete-state-model.md)
+- [Agent](./agent.md)
+- [掩码模型(Masked Discrete-State Model)](./masked-discrete-state-model.md)
+- [多模态模型(Multi-modal Model)](./multi-modal-model.md)
