@@ -1,25 +1,25 @@
-# Consistency Models
+# 一致性模型
 
-Consistency Models are a type of generative model that offers faster sampling than traditional diffusion models while maintaining generation quality.
+一致性模型是一种生成模型，相比传统扩散模型提供更快的采样速度，同时保持生成质量。
 
-## Key Innovations
+## 关键创新
 
-- Single-step generation: can generate high-quality samples in just one step
-- Few-step generation: offers quality-speed trade-off with few sampling steps
-- Distillation approach: distills knowledge from a pre-trained diffusion model
+- 单步生成：仅需一步即可生成高质量样本
+- 少步生成：通过少量采样步骤提供质量-速度的权衡
+- 蒸馏方法：从预训练的扩散模型中蒸馏知识
 
-## Advantages
+## 优势
 
-- Much faster sampling than regular diffusion models
-- Deterministic sampling process
-- Maintains generation quality comparable to diffusion models
+- 比常规扩散模型采样速度快得多
+- 确定性采样过程
+- 保持与扩散模型相当的生成质量
 
-## Technical Details
+## 技术细节
 
-- Consistency functions: maps noise to data points
-- Consistency distillation: training technique to learn consistency functions
-- Self-conditioning: improves generation quality
+- 一致性函数：将噪声映射到数据点
+- 一致性蒸馏：学习一致性函数的训练技术
+- 自我条件化：提高生成质量
 
-## References
+## 参考文献
 
-- [Song et al. (2023), "Consistency Models"](https://arxiv.org/abs/2303.01469)
+- [Song et al. (2023), "一致性模型"](https://arxiv.org/abs/2303.01469)
