@@ -1,28 +1,28 @@
-# Stable Diffusion
+# Stable Diffusion 稳定扩散模型
 
-Stable Diffusion is a latent diffusion model developed by Stability AI that generates detailed images from text descriptions.
+Stable Diffusion是由Stability AI开发的潜在扩散模型，能够根据文本描述生成详细的图像。
 
-## Architecture
+## 架构
 
-- Latent space diffusion: applies diffusion in a compressed latent space
-- Text conditioning: uses CLIP text embeddings to guide the generation
-- VAE: encodes images to latent space and decodes them back
-- UNet: performs the denoising in the latent space
+- 潜在空间扩散：在压缩的潜在空间中应用扩散过程
+- 文本条件：使用CLIP文本嵌入来引导生成过程
+- VAE：将图像编码到潜在空间并解码回来
+- UNet：在潜在空间中执行去噪过程
 
-## Key Features
+## 主要特点
 
-- Text-to-image generation
-- Image-to-image transformation
-- Inpainting and outpainting
-- Fine-tuning capabilities
+- 文本到图像生成
+- 图像到图像转换
+- 图像修复和扩展
+- 微调能力
 
-## Applications
+## 应用
 
-- Creative art generation
-- Design prototyping
-- Content creation
-- Image editing
+- 创意艺术生成
+- 设计原型制作
+- 内容创作
+- 图像编辑
 
-## References
+## 参考文献
 
-- [Rombach et al. (2022), "High-Resolution Image Synthesis with Latent Diffusion Models"](https://arxiv.org/abs/2112.10752)
+- [Rombach et al. (2022), "使用潜在扩散模型进行高分辨率图像合成"](https://arxiv.org/abs/2112.10752)
