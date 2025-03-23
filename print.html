@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -259,29 +259,29 @@
 <ul>
 <li><a href="https://arxiv.org/abs/2112.10752">Rombach et al. (2022), "使用潜在扩散模型进行高分辨率图像合成"</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="consistency-models"><a class="header" href="#consistency-models">Consistency Models</a></h1>
-<p>Consistency Models are a type of generative model that offers faster sampling than traditional diffusion models while maintaining generation quality.</p>
-<h2 id="key-innovations"><a class="header" href="#key-innovations">Key Innovations</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="一致性模型"><a class="header" href="#一致性模型">一致性模型</a></h1>
+<p>一致性模型是一种生成模型，相比传统扩散模型提供更快的采样速度，同时保持生成质量。</p>
+<h2 id="关键创新"><a class="header" href="#关键创新">关键创新</a></h2>
 <ul>
-<li>Single-step generation: can generate high-quality samples in just one step</li>
-<li>Few-step generation: offers quality-speed trade-off with few sampling steps</li>
-<li>Distillation approach: distills knowledge from a pre-trained diffusion model</li>
+<li>单步生成：仅需一步即可生成高质量样本</li>
+<li>少步生成：通过少量采样步骤提供质量-速度的权衡</li>
+<li>蒸馏方法：从预训练的扩散模型中蒸馏知识</li>
 </ul>
-<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
+<h2 id="优势"><a class="header" href="#优势">优势</a></h2>
 <ul>
-<li>Much faster sampling than regular diffusion models</li>
-<li>Deterministic sampling process</li>
-<li>Maintains generation quality comparable to diffusion models</li>
+<li>比常规扩散模型采样速度快得多</li>
+<li>确定性采样过程</li>
+<li>保持与扩散模型相当的生成质量</li>
 </ul>
-<h2 id="technical-details"><a class="header" href="#technical-details">Technical Details</a></h2>
+<h2 id="技术细节"><a class="header" href="#技术细节">技术细节</a></h2>
 <ul>
-<li>Consistency functions: maps noise to data points</li>
-<li>Consistency distillation: training technique to learn consistency functions</li>
-<li>Self-conditioning: improves generation quality</li>
+<li>一致性函数：将噪声映射到数据点</li>
+<li>一致性蒸馏：学习一致性函数的训练技术</li>
+<li>自我条件化：提高生成质量</li>
 </ul>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
+<h2 id="参考文献-2"><a class="header" href="#参考文献-2">参考文献</a></h2>
 <ul>
-<li><a href="https://arxiv.org/abs/2303.01469">Song et al. (2023), "Consistency Models"</a></li>
+<li><a href="https://arxiv.org/abs/2303.01469">Song et al. (2023), "一致性模型"</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="扩散模型骨干网络设计"><a class="header" href="#扩散模型骨干网络设计">扩散模型骨干网络设计</a></h1>
 <p>扩散模型的性能在很大程度上取决于其骨干网络的设计。这些骨干网络负责学习噪声预测或去噪过程，对生成质量至关重要。</p>
@@ -332,7 +332,7 @@
 <li><strong>一致性架构</strong>：专为一致性模型设计的特殊骨干网络</li>
 <li><strong>量化感知设计</strong>：考虑到部署时量化需求的骨干网络设计</li>
 </ul>
-<h2 id="参考文献-2"><a class="header" href="#参考文献-2">参考文献</a></h2>
+<h2 id="参考文献-3"><a class="header" href="#参考文献-3">参考文献</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1505.04597">Ronneberger et al. (2015), "U-Net: 用于生物医学图像分割的卷积网络"</a></li>
 <li><a href="https://arxiv.org/abs/2006.11239">Ho et al. (2020), "去噪扩散概率模型"</a></li>
@@ -353,7 +353,7 @@
 <li><strong>Autoregressive Flows (IAF, MAF)</strong>: Using autoregressive transformations</li>
 <li><strong>Continuous Normalizing Flows</strong>: Defining flows using ordinary differential equations</li>
 </ul>
-<h2 id="advantages-1"><a class="header" href="#advantages-1">Advantages</a></h2>
+<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
 <ul>
 <li><strong>Exact Likelihood</strong>: Unlike VAEs, flows provide exact likelihood computation</li>
 <li><strong>Efficient Sampling</strong>: Unlike autoregressive models, sampling can be parallelized</li>
@@ -373,7 +373,7 @@
 <li><strong>Computational Cost</strong>: Some flows can be computationally expensive</li>
 <li><strong>High-dimensional Data</strong>: Scaling to very high dimensions can be challenging</li>
 </ul>
-<h2 id="references-1"><a class="header" href="#references-1">References</a></h2>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1505.05770">Rezende &amp; Mohamed (2015), "Variational Inference with Normalizing Flows"</a></li>
 <li><a href="https://arxiv.org/abs/1605.08803">Dinh et al. (2016), "Density estimation using Real NVP"</a></li>
@@ -396,7 +396,7 @@
 <li><strong>Normalizing Flows</strong>: Similar concept but with different training objectives</li>
 <li><strong>Optimal Transport</strong>: Connection to optimal transport theory</li>
 </ul>
-<h2 id="advantages-2"><a class="header" href="#advantages-2">Advantages</a></h2>
+<h2 id="advantages-1"><a class="header" href="#advantages-1">Advantages</a></h2>
 <ul>
 <li><strong>Flexible Architecture</strong>: No invertibility requirement</li>
 <li><strong>Efficient Training</strong>: More efficient than score matching in some cases</li>
@@ -410,7 +410,7 @@
 <li><strong>Audio Synthesis</strong>: Generating audio waveforms</li>
 <li><strong>Density Estimation</strong>: Learning complex distributions</li>
 </ul>
-<h2 id="references-2"><a class="header" href="#references-2">References</a></h2>
+<h2 id="references-1"><a class="header" href="#references-1">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/2210.02747">Lipman et al. (2022), "Flow Matching for Generative Modeling"</a></li>
 <li><a href="https://arxiv.org/abs/2209.03003">Liu et al. (2022), "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow"</a></li>
@@ -437,7 +437,7 @@
 <li><strong>VQ-VAE</strong>：在潜在空间中使用向量量化</li>
 <li><strong>层次VAE</strong>：采用多层潜变量</li>
 </ul>
-<h2 id="优势"><a class="header" href="#优势">优势</a></h2>
+<h2 id="优势-1"><a class="header" href="#优势-1">优势</a></h2>
 <ul>
 <li><strong>结构化潜在空间</strong>：创建连续且有意义的潜在空间</li>
 <li><strong>生成能力</strong>：能够从学习的分布中生成新样本</li>
@@ -457,7 +457,7 @@
 <li><strong>异常检测</strong>：识别异常模式</li>
 <li><strong>数据压缩</strong>：复杂数据的高效编码</li>
 </ul>
-<h2 id="参考文献-3"><a class="header" href="#参考文献-3">参考文献</a></h2>
+<h2 id="参考文献-4"><a class="header" href="#参考文献-4">参考文献</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1312.6114">Kingma &amp; Welling (2014), "自编码变分贝叶斯"</a></li>
 <li><a href="https://arxiv.org/abs/1401.4082">Rezende et al. (2014), "随机反向传播与深度生成模型中的近似推断"</a></li>
@@ -486,7 +486,7 @@
 <li><strong>BigGAN</strong>: Scaled-up architecture for high-fidelity image generation</li>
 <li><strong>WGAN</strong>: Wasserstein GAN with improved training stability</li>
 </ul>
-<h2 id="advantages-3"><a class="header" href="#advantages-3">Advantages</a></h2>
+<h2 id="advantages-2"><a class="header" href="#advantages-2">Advantages</a></h2>
 <ul>
 <li><strong>Sharp, Realistic Outputs</strong>: Produces crisp, high-quality samples</li>
 <li><strong>Implicit Density Modeling</strong>: No need to explicitly define a likelihood function</li>
@@ -508,7 +508,7 @@
 <li><strong>Super-resolution</strong>: Enhancing low-resolution images</li>
 <li><strong>Art Generation</strong>: Creating novel artistic content</li>
 </ul>
-<h2 id="references-3"><a class="header" href="#references-3">References</a></h2>
+<h2 id="references-2"><a class="header" href="#references-2">References</a></h2>
 <ul>
 <li><a href="https://arxiv.org/abs/1406.2661">Goodfellow et al. (2014), "Generative Adversarial Networks"</a></li>
 <li><a href="https://arxiv.org/abs/1511.06434">Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"</a></li>

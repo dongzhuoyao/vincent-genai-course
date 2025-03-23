@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Consistency Models - Vincent教你学AI </title>
+        <title>一致性模型 - Vincent教你学AI </title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="../diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="../diffusion/consistency.html" class="active"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li><li class="chapter-item expanded "><a href="../diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="../normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="../flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="../vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="../gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="../auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="../diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型</a></li><li class="chapter-item expanded "><a href="../diffusion/consistency.html" class="active"><strong aria-hidden="true">1.3.</strong> 一致性模型</a></li><li class="chapter-item expanded "><a href="../diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="../normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流</a></li><li class="chapter-item expanded "><a href="../flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配</a></li><li class="chapter-item expanded "><a href="../vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li class="chapter-item expanded "><a href="../gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="../auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,29 +173,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="consistency-models"><a class="header" href="#consistency-models">Consistency Models</a></h1>
-<p>Consistency Models are a type of generative model that offers faster sampling than traditional diffusion models while maintaining generation quality.</p>
-<h2 id="key-innovations"><a class="header" href="#key-innovations">Key Innovations</a></h2>
+                        <h1 id="一致性模型"><a class="header" href="#一致性模型">一致性模型</a></h1>
+<p>一致性模型是一种生成模型，相比传统扩散模型提供更快的采样速度，同时保持生成质量。</p>
+<h2 id="关键创新"><a class="header" href="#关键创新">关键创新</a></h2>
 <ul>
-<li>Single-step generation: can generate high-quality samples in just one step</li>
-<li>Few-step generation: offers quality-speed trade-off with few sampling steps</li>
-<li>Distillation approach: distills knowledge from a pre-trained diffusion model</li>
+<li>单步生成：仅需一步即可生成高质量样本</li>
+<li>少步生成：通过少量采样步骤提供质量-速度的权衡</li>
+<li>蒸馏方法：从预训练的扩散模型中蒸馏知识</li>
 </ul>
-<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
+<h2 id="优势"><a class="header" href="#优势">优势</a></h2>
 <ul>
-<li>Much faster sampling than regular diffusion models</li>
-<li>Deterministic sampling process</li>
-<li>Maintains generation quality comparable to diffusion models</li>
+<li>比常规扩散模型采样速度快得多</li>
+<li>确定性采样过程</li>
+<li>保持与扩散模型相当的生成质量</li>
 </ul>
-<h2 id="technical-details"><a class="header" href="#technical-details">Technical Details</a></h2>
+<h2 id="技术细节"><a class="header" href="#技术细节">技术细节</a></h2>
 <ul>
-<li>Consistency functions: maps noise to data points</li>
-<li>Consistency distillation: training technique to learn consistency functions</li>
-<li>Self-conditioning: improves generation quality</li>
+<li>一致性函数：将噪声映射到数据点</li>
+<li>一致性蒸馏：学习一致性函数的训练技术</li>
+<li>自我条件化：提高生成质量</li>
 </ul>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
 <ul>
-<li><a href="https://arxiv.org/abs/2303.01469">Song et al. (2023), "Consistency Models"</a></li>
+<li><a href="https://arxiv.org/abs/2303.01469">Song et al. (2023), "一致性模型"</a></li>
 </ul>
 
                     </main>
