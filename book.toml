@@ -4,3 +4,21 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "Vincent教你学Generative AI "
+
+
+[build]
+build-dir = "book"                # the directory where the output is placed
+create-missing = true             # whether or not to create missing pages
+use-default-preprocessors = true  # use the default preprocessors
+extra-watch-dirs = []             # directories to watch for triggering builds
+
+
+[output.html]
+mathjax-support = true
+
+[output.html.search]
+limit-results = 15
+
+[preprocessor.index]
+
+[preprocessor.links]
