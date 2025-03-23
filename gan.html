@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Preface - Vincent教你学AI </title>
+        <title>Generative Adversarial Network (GAN) - Vincent教你学AI </title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html" class="active">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html" class="active"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,34 +173,68 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
-<p>Welcome to the AI Generative Models guide. This book serves as a comprehensive resource for understanding various generative AI models that have revolutionized the field of artificial intelligence in recent years.</p>
-<h2 id="purpose-of-this-book"><a class="header" href="#purpose-of-this-book">Purpose of This Book</a></h2>
-<p>This guide aims to provide a clear and concise overview of key generative AI models, with a focus on:</p>
+                        <h1 id="generative-adversarial-network-gan"><a class="header" href="#generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></h1>
+<p>Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.</p>
+<h2 id="core-architecture"><a class="header" href="#core-architecture">Core Architecture</a></h2>
 <ul>
-<li><strong>Diffusion Models</strong>: Including DDPM, Stable Diffusion, and Consistency Models</li>
-<li><strong>Normalizing Flows</strong>: Models that use invertible transformations</li>
-<li><strong>Flow Matching</strong>: Continuous-time flow-based generative models</li>
-<li><strong>Variational Autoencoders (VAEs)</strong>: Latent variable models with probabilistic encoders and decoders</li>
-<li><strong>Generative Adversarial Networks (GANs)</strong>: Adversarial framework with generator and discriminator networks</li>
-<li><strong>Auto-regressive Models</strong>: Such as transformers used in large language models</li>
+<li><strong>Generator Network</strong>: Creates synthetic data samples from random noise</li>
+<li><strong>Discriminator Network</strong>: Attempts to distinguish between real and generated samples</li>
+<li><strong>Adversarial Training</strong>: The two networks are trained in a competitive minimax game</li>
 </ul>
-<p>Each section explores the theoretical foundations, architectures, and practical applications of these models, making complex concepts accessible to readers with varying levels of technical expertise.</p>
-<h2 id="how-to-use-this-guide"><a class="header" href="#how-to-use-this-guide">How to Use This Guide</a></h2>
-<p>The book is structured to allow both sequential reading and targeted exploration of specific models. You can:</p>
-<ol>
-<li>Follow the chapters in order for a complete understanding of the landscape</li>
-<li>Jump directly to specific model types that interest you</li>
-<li>Use the reference sections to find original papers and additional resources</li>
-</ol>
-<p>We hope this guide enhances your understanding of generative AI and inspires your own experiments and applications in this exciting field.</p>
+<h2 id="mathematical-framework"><a class="header" href="#mathematical-framework">Mathematical Framework</a></h2>
+<ul>
+<li><strong>Minimax Game</strong>: Formulation as a two-player zero-sum game</li>
+<li><strong>Nash Equilibrium</strong>: Theoretical solution point where neither network can improve</li>
+<li><strong>Non-saturating Loss</strong>: Modified objective to prevent generator gradient vanishing</li>
+</ul>
+<h2 id="key-gan-variants"><a class="header" href="#key-gan-variants">Key GAN Variants</a></h2>
+<ul>
+<li><strong>DCGAN</strong>: Introduces convolutional architectures for stable training</li>
+<li><strong>Conditional GAN</strong>: Incorporates class or attribute information</li>
+<li><strong>CycleGAN</strong>: Enables unpaired image-to-image translation</li>
+<li><strong>StyleGAN</strong>: Progressive growing with style-based generator for high-quality images</li>
+<li><strong>BigGAN</strong>: Scaled-up architecture for high-fidelity image generation</li>
+<li><strong>WGAN</strong>: Wasserstein GAN with improved training stability</li>
+</ul>
+<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
+<ul>
+<li><strong>Sharp, Realistic Outputs</strong>: Produces crisp, high-quality samples</li>
+<li><strong>Implicit Density Modeling</strong>: No need to explicitly define a likelihood function</li>
+<li><strong>Versatile Framework</strong>: Applicable to many data types and problems</li>
+<li><strong>Strong Empirical Results</strong>: State-of-the-art in many image generation tasks</li>
+</ul>
+<h2 id="challenges"><a class="header" href="#challenges">Challenges</a></h2>
+<ul>
+<li><strong>Training Instability</strong>: Prone to mode collapse and oscillating behavior</li>
+<li><strong>Evaluation Difficulty</strong>: Hard to quantitatively evaluate quality</li>
+<li><strong>Lack of Inference</strong>: Standard GANs don't provide inference capabilities</li>
+<li><strong>Requires Careful Tuning</strong>: Sensitive to hyperparameters and architecture choices</li>
+</ul>
+<h2 id="applications"><a class="header" href="#applications">Applications</a></h2>
+<ul>
+<li><strong>Image Generation</strong>: Creating photorealistic images</li>
+<li><strong>Image Translation</strong>: Converting between image domains</li>
+<li><strong>Data Augmentation</strong>: Generating synthetic training data</li>
+<li><strong>Super-resolution</strong>: Enhancing low-resolution images</li>
+<li><strong>Art Generation</strong>: Creating novel artistic content</li>
+</ul>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<ul>
+<li><a href="https://arxiv.org/abs/1406.2661">Goodfellow et al. (2014), "Generative Adversarial Networks"</a></li>
+<li><a href="https://arxiv.org/abs/1511.06434">Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"</a></li>
+<li><a href="https://arxiv.org/abs/1812.04948">Karras et al. (2019), "A Style-Based Generator Architecture for Generative Adversarial Networks"</a></li>
+<li><a href="https://arxiv.org/abs/1701.07875">Arjovsky et al. (2017), "Wasserstein GAN"</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="vae.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="diffusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="auto-regressive.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -210,8 +244,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="vae.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="diffusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="auto-regressive.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

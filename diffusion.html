@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Preface - Vincent教你学AI </title>
+        <title>Diffusion Model - Vincent教你学AI </title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html" class="active">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html" class="active"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,34 +173,39 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
-<p>Welcome to the AI Generative Models guide. This book serves as a comprehensive resource for understanding various generative AI models that have revolutionized the field of artificial intelligence in recent years.</p>
-<h2 id="purpose-of-this-book"><a class="header" href="#purpose-of-this-book">Purpose of This Book</a></h2>
-<p>This guide aims to provide a clear and concise overview of key generative AI models, with a focus on:</p>
-<ul>
-<li><strong>Diffusion Models</strong>: Including DDPM, Stable Diffusion, and Consistency Models</li>
-<li><strong>Normalizing Flows</strong>: Models that use invertible transformations</li>
-<li><strong>Flow Matching</strong>: Continuous-time flow-based generative models</li>
-<li><strong>Variational Autoencoders (VAEs)</strong>: Latent variable models with probabilistic encoders and decoders</li>
-<li><strong>Generative Adversarial Networks (GANs)</strong>: Adversarial framework with generator and discriminator networks</li>
-<li><strong>Auto-regressive Models</strong>: Such as transformers used in large language models</li>
-</ul>
-<p>Each section explores the theoretical foundations, architectures, and practical applications of these models, making complex concepts accessible to readers with varying levels of technical expertise.</p>
-<h2 id="how-to-use-this-guide"><a class="header" href="#how-to-use-this-guide">How to Use This Guide</a></h2>
-<p>The book is structured to allow both sequential reading and targeted exploration of specific models. You can:</p>
+                        <h1 id="diffusion-model"><a class="header" href="#diffusion-model">Diffusion Model</a></h1>
+<p>Diffusion models are a class of generative models that have revolutionized AI-based content creation. These models work by gradually adding noise to data and then learning to reverse this process to generate new samples.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Diffusion models have emerged as one of the most powerful approaches for generative AI, particularly for images, but increasingly for other modalities like audio, video, and 3D content. They work by:</p>
 <ol>
-<li>Follow the chapters in order for a complete understanding of the landscape</li>
-<li>Jump directly to specific model types that interest you</li>
-<li>Use the reference sections to find original papers and additional resources</li>
+<li>Forward process: Gradually adding noise to data until it becomes pure noise</li>
+<li>Reverse process: Learning to iteratively denoise to generate new data</li>
 </ol>
-<p>We hope this guide enhances your understanding of generative AI and inspires your own experiments and applications in this exciting field.</p>
+<h2 id="key-advantages"><a class="header" href="#key-advantages">Key Advantages</a></h2>
+<ul>
+<li>High-quality generation</li>
+<li>Flexible conditioning mechanisms</li>
+<li>Stable training compared to GANs</li>
+<li>Strong theoretical foundation</li>
+</ul>
+<h2 id="types-of-diffusion-models"><a class="header" href="#types-of-diffusion-models">Types of Diffusion Models</a></h2>
+<p>This section covers several important variants of diffusion models:</p>
+<ul>
+<li><a href="./diffusion/ddpm.html">DDPM</a>: The original denoising diffusion probabilistic models</li>
+<li><a href="./diffusion/stable-diffusion.html">Stable Diffusion</a>: Latent diffusion models for text-to-image generation</li>
+<li><a href="./diffusion/consistency.html">Consistency Models</a>: Fast sampling diffusion variants</li>
+</ul>
+<p>Each sub-chapter provides detailed explanations of the model architecture, training process, and applications.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="preface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="diffusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="diffusion/ddpm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -210,8 +215,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="preface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="diffusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="diffusion/ddpm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
