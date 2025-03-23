@@ -1,0 +1,6 @@
+[book]
+authors = ["ants"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Vincent教你学AI"
