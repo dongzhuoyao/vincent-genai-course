@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Generative Adversarial Network (GAN) - Vincent教你学AI </title>
+        <title>骨干网络设计 - Vincent教你学AI </title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html" class="active"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../diffusion.html"><strong aria-hidden="true">1.</strong> Diffusion Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="../diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="../diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> Consistency Models</a></li><li class="chapter-item expanded "><a href="../diffusion/backbone.html" class="active"><strong aria-hidden="true">1.4.</strong> 骨干网络设计</a></li></ol></li><li class="chapter-item expanded "><a href="../normalizing-flow.html"><strong aria-hidden="true">2.</strong> Normalizing Flow</a></li><li class="chapter-item expanded "><a href="../flow-matching.html"><strong aria-hidden="true">3.</strong> Flow Matching</a></li><li class="chapter-item expanded "><a href="../vae.html"><strong aria-hidden="true">4.</strong> Variational Autoencoder (VAE)</a></li><li class="chapter-item expanded "><a href="../gan.html"><strong aria-hidden="true">5.</strong> Generative Adversarial Network (GAN)</a></li><li class="chapter-item expanded "><a href="../auto-regressive.html"><strong aria-hidden="true">6.</strong> Auto-regressive Model</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -144,7 +144,7 @@
                     <h1 class="menu-title">Vincent教你学AI </h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -173,68 +173,71 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="generative-adversarial-network-gan"><a class="header" href="#generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></h1>
-<p>Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.</p>
-<h2 id="core-architecture"><a class="header" href="#core-architecture">Core Architecture</a></h2>
+                        <h1 id="扩散模型骨干网络设计"><a class="header" href="#扩散模型骨干网络设计">扩散模型骨干网络设计</a></h1>
+<p>扩散模型的性能在很大程度上取决于其骨干网络的设计。这些骨干网络负责学习噪声预测或去噪过程，对生成质量至关重要。</p>
+<h2 id="u-net架构"><a class="header" href="#u-net架构">U-Net架构</a></h2>
+<p>U-Net是扩散模型中最常用的骨干网络，其特点包括：</p>
 <ul>
-<li><strong>Generator Network</strong>: Creates synthetic data samples from random noise</li>
-<li><strong>Discriminator Network</strong>: Attempts to distinguish between real and generated samples</li>
-<li><strong>Adversarial Training</strong>: The two networks are trained in a competitive minimax game</li>
+<li><strong>对称编码器-解码器结构</strong>：通过下采样逐步减小特征图尺寸，然后通过上采样恢复尺寸</li>
+<li><strong>跳跃连接</strong>：连接编码器和解码器对应层，保留细节信息</li>
+<li><strong>残差块</strong>：改进的ResNet块，提高训练稳定性和模型性能</li>
+<li><strong>自注意力层</strong>：在某些分辨率层中引入，捕获远程依赖关系</li>
 </ul>
-<h2 id="mathematical-framework"><a class="header" href="#mathematical-framework">Mathematical Framework</a></h2>
+<h2 id="其他常见骨干网络"><a class="header" href="#其他常见骨干网络">其他常见骨干网络</a></h2>
+<h3 id="transformer架构"><a class="header" href="#transformer架构">Transformer架构</a></h3>
 <ul>
-<li><strong>Minimax Game</strong>: Formulation as a two-player zero-sum game</li>
-<li><strong>Nash Equilibrium</strong>: Theoretical solution point where neither network can improve</li>
-<li><strong>Non-saturating Loss</strong>: Modified objective to prevent generator gradient vanishing</li>
+<li><strong>Diffusion Transformer (DiT)</strong>：使用Transformer块替代卷积层</li>
+<li><strong>U-ViT</strong>：结合U-Net的多尺度特性和Vision Transformer的注意力机制</li>
+<li><strong>优势</strong>：更好地捕获全局依赖关系，对大尺寸图像效果更佳</li>
 </ul>
-<h2 id="key-gan-variants"><a class="header" href="#key-gan-variants">Key GAN Variants</a></h2>
+<h3 id="高效改进"><a class="header" href="#高效改进">高效改进</a></h3>
 <ul>
-<li><strong>DCGAN</strong>: Introduces convolutional architectures for stable training</li>
-<li><strong>Conditional GAN</strong>: Incorporates class or attribute information</li>
-<li><strong>CycleGAN</strong>: Enables unpaired image-to-image translation</li>
-<li><strong>StyleGAN</strong>: Progressive growing with style-based generator for high-quality images</li>
-<li><strong>BigGAN</strong>: Scaled-up architecture for high-fidelity image generation</li>
-<li><strong>WGAN</strong>: Wasserstein GAN with improved training stability</li>
+<li><strong>Progressive U-Net</strong>：渐进式的U-Net变体，针对不同噪声级别使用不同复杂度的网络</li>
+<li><strong>轻量级设计</strong>：使用分组卷积、深度可分离卷积等减少参数量</li>
+<li><strong>知识蒸馏</strong>：从大型模型蒸馏知识到小型模型，平衡效率和质量</li>
 </ul>
-<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
+<h2 id="时间步和条件嵌入"><a class="header" href="#时间步和条件嵌入">时间步和条件嵌入</a></h2>
 <ul>
-<li><strong>Sharp, Realistic Outputs</strong>: Produces crisp, high-quality samples</li>
-<li><strong>Implicit Density Modeling</strong>: No need to explicitly define a likelihood function</li>
-<li><strong>Versatile Framework</strong>: Applicable to many data types and problems</li>
-<li><strong>Strong Empirical Results</strong>: State-of-the-art in many image generation tasks</li>
+<li><strong>时间步嵌入</strong>：将去噪步骤转换为特征表示，通常使用正弦位置编码</li>
+<li><strong>条件嵌入</strong>：
+<ul>
+<li><strong>类别条件</strong>：使用类别嵌入或one-hot向量</li>
+<li><strong>文本条件</strong>：使用CLIP或T5等语言模型的文本编码</li>
+<li><strong>跨模态条件</strong>：结合多种模态输入的特征</li>
 </ul>
-<h2 id="challenges"><a class="header" href="#challenges">Challenges</a></h2>
-<ul>
-<li><strong>Training Instability</strong>: Prone to mode collapse and oscillating behavior</li>
-<li><strong>Evaluation Difficulty</strong>: Hard to quantitatively evaluate quality</li>
-<li><strong>Lack of Inference</strong>: Standard GANs don't provide inference capabilities</li>
-<li><strong>Requires Careful Tuning</strong>: Sensitive to hyperparameters and architecture choices</li>
+</li>
 </ul>
-<h2 id="applications"><a class="header" href="#applications">Applications</a></h2>
+<h2 id="扩散模型骨干设计中的关键考虑因素"><a class="header" href="#扩散模型骨干设计中的关键考虑因素">扩散模型骨干设计中的关键考虑因素</a></h2>
+<ol>
+<li><strong>感受野大小</strong>：更大的感受野有助于捕获全局结构</li>
+<li><strong>参数效率</strong>：优化参数数量和计算复杂度</li>
+<li><strong>多分辨率处理</strong>：有效处理不同尺度的特征</li>
+<li><strong>注意力机制</strong>：在合适的层级高效应用注意力机制</li>
+<li><strong>可扩展性</strong>：能够适应不同尺寸的输入和复杂度要求</li>
+</ol>
+<h2 id="最新研究方向"><a class="header" href="#最新研究方向">最新研究方向</a></h2>
 <ul>
-<li><strong>Image Generation</strong>: Creating photorealistic images</li>
-<li><strong>Image Translation</strong>: Converting between image domains</li>
-<li><strong>Data Augmentation</strong>: Generating synthetic training data</li>
-<li><strong>Super-resolution</strong>: Enhancing low-resolution images</li>
-<li><strong>Art Generation</strong>: Creating novel artistic content</li>
+<li><strong>动态架构</strong>：根据噪声水平动态调整网络结构</li>
+<li><strong>混合架构</strong>：结合CNN和Transformer的优点</li>
+<li><strong>一致性架构</strong>：专为一致性模型设计的特殊骨干网络</li>
+<li><strong>量化感知设计</strong>：考虑到部署时量化需求的骨干网络设计</li>
 </ul>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
 <ul>
-<li><a href="https://arxiv.org/abs/1406.2661">Goodfellow et al. (2014), "Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1511.06434">Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1812.04948">Karras et al. (2019), "A Style-Based Generator Architecture for Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1701.07875">Arjovsky et al. (2017), "Wasserstein GAN"</a></li>
+<li><a href="https://arxiv.org/abs/1505.04597">Ronneberger et al. (2015), "U-Net: 用于生物医学图像分割的卷积网络"</a></li>
+<li><a href="https://arxiv.org/abs/2006.11239">Ho et al. (2020), "去噪扩散概率模型"</a></li>
+<li><a href="https://arxiv.org/abs/2212.09748">Peebles &amp; Xie (2023), "扩散变换器"</a></li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="vae.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../diffusion/consistency.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="auto-regressive.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../normalizing-flow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -244,11 +247,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="vae.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../diffusion/consistency.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="auto-regressive.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../normalizing-flow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -263,13 +266,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
