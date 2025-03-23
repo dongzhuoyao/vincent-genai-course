@@ -1,6 +1,6 @@
 [book]
-authors = ["ants"]
-language = "en"
+authors = ["Vincent"]
+language = "cn"
 multilingual = false
 src = "src"
 title = "Vincent教你学AI"
