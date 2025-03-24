@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>流匹配(Flow Matching) - Vincent教你学Generative AI </title>
+        <title>向量量化变分自编码器 - Vincent教你学Generative AI </title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -37,7 +37,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="flow-matching.html" class="active"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vae/continuous.html"><strong aria-hidden="true">4.1.</strong> 连续变分自编码器</a></li><li class="chapter-item expanded "><a href="vae/vq-vae.html"><strong aria-hidden="true">4.2.</strong> 向量量化变分自编码器</a></li></ol></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="../diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="../diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="../diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="../normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="../flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="../vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vae/continuous.html"><strong aria-hidden="true">4.1.</strong> 连续变分自编码器</a></li><li class="chapter-item expanded "><a href="../vae/vq-vae.html" class="active"><strong aria-hidden="true">4.2.</strong> 向量量化变分自编码器</a></li></ol></li><li class="chapter-item expanded "><a href="../gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="../auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="../agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="../masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="../multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -146,7 +146,7 @@
                     <h1 class="menu-title">Vincent教你学Generative AI </h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -175,53 +175,77 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="flow-matching"><a class="header" href="#flow-matching">Flow Matching</a></h1>
-<p>Flow Matching is a generative modeling technique that builds upon the ideas of continuous normalizing flows and probability flow ODEs, offering an alternative training approach for generative models.</p>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>Flow Matching defines a continuous-time transformation from a simple distribution (like a Gaussian) to a complex target distribution. Unlike traditional normalizing flows, flow matching doesn't require computing the Jacobian determinant, making it more flexible and computationally efficient.</p>
-<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
-<ul>
-<li><strong>Vector Fields</strong>: Learning a vector field to represent the continuous-time flow</li>
-<li><strong>Straight-line Paths</strong>: Using simple paths between distributions</li>
-<li><strong>Conditional Flow Matching</strong>: Extending to conditional generation</li>
-<li><strong>ODE-based Generation</strong>: Sampling by solving an ordinary differential equation</li>
-</ul>
-<h2 id="relation-to-other-models"><a class="header" href="#relation-to-other-models">Relation to Other Models</a></h2>
-<ul>
-<li><strong>Diffusion Models</strong>: Flow matching can be seen as a generalization of score-based diffusion models</li>
-<li><strong>Normalizing Flows</strong>: Similar concept but with different training objectives</li>
-<li><strong>Optimal Transport</strong>: Connection to optimal transport theory</li>
-</ul>
-<h2 id="advantages"><a class="header" href="#advantages">Advantages</a></h2>
-<ul>
-<li><strong>Flexible Architecture</strong>: No invertibility requirement</li>
-<li><strong>Efficient Training</strong>: More efficient than score matching in some cases</li>
-<li><strong>Theoretical Guarantees</strong>: Well-founded mathematical framework</li>
-<li><strong>Stable Training</strong>: Often more stable than adversarial approaches</li>
-</ul>
-<h2 id="applications"><a class="header" href="#applications">Applications</a></h2>
-<ul>
-<li><strong>Image Generation</strong>: Creating realistic images</li>
-<li><strong>Shape Generation</strong>: 3D shape synthesis</li>
-<li><strong>Audio Synthesis</strong>: Generating audio waveforms</li>
-<li><strong>Density Estimation</strong>: Learning complex distributions</li>
-</ul>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
-<ul>
-<li><a href="https://arxiv.org/abs/2210.02747">Lipman et al. (2022), "Flow Matching for Generative Modeling"</a></li>
-<li><a href="https://arxiv.org/abs/2209.03003">Liu et al. (2022), "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow"</a></li>
-<li><a href="https://arxiv.org/abs/2302.00482">Tong et al. (2023), "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport"</a></li>
-</ul>
+                        <h1 id="向量量化变分自编码器-vq-vae"><a class="header" href="#向量量化变分自编码器-vq-vae">向量量化变分自编码器 (VQ-VAE)</a></h1>
+<p>向量量化变分自编码器（VQ-VAE）是 VAE 的一个重要变体，它使用离散的潜在表示而不是连续的潜在空间。VQ-VAE 通过将连续向量映射到离散的码本（codebook）来实现这一点，这使得它特别适合处理离散数据（如文本、音频等）和需要精确重建的场景。</p>
+<h2 id="架构"><a class="header" href="#架构">架构</a></h2>
+<p>VQ-VAE 的主要组件包括：</p>
+<ol>
+<li><strong>编码器网络</strong>：将输入数据映射到连续向量空间</li>
+<li><strong>向量量化层</strong>：将连续向量映射到最近的码本条目</li>
+<li><strong>解码器网络</strong>：从量化后的向量重建输入数据</li>
+<li><strong>码本</strong>：包含 K 个可学习的向量，用于量化</li>
+</ol>
+<h2 id="数学框架"><a class="header" href="#数学框架">数学框架</a></h2>
+<h3 id="向量量化过程"><a class="header" href="#向量量化过程">向量量化过程</a></h3>
+<p>给定编码器输出 ( z_e(x) )，VQ-VAE 通过以下步骤进行量化：</p>
+<ol>
+<li>计算与码本中所有向量的距离</li>
+<li>选择最近的码本条目</li>
+<li>使用选中的码本条目进行重建</li>
+</ol>
+<p>量化过程可以表示为：</p>
+<p>[ z_q(x) = \text{VQ}(z_e(x)) = e_k, \quad k = \arg\min_j |z_e(x) - e_j|_2 ]</p>
+<h3 id="训练目标"><a class="header" href="#训练目标">训练目标</a></h3>
+<p>VQ-VAE 的训练目标包括：</p>
+<ol>
+<li><strong>重建损失</strong>：确保解码器能够准确重建输入</li>
+<li><strong>码本损失</strong>：更新码本向量以更好地表示输入</li>
+<li><strong>承诺损失</strong>：防止编码器输出在码本条目之间频繁切换</li>
+</ol>
+<p>总损失函数为：</p>
+<p>[ \mathcal{L}<em>{\text{VQ-VAE}} = \mathcal{L}</em>{\text{recon}} + |\text{sg}[z_e(x)] - e_k|_2^2 + |\text{sg}[e_k] - z_e(x)|_2^2 ]</p>
+<p>其中 (\text{sg}) 表示停止梯度操作。</p>
+<h2 id="变体"><a class="header" href="#变体">变体</a></h2>
+<h3 id="vq-vae-2"><a class="header" href="#vq-vae-2">VQ-VAE-2</a></h3>
+<p>VQ-VAE-2 通过引入分层结构来增强生成能力，使用多个 VQ 层处理不同尺度的特征。</p>
+<h3 id="vq-gan"><a class="header" href="#vq-gan">VQ-GAN</a></h3>
+<p>VQ-GAN 将 VQ-VAE 与对抗训练相结合，通过判别器来提升生成质量。</p>
+<h2 id="优势"><a class="header" href="#优势">优势</a></h2>
+<ol>
+<li><strong>离散表示</strong>：更适合处理离散数据</li>
+<li><strong>精确重建</strong>：可以产生更清晰的输出</li>
+<li><strong>自回归生成</strong>：支持自回归式的生成过程</li>
+<li><strong>多尺度处理</strong>：可以处理不同尺度的特征</li>
+</ol>
+<h2 id="局限性"><a class="header" href="#局限性">局限性</a></h2>
+<ol>
+<li><strong>码本大小限制</strong>：码本大小需要预先设定</li>
+<li><strong>计算开销</strong>：量化过程需要计算与所有码本条目的距离</li>
+<li><strong>训练稳定性</strong>：需要仔细平衡各个损失项</li>
+</ol>
+<h2 id="应用"><a class="header" href="#应用">应用</a></h2>
+<ol>
+<li><strong>图像生成</strong>：高质量图像生成</li>
+<li><strong>音频处理</strong>：语音合成和音频压缩</li>
+<li><strong>文本生成</strong>：基于离散 token 的文本生成</li>
+<li><strong>视频生成</strong>：多帧视频生成</li>
+</ol>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
+<ol>
+<li>van den Oord, A., et al. (2017). Neural discrete representation learning.</li>
+<li>Razavi, A., et al. (2019). Generating diverse high-fidelity images with VQ-VAE-2.</li>
+<li>Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="normalizing-flow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../vae/continuous.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="vae.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../gan.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -231,11 +255,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="normalizing-flow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../vae/continuous.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="vae.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../gan.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -250,13 +274,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 

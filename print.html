@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vae/continuous.html"><strong aria-hidden="true">4.1.</strong> 连续变分自编码器</a></li><li class="chapter-item expanded "><a href="vae/vq-vae.html"><strong aria-hidden="true">4.2.</strong> 向量量化变分自编码器</a></li></ol></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -425,52 +425,197 @@
 <li><a href="https://arxiv.org/abs/2302.00482">Tong et al. (2023), "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport"</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="变分自编码器-vae"><a class="header" href="#变分自编码器-vae">变分自编码器 (VAE)</a></h1>
-<p>变分自编码器(VAE)是一类将神经网络与变分推断相结合来学习数据潜在表示的生成模型。</p>
-<h2 id="架构-1"><a class="header" href="#架构-1">架构</a></h2>
-<p>VAE由两个主要组件组成：</p>
+<p>变分自编码器（VAE）是一类重要的生成模型，它通过结合神经网络和变分推断来学习数据的潜在表示。VAE 的核心思想是通过编码器将输入数据映射到潜在空间，然后通过解码器从潜在空间重建数据。</p>
+<h2 id="主要类型"><a class="header" href="#主要类型">主要类型</a></h2>
+<h3 id="连续变分自编码器"><a class="header" href="#连续变分自编码器">连续变分自编码器</a></h3>
+<p>连续 VAE 使用连续的潜在空间，通过重参数化技巧实现端到端的训练。它特别适合处理连续数据，如自然图像。</p>
+<p><a href="./vae/continuous.html">了解更多关于连续变分自编码器</a></p>
+<h3 id="向量量化变分自编码器-vq-vae"><a class="header" href="#向量量化变分自编码器-vq-vae">向量量化变分自编码器 (VQ-VAE)</a></h3>
+<p>VQ-VAE 使用离散的潜在表示，通过向量量化将连续向量映射到离散的码本。它特别适合处理离散数据，如文本和音频。</p>
+<p><a href="./vae/vq-vae.html">了解更多关于向量量化变分自编码器</a></p>
+<h2 id="应用领域"><a class="header" href="#应用领域">应用领域</a></h2>
+<ol>
+<li>
+<p><strong>图像生成与处理</strong></p>
 <ul>
-<li><strong>编码器网络</strong>：将输入数据映射到潜在空间中的分布</li>
-<li><strong>解码器网络</strong>：将潜在空间中的点映射回数据空间</li>
+<li>图像压缩</li>
+<li>图像重建</li>
+<li>风格迁移</li>
 </ul>
-<h2 id="数学框架"><a class="header" href="#数学框架">数学框架</a></h2>
+</li>
+<li>
+<p><strong>音频处理</strong></p>
 <ul>
-<li><strong>变分推断</strong>：近似不可处理的后验分布</li>
-<li><strong>证据下界(ELBO)</strong>：结合重建和正则化的目标函数</li>
-<li><strong>重参数化技巧</strong>：使得反向传播可以通过采样过程进行</li>
+<li>语音合成</li>
+<li>音频压缩</li>
+<li>音乐生成</li>
 </ul>
-<h2 id="主要变体"><a class="header" href="#主要变体">主要变体</a></h2>
+</li>
+<li>
+<p><strong>文本生成</strong></p>
 <ul>
-<li><strong>β-VAE</strong>：为KL散度项引入权重因子</li>
-<li><strong>条件VAE</strong>：将条件信息纳入生成过程</li>
-<li><strong>VQ-VAE</strong>：在潜在空间中使用向量量化</li>
-<li><strong>层次VAE</strong>：采用多层潜变量</li>
+<li>文本压缩</li>
+<li>文本生成</li>
+<li>文本表示学习</li>
 </ul>
-<h2 id="优势-1"><a class="header" href="#优势-1">优势</a></h2>
+</li>
+<li>
+<p><strong>异常检测</strong></p>
 <ul>
-<li><strong>结构化潜在空间</strong>：创建连续且有意义的潜在空间</li>
-<li><strong>生成能力</strong>：能够从学习的分布中生成新样本</li>
-<li><strong>无监督学习</strong>：不需要标记数据</li>
-<li><strong>概率框架</strong>：提供不确定性估计</li>
+<li>基于重构误差的异常检测</li>
+<li>数据清洗</li>
 </ul>
-<h2 id="局限性"><a class="header" href="#局限性">局限性</a></h2>
+</li>
+</ol>
+<h2 id="发展趋势"><a class="header" href="#发展趋势">发展趋势</a></h2>
+<ol>
+<li>
+<p><strong>架构改进</strong></p>
 <ul>
-<li><strong>模糊输出</strong>：通常比GANs产生更模糊的结果</li>
-<li><strong>后验崩塌</strong>：可能忽略一些潜变量</li>
-<li><strong>近似差距</strong>：真实后验和近似后验可能有显著差异</li>
+<li>更高效的编码器-解码器结构</li>
+<li>更好的潜在空间组织</li>
+<li>更强的生成能力</li>
 </ul>
-<h2 id="应用-1"><a class="header" href="#应用-1">应用</a></h2>
+</li>
+<li>
+<p><strong>训练方法</strong></p>
 <ul>
-<li><strong>图像生成</strong>：创建新的真实图像</li>
-<li><strong>表示学习</strong>：寻找有意义的数据表示</li>
-<li><strong>异常检测</strong>：识别异常模式</li>
-<li><strong>数据压缩</strong>：复杂数据的高效编码</li>
+<li>更稳定的训练策略</li>
+<li>更好的损失函数设计</li>
+<li>更高效的优化方法</li>
 </ul>
+</li>
+<li>
+<p><strong>应用扩展</strong></p>
+<ul>
+<li>多模态学习</li>
+<li>跨域迁移</li>
+<li>可解释性研究</li>
+</ul>
+</li>
+</ol>
 <h2 id="参考文献-4"><a class="header" href="#参考文献-4">参考文献</a></h2>
+<ol>
+<li>Kingma, D. P., &amp; Welling, M. (2013). Auto-encoding variational bayes.</li>
+<li>van den Oord, A., et al. (2017). Neural discrete representation learning.</li>
+<li>Razavi, A., et al. (2019). Generating diverse high-fidelity images with VQ-VAE-2.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="连续变分自编码器-continuous-vae"><a class="header" href="#连续变分自编码器-continuous-vae">连续变分自编码器 (Continuous VAE)</a></h1>
+<p>变分自编码器（VAE）是一种生成模型，它结合了神经网络和变分推断来学习数据的潜在表示。VAE 的核心思想是通过编码器将输入数据映射到潜在空间，然后通过解码器从潜在空间重建数据。</p>
+<h2 id="架构-1"><a class="header" href="#架构-1">架构</a></h2>
+<p>VAE 由两个主要部分组成：</p>
+<ol>
+<li><strong>编码器网络</strong>：将输入数据映射到潜在空间的分布参数（均值和方差）</li>
+<li><strong>解码器网络</strong>：将潜在空间的样本映射回数据空间</li>
+</ol>
+<h2 id="数学框架"><a class="header" href="#数学框架">数学框架</a></h2>
+<h3 id="变分推断"><a class="header" href="#变分推断">变分推断</a></h3>
+<p>VAE 使用变分推断来优化以下目标函数（证据下界，ELBO）：</p>
+<p>[ \mathcal{L}<em>{\text{VAE}} = \mathbb{E}</em>{q_\phi(z|x)}[\log p_\theta(x|z)] - \text{KL}(q_\phi(z|x) | p(z)) ]</p>
+<p>其中：</p>
 <ul>
-<li><a href="https://arxiv.org/abs/1312.6114">Kingma &amp; Welling (2014), "自编码变分贝叶斯"</a></li>
-<li><a href="https://arxiv.org/abs/1401.4082">Rezende et al. (2014), "随机反向传播与深度生成模型中的近似推断"</a></li>
-<li><a href="https://openreview.net/pdf?id=Sy2fzU9gl">Higgins et al. (2017), "beta-VAE: 使用约束变分框架学习基本视觉概念"</a></li>
+<li>( q_\phi(z|x) ) 是编码器定义的近似后验分布</li>
+<li>( p_\theta(x|z) ) 是解码器定义的似然函数</li>
+<li>( p(z) ) 是先验分布（通常为标准正态分布）</li>
+<li>KL 项是 KL 散度，用于正则化潜在空间</li>
 </ul>
+<h3 id="重参数化技巧"><a class="header" href="#重参数化技巧">重参数化技巧</a></h3>
+<p>为了能够通过编码器反向传播，VAE 使用重参数化技巧：</p>
+<p>[ z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I) ]</p>
+<h2 id="变体"><a class="header" href="#变体">变体</a></h2>
+<h3 id="β-vae"><a class="header" href="#β-vae">β-VAE</a></h3>
+<p>β-VAE 通过引入权重系数 β 来增强潜在空间的结构化表示：</p>
+<p>[ \mathcal{L}<em>{\beta\text{-VAE}} = \mathbb{E}</em>{q_\phi(z|x)}[\log p_\theta(x|z)] - \beta \text{KL}(q_\phi(z|x) | p(z)) ]</p>
+<h3 id="条件-vae-cvae"><a class="header" href="#条件-vae-cvae">条件 VAE (CVAE)</a></h3>
+<p>CVAE 通过引入条件信息来增强生成过程：</p>
+<p>[ \mathcal{L}<em>{\text{CVAE}} = \mathbb{E}</em>{q_\phi(z|x,c)}[\log p_\theta(x|z,c)] - \text{KL}(q_\phi(z|x,c) | p(z|c)) ]</p>
+<h2 id="优势-1"><a class="header" href="#优势-1">优势</a></h2>
+<ol>
+<li><strong>结构化潜在空间</strong>：通过 KL 散度正则化，VAE 学习到结构化的潜在表示</li>
+<li><strong>生成能力</strong>：可以从潜在空间采样生成新的数据样本</li>
+<li><strong>无监督学习</strong>：不需要标签数据就能学习数据的表示</li>
+<li><strong>概率框架</strong>：提供了完整的概率模型框架</li>
+</ol>
+<h2 id="局限性"><a class="header" href="#局限性">局限性</a></h2>
+<ol>
+<li><strong>模糊输出</strong>：由于 KL 散度正则化，生成的结果可能过于平滑</li>
+<li><strong>后验崩塌</strong>：编码器可能忽略输入信息，导致 KL 项接近零</li>
+<li><strong>近似差距</strong>：变分推断的近似可能导致次优解</li>
+</ol>
+<h2 id="应用-1"><a class="header" href="#应用-1">应用</a></h2>
+<ol>
+<li><strong>图像生成</strong>：生成新的图像样本</li>
+<li><strong>表示学习</strong>：学习数据的低维表示</li>
+<li><strong>异常检测</strong>：基于重构误差检测异常样本</li>
+<li><strong>数据压缩</strong>：通过潜在表示压缩数据</li>
+</ol>
+<h2 id="参考文献-5"><a class="header" href="#参考文献-5">参考文献</a></h2>
+<ol>
+<li>Kingma, D. P., &amp; Welling, M. (2013). Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114.</li>
+<li>Higgins, I., et al. (2017). beta-VAE: Learning basic visual concepts with a constrained variational framework.</li>
+<li>Sohn, K., et al. (2015). Learning structured output representation using deep conditional generative models.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="向量量化变分自编码器-vq-vae-1"><a class="header" href="#向量量化变分自编码器-vq-vae-1">向量量化变分自编码器 (VQ-VAE)</a></h1>
+<p>向量量化变分自编码器（VQ-VAE）是 VAE 的一个重要变体，它使用离散的潜在表示而不是连续的潜在空间。VQ-VAE 通过将连续向量映射到离散的码本（codebook）来实现这一点，这使得它特别适合处理离散数据（如文本、音频等）和需要精确重建的场景。</p>
+<h2 id="架构-2"><a class="header" href="#架构-2">架构</a></h2>
+<p>VQ-VAE 的主要组件包括：</p>
+<ol>
+<li><strong>编码器网络</strong>：将输入数据映射到连续向量空间</li>
+<li><strong>向量量化层</strong>：将连续向量映射到最近的码本条目</li>
+<li><strong>解码器网络</strong>：从量化后的向量重建输入数据</li>
+<li><strong>码本</strong>：包含 K 个可学习的向量，用于量化</li>
+</ol>
+<h2 id="数学框架-1"><a class="header" href="#数学框架-1">数学框架</a></h2>
+<h3 id="向量量化过程"><a class="header" href="#向量量化过程">向量量化过程</a></h3>
+<p>给定编码器输出 ( z_e(x) )，VQ-VAE 通过以下步骤进行量化：</p>
+<ol>
+<li>计算与码本中所有向量的距离</li>
+<li>选择最近的码本条目</li>
+<li>使用选中的码本条目进行重建</li>
+</ol>
+<p>量化过程可以表示为：</p>
+<p>[ z_q(x) = \text{VQ}(z_e(x)) = e_k, \quad k = \arg\min_j |z_e(x) - e_j|_2 ]</p>
+<h3 id="训练目标"><a class="header" href="#训练目标">训练目标</a></h3>
+<p>VQ-VAE 的训练目标包括：</p>
+<ol>
+<li><strong>重建损失</strong>：确保解码器能够准确重建输入</li>
+<li><strong>码本损失</strong>：更新码本向量以更好地表示输入</li>
+<li><strong>承诺损失</strong>：防止编码器输出在码本条目之间频繁切换</li>
+</ol>
+<p>总损失函数为：</p>
+<p>[ \mathcal{L}<em>{\text{VQ-VAE}} = \mathcal{L}</em>{\text{recon}} + |\text{sg}[z_e(x)] - e_k|_2^2 + |\text{sg}[e_k] - z_e(x)|_2^2 ]</p>
+<p>其中 (\text{sg}) 表示停止梯度操作。</p>
+<h2 id="变体-1"><a class="header" href="#变体-1">变体</a></h2>
+<h3 id="vq-vae-2"><a class="header" href="#vq-vae-2">VQ-VAE-2</a></h3>
+<p>VQ-VAE-2 通过引入分层结构来增强生成能力，使用多个 VQ 层处理不同尺度的特征。</p>
+<h3 id="vq-gan"><a class="header" href="#vq-gan">VQ-GAN</a></h3>
+<p>VQ-GAN 将 VQ-VAE 与对抗训练相结合，通过判别器来提升生成质量。</p>
+<h2 id="优势-2"><a class="header" href="#优势-2">优势</a></h2>
+<ol>
+<li><strong>离散表示</strong>：更适合处理离散数据</li>
+<li><strong>精确重建</strong>：可以产生更清晰的输出</li>
+<li><strong>自回归生成</strong>：支持自回归式的生成过程</li>
+<li><strong>多尺度处理</strong>：可以处理不同尺度的特征</li>
+</ol>
+<h2 id="局限性-1"><a class="header" href="#局限性-1">局限性</a></h2>
+<ol>
+<li><strong>码本大小限制</strong>：码本大小需要预先设定</li>
+<li><strong>计算开销</strong>：量化过程需要计算与所有码本条目的距离</li>
+<li><strong>训练稳定性</strong>：需要仔细平衡各个损失项</li>
+</ol>
+<h2 id="应用-2"><a class="header" href="#应用-2">应用</a></h2>
+<ol>
+<li><strong>图像生成</strong>：高质量图像生成</li>
+<li><strong>音频处理</strong>：语音合成和音频压缩</li>
+<li><strong>文本生成</strong>：基于离散 token 的文本生成</li>
+<li><strong>视频生成</strong>：多帧视频生成</li>
+</ol>
+<h2 id="参考文献-6"><a class="header" href="#参考文献-6">参考文献</a></h2>
+<ol>
+<li>van den Oord, A., et al. (2017). Neural discrete representation learning.</li>
+<li>Razavi, A., et al. (2019). Generating diverse high-fidelity images with VQ-VAE-2.</li>
+<li>Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="generative-adversarial-network-gan"><a class="header" href="#generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></h1>
 <p>Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.</p>
 <h2 id="core-architecture"><a class="header" href="#core-architecture">Core Architecture</a></h2>
