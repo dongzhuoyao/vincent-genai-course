@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vae/continuous.html"><strong aria-hidden="true">4.1.</strong> 连续变分自编码器</a></li><li class="chapter-item expanded "><a href="vae/vq-vae.html"><strong aria-hidden="true">4.2.</strong> 向量量化变分自编码器</a></li></ol></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="diffusion.html"><strong aria-hidden="true">1.</strong> 扩散模型(Diffusion Model)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion/ddpm.html"><strong aria-hidden="true">1.1.</strong> DDPM</a></li><li class="chapter-item expanded "><a href="diffusion/stable-diffusion.html"><strong aria-hidden="true">1.2.</strong> 稳定扩散模型(Stable Diffusion)</a></li><li class="chapter-item expanded "><a href="diffusion/consistency.html"><strong aria-hidden="true">1.3.</strong> 一致性模型(Consistency Models)</a></li><li class="chapter-item expanded "><a href="diffusion/backbone.html"><strong aria-hidden="true">1.4.</strong> 骨干网络设计(Backbone Design)</a></li></ol></li><li class="chapter-item expanded "><a href="normalizing-flow.html"><strong aria-hidden="true">2.</strong> 标准化流(Normalizing Flow)</a></li><li class="chapter-item expanded "><a href="flow-matching.html"><strong aria-hidden="true">3.</strong> 流匹配(Flow Matching)</a></li><li class="chapter-item expanded "><a href="vae.html"><strong aria-hidden="true">4.</strong> 变分自编码器 (VAE)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vae/continuous.html"><strong aria-hidden="true">4.1.</strong> 连续变分自编码器</a></li><li class="chapter-item expanded "><a href="vae/vq-vae.html"><strong aria-hidden="true">4.2.</strong> 向量量化变分自编码器</a></li></ol></li><li class="chapter-item expanded "><a href="gan.html"><strong aria-hidden="true">5.</strong> 生成对抗网络 (GAN)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="gan/continuous.html"><strong aria-hidden="true">5.1.</strong> 连续生成对抗网络</a></li><li class="chapter-item expanded "><a href="gan/vq-gan.html"><strong aria-hidden="true">5.2.</strong> 向量量化生成对抗网络</a></li></ol></li><li class="chapter-item expanded "><a href="auto-regressive.html"><strong aria-hidden="true">6.</strong> 自回归模型(Auto-regressive Model)</a></li><li class="chapter-item expanded "><a href="agent.html"><strong aria-hidden="true">7.</strong> Agent</a></li><li class="chapter-item expanded "><a href="masked-discrete-state-model.html"><strong aria-hidden="true">8.</strong> 掩码模型(Masked Discrete-State Model)</a></li><li class="chapter-item expanded "><a href="multi-modal-model.html"><strong aria-hidden="true">9.</strong> 多模态模型(Multi-modal Model)</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -616,58 +616,195 @@
 <li>Razavi, A., et al. (2019). Generating diverse high-fidelity images with VQ-VAE-2.</li>
 <li>Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="generative-adversarial-network-gan"><a class="header" href="#generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></h1>
-<p>Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.</p>
-<h2 id="core-architecture"><a class="header" href="#core-architecture">Core Architecture</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="生成对抗网络-gan"><a class="header" href="#生成对抗网络-gan">生成对抗网络 (GAN)</a></h1>
+<p>生成对抗网络（GAN）是一类重要的生成模型，它通过生成器和判别器的相互博弈来学习数据分布。GAN 的核心思想是通过对抗训练来提升生成质量，使得生成器能够产生逼真的样本。</p>
+<h2 id="主要类型-1"><a class="header" href="#主要类型-1">主要类型</a></h2>
+<h3 id="连续生成对抗网络"><a class="header" href="#连续生成对抗网络">连续生成对抗网络</a></h3>
+<p>连续 GAN 使用连续的潜在空间，通过生成器和判别器的相互博弈来提升生成质量。它特别适合处理连续数据，如自然图像。</p>
+<p><a href="./gan/continuous.html">了解更多关于连续生成对抗网络</a></p>
+<h3 id="向量量化生成对抗网络-vq-gan"><a class="header" href="#向量量化生成对抗网络-vq-gan">向量量化生成对抗网络 (VQ-GAN)</a></h3>
+<p>VQ-GAN 结合了 VQ-VAE 和 GAN 的优点，使用离散的潜在表示和对抗训练来提升生成质量。它特别适合处理离散数据，如文本和音频。</p>
+<p><a href="./gan/vq-gan.html">了解更多关于向量量化生成对抗网络</a></p>
+<h2 id="应用领域-1"><a class="header" href="#应用领域-1">应用领域</a></h2>
+<ol>
+<li>
+<p><strong>图像生成与处理</strong></p>
 <ul>
-<li><strong>Generator Network</strong>: Creates synthetic data samples from random noise</li>
-<li><strong>Discriminator Network</strong>: Attempts to distinguish between real and generated samples</li>
-<li><strong>Adversarial Training</strong>: The two networks are trained in a competitive minimax game</li>
+<li>图像生成</li>
+<li>图像编辑</li>
+<li>风格迁移</li>
+<li>超分辨率</li>
 </ul>
-<h2 id="mathematical-framework"><a class="header" href="#mathematical-framework">Mathematical Framework</a></h2>
+</li>
+<li>
+<p><strong>音频处理</strong></p>
 <ul>
-<li><strong>Minimax Game</strong>: Formulation as a two-player zero-sum game</li>
-<li><strong>Nash Equilibrium</strong>: Theoretical solution point where neither network can improve</li>
-<li><strong>Non-saturating Loss</strong>: Modified objective to prevent generator gradient vanishing</li>
+<li>语音合成</li>
+<li>音乐生成</li>
+<li>音频增强</li>
 </ul>
-<h2 id="key-gan-variants"><a class="header" href="#key-gan-variants">Key GAN Variants</a></h2>
+</li>
+<li>
+<p><strong>文本生成</strong></p>
 <ul>
-<li><strong>DCGAN</strong>: Introduces convolutional architectures for stable training</li>
-<li><strong>Conditional GAN</strong>: Incorporates class or attribute information</li>
-<li><strong>CycleGAN</strong>: Enables unpaired image-to-image translation</li>
-<li><strong>StyleGAN</strong>: Progressive growing with style-based generator for high-quality images</li>
-<li><strong>BigGAN</strong>: Scaled-up architecture for high-fidelity image generation</li>
-<li><strong>WGAN</strong>: Wasserstein GAN with improved training stability</li>
+<li>文本生成</li>
+<li>对话系统</li>
+<li>机器翻译</li>
 </ul>
-<h2 id="advantages-2"><a class="header" href="#advantages-2">Advantages</a></h2>
+</li>
+<li>
+<p><strong>视频生成</strong></p>
 <ul>
-<li><strong>Sharp, Realistic Outputs</strong>: Produces crisp, high-quality samples</li>
-<li><strong>Implicit Density Modeling</strong>: No need to explicitly define a likelihood function</li>
-<li><strong>Versatile Framework</strong>: Applicable to many data types and problems</li>
-<li><strong>Strong Empirical Results</strong>: State-of-the-art in many image generation tasks</li>
+<li>视频生成</li>
+<li>视频编辑</li>
+<li>动作迁移</li>
 </ul>
-<h2 id="challenges-1"><a class="header" href="#challenges-1">Challenges</a></h2>
+</li>
+</ol>
+<h2 id="发展趋势-1"><a class="header" href="#发展趋势-1">发展趋势</a></h2>
+<ol>
+<li>
+<p><strong>架构改进</strong></p>
 <ul>
-<li><strong>Training Instability</strong>: Prone to mode collapse and oscillating behavior</li>
-<li><strong>Evaluation Difficulty</strong>: Hard to quantitatively evaluate quality</li>
-<li><strong>Lack of Inference</strong>: Standard GANs don't provide inference capabilities</li>
-<li><strong>Requires Careful Tuning</strong>: Sensitive to hyperparameters and architecture choices</li>
+<li>更稳定的训练策略</li>
+<li>更高效的网络结构</li>
+<li>更好的生成质量</li>
 </ul>
-<h2 id="applications-2"><a class="header" href="#applications-2">Applications</a></h2>
+</li>
+<li>
+<p><strong>训练方法</strong></p>
 <ul>
-<li><strong>Image Generation</strong>: Creating photorealistic images</li>
-<li><strong>Image Translation</strong>: Converting between image domains</li>
-<li><strong>Data Augmentation</strong>: Generating synthetic training data</li>
-<li><strong>Super-resolution</strong>: Enhancing low-resolution images</li>
-<li><strong>Art Generation</strong>: Creating novel artistic content</li>
+<li>更稳定的优化算法</li>
+<li>更好的损失函数设计</li>
+<li>更高效的训练策略</li>
 </ul>
-<h2 id="references-2"><a class="header" href="#references-2">References</a></h2>
+</li>
+<li>
+<p><strong>应用扩展</strong></p>
 <ul>
-<li><a href="https://arxiv.org/abs/1406.2661">Goodfellow et al. (2014), "Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1511.06434">Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1812.04948">Karras et al. (2019), "A Style-Based Generator Architecture for Generative Adversarial Networks"</a></li>
-<li><a href="https://arxiv.org/abs/1701.07875">Arjovsky et al. (2017), "Wasserstein GAN"</a></li>
+<li>多模态生成</li>
+<li>可控生成</li>
+<li>可解释性研究</li>
 </ul>
+</li>
+</ol>
+<h2 id="参考文献-7"><a class="header" href="#参考文献-7">参考文献</a></h2>
+<ol>
+<li>Goodfellow, I., et al. (2014). Generative adversarial networks.</li>
+<li>Arjovsky, M., et al. (2017). Wasserstein GAN.</li>
+<li>Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="连续生成对抗网络-continuous-gan"><a class="header" href="#连续生成对抗网络-continuous-gan">连续生成对抗网络 (Continuous GAN)</a></h1>
+<p>生成对抗网络（GAN）是一种通过对抗训练来学习数据分布的生成模型。连续 GAN 使用连续的潜在空间，通过生成器和判别器的相互博弈来提升生成质量。</p>
+<h2 id="架构-3"><a class="header" href="#架构-3">架构</a></h2>
+<p>连续 GAN 由两个主要组件组成：</p>
+<ol>
+<li><strong>生成器网络</strong>：将随机噪声映射到数据空间</li>
+<li><strong>判别器网络</strong>：区分真实数据和生成数据</li>
+</ol>
+<h2 id="数学框架-2"><a class="header" href="#数学框架-2">数学框架</a></h2>
+<h3 id="对抗目标"><a class="header" href="#对抗目标">对抗目标</a></h3>
+<p>GAN 的训练目标可以表示为：</p>
+<p>[ \min_G \max_D \mathbb{E}<em>{x \sim p</em>{data}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1-D(G(z)))] ]</p>
+<p>其中：</p>
+<ul>
+<li>( G ) 是生成器</li>
+<li>( D ) 是判别器</li>
+<li>( p_{data} ) 是真实数据分布</li>
+<li>( p_z ) 是潜在空间分布（通常为标准正态分布）</li>
+</ul>
+<h3 id="训练过程"><a class="header" href="#训练过程">训练过程</a></h3>
+<ol>
+<li><strong>判别器更新</strong>：最大化判别准确率</li>
+<li><strong>生成器更新</strong>：最小化判别准确率</li>
+</ol>
+<h2 id="变体-2"><a class="header" href="#变体-2">变体</a></h2>
+<h3 id="wgan"><a class="header" href="#wgan">WGAN</a></h3>
+<p>WGAN 使用 Wasserstein 距离来改善训练稳定性：</p>
+<p>[ \min_G \max_{D \in \mathcal{D}} \mathbb{E}<em>{x \sim p</em>{data}}[D(x)] - \mathbb{E}_{z \sim p_z}[D(G(z))] ]</p>
+<h3 id="stylegan"><a class="header" href="#stylegan">StyleGAN</a></h3>
+<p>StyleGAN 通过风格混合和噪声注入来增强生成多样性。</p>
+<h2 id="优势-3"><a class="header" href="#优势-3">优势</a></h2>
+<ol>
+<li><strong>高质量生成</strong>：可以产生逼真的样本</li>
+<li><strong>灵活性</strong>：可以处理各种类型的数据</li>
+<li><strong>无监督学习</strong>：不需要标签数据</li>
+<li><strong>端到端训练</strong>：可以直接优化生成质量</li>
+</ol>
+<h2 id="局限性-2"><a class="header" href="#局限性-2">局限性</a></h2>
+<ol>
+<li><strong>训练不稳定</strong>：需要仔细平衡生成器和判别器</li>
+<li><strong>模式崩塌</strong>：可能只生成有限种类的样本</li>
+<li><strong>评估困难</strong>：缺乏明确的评估指标</li>
+</ol>
+<h2 id="应用-3"><a class="header" href="#应用-3">应用</a></h2>
+<ol>
+<li><strong>图像生成</strong>：创建逼真的图像</li>
+<li><strong>图像编辑</strong>：属性编辑和风格迁移</li>
+<li><strong>数据增强</strong>：生成训练数据</li>
+<li><strong>跨域转换</strong>：图像到图像转换</li>
+</ol>
+<h2 id="参考文献-8"><a class="header" href="#参考文献-8">参考文献</a></h2>
+<ol>
+<li>Goodfellow, I., et al. (2014). Generative adversarial networks.</li>
+<li>Arjovsky, M., et al. (2017). Wasserstein GAN.</li>
+<li>Karras, T., et al. (2019). A style-based generator architecture for generative adversarial networks.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="向量量化生成对抗网络-vq-gan-1"><a class="header" href="#向量量化生成对抗网络-vq-gan-1">向量量化生成对抗网络 (VQ-GAN)</a></h1>
+<p>向量量化生成对抗网络（VQ-GAN）结合了 VQ-VAE 和 GAN 的优点，使用离散的潜在表示和对抗训练来提升生成质量。VQ-GAN 通过向量量化将连续特征映射到离散的码本，并利用判别器来优化重建质量。</p>
+<h2 id="架构-4"><a class="header" href="#架构-4">架构</a></h2>
+<p>VQ-GAN 的主要组件包括：</p>
+<ol>
+<li><strong>编码器网络</strong>：将输入数据映射到连续特征空间</li>
+<li><strong>向量量化层</strong>：将连续特征映射到离散码本</li>
+<li><strong>解码器网络</strong>：从量化特征重建数据</li>
+<li><strong>判别器网络</strong>：评估重建质量</li>
+<li><strong>码本</strong>：包含可学习的离散表示</li>
+</ol>
+<h2 id="数学框架-3"><a class="header" href="#数学框架-3">数学框架</a></h2>
+<h3 id="向量量化过程-1"><a class="header" href="#向量量化过程-1">向量量化过程</a></h3>
+<p>给定编码器输出 ( z_e(x) )，VQ-GAN 通过以下步骤进行量化：</p>
+<p>[ z_q(x) = \text{VQ}(z_e(x)) = e_k, \quad k = \arg\min_j |z_e(x) - e_j|_2 ]</p>
+<h3 id="训练目标-1"><a class="header" href="#训练目标-1">训练目标</a></h3>
+<p>VQ-GAN 的训练目标包括：</p>
+<ol>
+<li><strong>重建损失</strong>：确保解码器能够准确重建输入</li>
+<li><strong>对抗损失</strong>：通过判别器提升生成质量</li>
+<li><strong>感知损失</strong>：使用预训练网络提取特征进行监督</li>
+</ol>
+<p>总损失函数为：</p>
+<p>[ \mathcal{L}<em>{\text{VQ-GAN}} = \mathcal{L}</em>{\text{recon}} + \lambda_{\text{adv}}\mathcal{L}<em>{\text{adv}} + \lambda</em>{\text{perceptual}}\mathcal{L}_{\text{perceptual}} ]</p>
+<h2 id="变体-3"><a class="header" href="#变体-3">变体</a></h2>
+<h3 id="vq-gan-2"><a class="header" href="#vq-gan-2">VQ-GAN-2</a></h3>
+<p>VQ-GAN-2 通过引入分层结构和多尺度判别器来增强生成能力。</p>
+<h3 id="vq-gan-3"><a class="header" href="#vq-gan-3">VQ-GAN-3</a></h3>
+<p>VQ-GAN-3 进一步改进了码本设计和训练策略。</p>
+<h2 id="优势-4"><a class="header" href="#优势-4">优势</a></h2>
+<ol>
+<li><strong>高质量生成</strong>：结合了 VQ-VAE 的精确重建和 GAN 的逼真性</li>
+<li><strong>离散表示</strong>：更适合处理离散数据</li>
+<li><strong>多尺度处理</strong>：可以处理不同尺度的特征</li>
+<li><strong>可控生成</strong>：支持基于离散 token 的生成控制</li>
+</ol>
+<h2 id="局限性-3"><a class="header" href="#局限性-3">局限性</a></h2>
+<ol>
+<li><strong>计算开销</strong>：需要维护和更新码本</li>
+<li><strong>训练复杂度</strong>：需要平衡多个损失项</li>
+<li><strong>码本大小限制</strong>：需要预先设定合适的码本大小</li>
+</ol>
+<h2 id="应用-4"><a class="header" href="#应用-4">应用</a></h2>
+<ol>
+<li><strong>图像生成</strong>：高质量图像生成和编辑</li>
+<li><strong>视频生成</strong>：多帧视频生成</li>
+<li><strong>音频处理</strong>：高质量音频生成</li>
+<li><strong>文本生成</strong>：基于离散 token 的文本生成</li>
+</ol>
+<h2 id="参考文献-9"><a class="header" href="#参考文献-9">参考文献</a></h2>
+<ol>
+<li>Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.</li>
+<li>Yu, J., et al. (2022). Vector-quantized image modeling with improved VQGAN.</li>
+<li>Yu, J., et al. (2023). Scaling autoregressive models for content-rich text-to-image generation.</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="auto-regressive-model"><a class="header" href="#auto-regressive-model">Auto-regressive Model</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="agent"><a class="header" href="#agent">Agent</a></h1>
 <h2 id="什么是agent"><a class="header" href="#什么是agent">什么是Agent</a></h2>
