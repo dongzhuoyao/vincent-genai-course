@@ -6,6 +6,7 @@
   - [DDPM](./diffusion/ddpm.md)
   - [稳定扩散模型(Stable Diffusion)](./diffusion/stable-diffusion.md)
   - [一致性模型(Consistency Models)](./diffusion/consistency.md)
+  - [向量量化扩散模型](./diffusion/vector-quantized-diffusion.md)
   - [骨干网络设计(Backbone Design)](./diffusion/backbone.md) 
 - [标准化流(Normalizing Flow)](./normalizing-flow.md)
 - [流匹配(Flow Matching)](./flow-matching.md)

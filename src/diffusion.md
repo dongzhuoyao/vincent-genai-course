@@ -21,7 +21,9 @@
 本节介绍扩散模型的几个重要变体：
 
 - [DDPM](./diffusion/ddpm.md)：原始的去噪扩散概率模型
+- [Score-based Diffusion](./diffusion/one-or-two-stage.md)：单阶段or两阶段扩散模型
 - [Stable Diffusion](./diffusion/stable-diffusion.md)：用于文本到图像生成的潜在扩散模型
 - [一致性模型](./diffusion/consistency.md)：快速采样扩散变体
+- [Vector Quantized Diffusion](./diffusion/vector-quantized-diffusion.md)：向量量化扩散模型
 
 每个子章节都提供了关于模型架构、训练过程和应用的详细解释。
