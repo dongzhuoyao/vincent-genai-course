@@ -10,6 +10,8 @@
 - [标准化流(Normalizing Flow)](./normalizing-flow.md)
 - [流匹配(Flow Matching)](./flow-matching.md)
 - [变分自编码器 (VAE)](./vae.md)
+  - [连续变分自编码器](./vae/continuous.md)
+  - [向量量化变分自编码器](./vae/vq-vae.md)
 - [生成对抗网络 (GAN)](./gan.md)
 - [自回归模型(Auto-regressive Model)](./auto-regressive.md)
 - [Agent](./agent.md)
