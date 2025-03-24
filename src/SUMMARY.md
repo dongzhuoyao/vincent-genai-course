@@ -13,6 +13,8 @@
   - [连续变分自编码器](./vae/continuous.md)
   - [向量量化变分自编码器](./vae/vq-vae.md)
 - [生成对抗网络 (GAN)](./gan.md)
+  - [连续生成对抗网络](./gan/continuous.md)
+  - [向量量化生成对抗网络](./gan/vq-gan.md)
 - [自回归模型(Auto-regressive Model)](./auto-regressive.md)
 - [Agent](./agent.md)
 - [掩码模型(Masked Discrete-State Model)](./masked-discrete-state-model.md)

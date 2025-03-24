@@ -1,53 +1,63 @@
-# Generative Adversarial Network (GAN)
+# 生成对抗网络 (GAN)
 
-Generative Adversarial Networks (GANs) are a framework for training generative models through an adversarial process involving two neural networks - a generator and a discriminator.
+生成对抗网络（GAN）是一类重要的生成模型，它通过生成器和判别器的相互博弈来学习数据分布。GAN 的核心思想是通过对抗训练来提升生成质量，使得生成器能够产生逼真的样本。
 
-## Core Architecture
+## 主要类型
 
-- **Generator Network**: Creates synthetic data samples from random noise
-- **Discriminator Network**: Attempts to distinguish between real and generated samples
-- **Adversarial Training**: The two networks are trained in a competitive minimax game
+### 连续生成对抗网络
 
-## Mathematical Framework
+连续 GAN 使用连续的潜在空间，通过生成器和判别器的相互博弈来提升生成质量。它特别适合处理连续数据，如自然图像。
 
-- **Minimax Game**: Formulation as a two-player zero-sum game
-- **Nash Equilibrium**: Theoretical solution point where neither network can improve
-- **Non-saturating Loss**: Modified objective to prevent generator gradient vanishing
+[了解更多关于连续生成对抗网络](./gan/continuous.md)
 
-## Key GAN Variants
+### 向量量化生成对抗网络 (VQ-GAN)
 
-- **DCGAN**: Introduces convolutional architectures for stable training
-- **Conditional GAN**: Incorporates class or attribute information
-- **CycleGAN**: Enables unpaired image-to-image translation
-- **StyleGAN**: Progressive growing with style-based generator for high-quality images
-- **BigGAN**: Scaled-up architecture for high-fidelity image generation
-- **WGAN**: Wasserstein GAN with improved training stability
+VQ-GAN 结合了 VQ-VAE 和 GAN 的优点，使用离散的潜在表示和对抗训练来提升生成质量。它特别适合处理离散数据，如文本和音频。
 
-## Advantages
+[了解更多关于向量量化生成对抗网络](./gan/vq-gan.md)
 
-- **Sharp, Realistic Outputs**: Produces crisp, high-quality samples
-- **Implicit Density Modeling**: No need to explicitly define a likelihood function
-- **Versatile Framework**: Applicable to many data types and problems
-- **Strong Empirical Results**: State-of-the-art in many image generation tasks
+## 应用领域
 
-## Challenges
+1. **图像生成与处理**
+   - 图像生成
+   - 图像编辑
+   - 风格迁移
+   - 超分辨率
 
-- **Training Instability**: Prone to mode collapse and oscillating behavior
-- **Evaluation Difficulty**: Hard to quantitatively evaluate quality
-- **Lack of Inference**: Standard GANs don't provide inference capabilities
-- **Requires Careful Tuning**: Sensitive to hyperparameters and architecture choices
+2. **音频处理**
+   - 语音合成
+   - 音乐生成
+   - 音频增强
 
-## Applications
+3. **文本生成**
+   - 文本生成
+   - 对话系统
+   - 机器翻译
 
-- **Image Generation**: Creating photorealistic images
-- **Image Translation**: Converting between image domains
-- **Data Augmentation**: Generating synthetic training data
-- **Super-resolution**: Enhancing low-resolution images
-- **Art Generation**: Creating novel artistic content
+4. **视频生成**
+   - 视频生成
+   - 视频编辑
+   - 动作迁移
 
-## References
+## 发展趋势
 
-- [Goodfellow et al. (2014), "Generative Adversarial Networks"](https://arxiv.org/abs/1406.2661)
-- [Radford et al. (2015), "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"](https://arxiv.org/abs/1511.06434)
-- [Karras et al. (2019), "A Style-Based Generator Architecture for Generative Adversarial Networks"](https://arxiv.org/abs/1812.04948)
-- [Arjovsky et al. (2017), "Wasserstein GAN"](https://arxiv.org/abs/1701.07875)
+1. **架构改进**
+   - 更稳定的训练策略
+   - 更高效的网络结构
+   - 更好的生成质量
+
+2. **训练方法**
+   - 更稳定的优化算法
+   - 更好的损失函数设计
+   - 更高效的训练策略
+
+3. **应用扩展**
+   - 多模态生成
+   - 可控生成
+   - 可解释性研究
+
+## 参考文献
+
+1. Goodfellow, I., et al. (2014). Generative adversarial networks.
+2. Arjovsky, M., et al. (2017). Wasserstein GAN.
+3. Esser, P., et al. (2021). Taming transformers for high-resolution image synthesis.
