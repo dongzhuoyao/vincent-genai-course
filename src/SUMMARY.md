@@ -4,7 +4,7 @@
 
 - [扩散模型(Diffusion Model)](./diffusion.md)
   - [理论基础](./diffusion/basics.md)
-    - [第一篇 Diffusion 论文: Sol Dickenstein](./diffusion/basics/first_diffusion_paper.md)
+    - [从 Sol Dickenstein 到 DDPM](./diffusion/basics/first_diffusion_paper.md)
     - [DDPM](./diffusion/basics/ddpm.md)
     - [Score Matching](./diffusion/basics/score-matching.md)
     - [Score SDE](./diffusion/basics/score-sde.md)
@@ -19,7 +19,7 @@
     - [ODE 采样方法](./diffusion/sampling/ode.md)
     - [DDIM](./diffusion/sampling/DDIM.md)
     - [DPM](./diffusion/sampling/DPM.md)
-  - [扩散模型的应用](./diffusion/application.md)
+- [扩散模型的应用](./diffusion_application.md)
 - [标准化流(Normalizing Flow)](./normalizing-flow.md)
 - [变分自编码器 (VAE)](./vae.md)
   - [连续变分自编码器](./vae/continuous.md)
