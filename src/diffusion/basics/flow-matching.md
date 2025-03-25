@@ -33,6 +33,10 @@ Flow Matching defines a continuous-time transformation from a simple distributio
 - **Audio Synthesis**: Generating audio waveforms
 - **Density Estimation**: Learning complex distributions
 
+## Awesome Flow Matching
+
+- [https://github.com/dongzhuoyao/awesome-flow-matching](https://github.com/dongzhuoyao/awesome-flow-matching)
+
 ## References
 
 - [Lipman et al. (2022), "Flow Matching for Generative Modeling"](https://arxiv.org/abs/2210.02747)
