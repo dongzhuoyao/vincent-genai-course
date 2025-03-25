@@ -10,7 +10,7 @@
     - [Score SDE](./diffusion/basics/score-sde.md)
     - [Flow Matching](./diffusion/basics/flow-matching.md)
     - [Stochastic Interpolants](./diffusion/basics/stochastic-interpolants.md)
-  - [VAE 相关的优化](./diffusion/vae.md)
+  - [✅ VAE 相关的优化](./diffusion/vae.md)
   - [稳定扩散模型(Stable Diffusion)](./diffusion/stable-diffusion.md)
   - [一致性模型(Consistency Models)](./diffusion/consistency.md)
   - [向量量化扩散模型](./diffusion/vector-quantized-diffusion.md)
