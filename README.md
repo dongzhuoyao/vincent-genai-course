@@ -1,6 +1,6 @@
 # Source code of [Vincent教你学Generative AI](https://taohu.me/vincent-ai-course/)
 
-Read the book online: [https://taohu.me/vincent-ai-course/](https://taohu.me/vincent-ai-course/)
+Read the book online: [https://taohu.me/vincent-ai-course/](https://taohu.me/vincent-genai-course/)
 
 # How to contribute
 
