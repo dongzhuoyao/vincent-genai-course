@@ -3,7 +3,7 @@ authors = ["Vincent"]
 language = "cn"
 multilingual = false
 src = "src"
-title = "Vincent教你学Generative AI "
+title = "Vincent教你学Generative AI (https://taohu.me/vincent-genai-course/) "
 
 
 [build]
