@@ -17,6 +17,8 @@
   - [✅ VAE 相关的优化](./diffusion/vae.md)
   - [稳定扩散模型(Stable Diffusion)](./diffusion/stable-diffusion.md)
   - [一致性模型(Consistency Models)](./diffusion/consistency.md)
+    - [improved consistency models](./diffusion/consistency/improved-consistency-models.md)
+    - [Simplified Consistency Models](./diffusion/consistency/simplified-consistency-models.md)
   - [✅ Shorcut Models ](./diffusion/shortcut.md)
   - [骨干网络设计(Backbone Design)](./diffusion/backbone.md)
     - [Transformer](./diffusion/backbone/transformer.md)
