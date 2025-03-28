@@ -23,4 +23,16 @@
 2. 直接跳到您感兴趣的特定模型类型
 3. 使用参考部分查找原始论文和其他资源
 
+## 贡献
+
+教程源码: [https://github.com/dongzhuoyao/vincent-genai-course](https://github.com/dongzhuoyao/vincent-genai-course)
+
+贡献请参考此框架: [https://github.com/rust-lang/mdBook](https://github.com/rust-lang/mdBook)
+
+
+
+## 许可证
+
+本指南基于 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可证。
+
 我们希望本指南能增强您对生成式AI的理解，并在这一激动人心的领域中启发您自己的实验和应用。 
