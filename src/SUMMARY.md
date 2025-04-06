@@ -22,6 +22,7 @@
   - [✅ Shorcut Models ](./diffusion/shortcut.md)
   - [骨干网络设计(Backbone Design)](./diffusion/backbone.md)
     - [Transformer](./diffusion/backbone/transformer.md)
+      - [✅ U-ViT](./diffusion/backbone/u-vit.md)
     - [U-Net](./diffusion/backbone/unet.md)
     - [Mamba, RWKV, GLA](./diffusion/backbone/mamba.md)
     - [Transformer U-Net](./diffusion/backbone/transformer-unet.md)

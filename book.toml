@@ -16,8 +16,13 @@ extra-watch-dirs = []             # directories to watch for triggering builds
 [output.html]
 mathjax-support = true
 
+[output.html.print]
+enable = true
+
 [output.html.search]
 limit-results = 15
+
+[output.pdf]
 
 [preprocessor.index]
 
