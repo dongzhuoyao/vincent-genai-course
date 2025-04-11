@@ -1,0 +1,3340 @@
+1
+00:00:07,100 --> 00:00:11,500
+so a lot of the work in non equilibrium statmech
+
+2
+00:00:13,433 --> 00:00:17,033
+looks at the trajectories and the process of like
+
+3
+00:00:17,066 --> 00:00:19,333
+locally reversing entropy
+
+4
+00:00:19,333 --> 00:00:20,633
+sorting air particles
+
+5
+00:00:20,633 --> 00:00:22,666
+and putting you fast moving air particles on the right
+
+6
+00:00:22,666 --> 00:00:24,866
+and slow moving air particles on the left
+
+7
+00:00:24,866 --> 00:00:25,400
+that was
+
+8
+00:00:25,400 --> 00:00:28,000
+that was maybe useful for thinking that you could
+
+9
+00:00:28,000 --> 00:00:29,600
+you could pump entropy out of the system
+
+10
+00:00:29,600 --> 00:00:31,800
+hi, I'm Slater Stich with Bain Capital Ventures
+
+11
+00:00:31,800 --> 00:00:33,900
+and today we're talking with Jascha Sohl-Dickstein
+
+12
+00:00:34,300 --> 00:00:36,800
+Jascha is best known for inventing diffusion models
+
+13
+00:00:36,800 --> 00:00:36,900
+and
+
+14
+00:00:36,900 --> 00:00:39,266
+that's the technology behind many of today's creative
+
+15
+00:00:39,266 --> 00:00:40,333
+AI applications
+
+16
+00:00:40,333 --> 00:00:43,033
+so if you've used a text to image generation model
+
+17
+00:00:43,033 --> 00:00:46,533
+for example, something like Midjourney Ideogram
+
+18
+00:00:46,533 --> 00:00:49,700
+DALL-E, Stable Diffusion, Black Forest Labs
+
+19
+00:00:49,700 --> 00:00:50,933
+Imagen from Google
+
+20
+00:00:51,200 --> 00:00:54,433
+all of those products are based on diffusion models
+
+21
+00:00:55,000 --> 00:00:55,866
+in today's interview
+
+22
+00:00:55,866 --> 00:00:58,733
+we will talk about the original diffusion paper from
+
+23
+00:00:58,733 --> 00:01:00,033
+2015. we'll talk about
+
+24
+00:01:00,033 --> 00:01:02,733
+Jascha's interpretation of all of the diffusion
+
+25
+00:01:02,733 --> 00:01:04,300
+research that came after that
+
+26
+00:01:04,300 --> 00:01:07,633
+and we'll also get into the theoretical physics
+
+27
+00:01:07,633 --> 00:01:08,733
+that inspired diffusion
+
+28
+00:01:08,733 --> 00:01:09,666
+in the first place
+
+29
+00:01:09,666 --> 00:01:11,600
+and led to many of the key insights
+
+30
+00:01:11,600 --> 00:01:12,733
+in that original paper
+
+31
+00:01:13,033 --> 00:01:13,833
+enjoy
+
+32
+00:01:14,300 --> 00:01:16,833
+in 2015, you wrote this paper
+
+33
+00:01:16,833 --> 00:01:17,933
+I think it was deep
+
+34
+00:01:17,933 --> 00:01:19,133
+unsupervised learning
+
+35
+00:01:19,133 --> 00:01:21,400
+using Nonequilibrium Thermodynamics
+
+36
+00:01:21,400 --> 00:01:22,900
+maybe to start
+
+37
+00:01:22,900 --> 00:01:24,866
+could you talk a little bit about what the research
+
+38
+00:01:24,866 --> 00:01:26,333
+world and deep learning looked like
+
+39
+00:01:26,333 --> 00:01:27,266
+at that phase
+
+40
+00:01:27,266 --> 00:01:28,633
+this was pretty early
+
+41
+00:01:28,633 --> 00:01:31,933
+I think that this was a couple of years after AlexNet
+
+42
+00:01:31,933 --> 00:01:34,666
+we'd just gotten to the point of being at you
+
+43
+00:01:34,666 --> 00:01:36,900
+know sort of human level performance for image
+
+44
+00:01:36,900 --> 00:01:38,433
+classification, like little one
+
+45
+00:01:38,433 --> 00:01:40,133
+yeah, you know, anything generative
+
+46
+00:01:40,133 --> 00:01:42,633
+so this is really early to work on generative problems
+
+47
+00:01:42,633 --> 00:01:43,400
+in a way
+
+48
+00:01:43,400 --> 00:01:46,266
+and what made you interested in this problem then
+
+49
+00:01:46,266 --> 00:01:48,700
+sort of what was the prehistory of this paper
+
+50
+00:01:49,066 --> 00:01:50,800
+yeah, this was
+
+51
+00:01:52,066 --> 00:01:53,866
+so maybe the the
+
+52
+00:01:53,866 --> 00:01:57,066
+the prehistory of this paper is that I had done a
+
+53
+00:01:57,066 --> 00:01:59,033
+PhD in Computational Neuroscience
+
+54
+00:01:59,200 --> 00:02:03,466
+and a question that we thought a lot about
+
+55
+00:02:03,600 --> 00:02:06,433
+was how the brain
+
+56
+00:02:06,600 --> 00:02:09,533
+learned the representations that that it learned
+
+57
+00:02:09,833 --> 00:02:16,866
+and there's one class of hypotheses in neuroscience
+
+58
+00:02:17,033 --> 00:02:19,633
+for for how that learning happens
+
+59
+00:02:19,633 --> 00:02:21,633
+which is that maybe the brain
+
+60
+00:02:21,666 --> 00:02:25,066
+is building a like probabilistic model
+
+61
+00:02:25,200 --> 00:02:28,633
+of its input. and what that means
+
+62
+00:02:29,066 --> 00:02:30,000
+is
+
+63
+00:02:30,200 --> 00:02:35,500
+maybe the brain is solving a task where
+
+64
+00:02:35,700 --> 00:02:37,533
+it sees an image
+
+65
+00:02:37,733 --> 00:02:39,633
+and it tries as hard as it can
+
+66
+00:02:39,633 --> 00:02:42,033
+to accurately assign like
+
+67
+00:02:42,333 --> 00:02:45,900
+how probable would this image be to occur in the world
+
+68
+00:02:46,133 --> 00:02:48,433
+and if the brain does a really
+
+69
+00:02:48,433 --> 00:02:52,200
+really, really good job of this, then in some sense
+
+70
+00:02:52,233 --> 00:02:55,500
+it like understands everything that's possible
+
+71
+00:02:55,500 --> 00:02:56,433
+to know about the world
+
+72
+00:02:56,433 --> 00:02:59,133
+like, yeah, you can describe the full distribution
+
+73
+00:02:59,133 --> 00:03:00,833
+over things that you see in the world
+
+74
+00:03:00,933 --> 00:03:05,033
+then you must like somehow have Learned
+
+75
+00:03:07,033 --> 00:03:07,600
+everything about
+
+76
+00:03:07,600 --> 00:03:09,633
+about what makes something likely in the world
+
+77
+00:03:09,633 --> 00:03:10,533
+unlikely in the world
+
+78
+00:03:10,533 --> 00:03:11,333
+yeah
+
+79
+00:03:12,300 --> 00:03:13,333
+sorry, I'll go for those
+
+80
+00:03:13,500 --> 00:03:16,466
+I was gonna say that that in a way is like a very, I
+
+81
+00:03:16,633 --> 00:03:17,633
+don't know, like
+
+82
+00:03:18,100 --> 00:03:21,600
+like abstract or sort of like a high minded aspiration
+
+83
+00:03:21,600 --> 00:03:22,800
+and so he sort of had almost this like
+
+84
+00:03:22,800 --> 00:03:24,700
+world model idea of, yeah
+
+85
+00:03:24,700 --> 00:03:26,066
+I've wanted to learn world models
+
+86
+00:03:26,066 --> 00:03:28,600
+yeah. and
+
+87
+00:03:28,733 --> 00:03:31,333
+I spent a lot of my PhD trying to learn world models
+
+88
+00:03:31,333 --> 00:03:32,533
+and then looking to see if
+
+89
+00:03:32,533 --> 00:03:34,733
+the same representations that were learned
+
+90
+00:03:34,733 --> 00:03:36,000
+inside the world models
+
+91
+00:03:36,000 --> 00:03:41,100
+were also found in like recordings from from the brain
+
+92
+00:03:41,100 --> 00:03:45,033
+yeah. and
+
+93
+00:03:45,533 --> 00:03:48,066
+the answer to that is, well, it was
+
+94
+00:03:49,133 --> 00:03:50,066
+was often hard to know
+
+95
+00:03:50,066 --> 00:03:51,433
+but often, often you could find
+
+96
+00:03:51,433 --> 00:03:53,066
+you could find a place where the answer was yes
+
+97
+00:03:53,066 --> 00:04:01,666
+yeah. and maybe maybe in parallel to that
+
+98
+00:04:01,900 --> 00:04:04,333
+I had like this
+
+99
+00:04:04,400 --> 00:04:06,200
+this I'd been a physics undergrad
+
+100
+00:04:06,200 --> 00:04:07,833
+and I was doing biophysics PhD
+
+101
+00:04:07,933 --> 00:04:11,033
+and we had this like group of people at Berkeley
+
+102
+00:04:11,033 --> 00:04:12,033
+where I did my PhD
+
+103
+00:04:12,033 --> 00:04:14,633
+who were really interested in non equilibrium
+
+104
+00:04:14,633 --> 00:04:15,500
+physical kinetics
+
+105
+00:04:15,500 --> 00:04:17,900
+yeah, and
+
+106
+00:04:18,833 --> 00:04:20,466
+non equilibrium
+
+107
+00:04:21,433 --> 00:04:24,733
+so okay, equilibrium to school mechanics is
+
+108
+00:04:25,600 --> 00:04:27,000
+you like have a system
+
+109
+00:04:27,000 --> 00:04:29,533
+and the system has no inputs and no outputs
+
+110
+00:04:29,533 --> 00:04:31,066
+and you let it sit there for a really
+
+111
+00:04:31,066 --> 00:04:32,266
+really, really long time
+
+112
+00:04:32,266 --> 00:04:33,466
+and it like settles
+
+113
+00:04:33,466 --> 00:04:35,533
+to whatever kind of ground state is going to be in
+
+114
+00:04:35,533 --> 00:04:35,733
+yeah
+
+115
+00:04:35,733 --> 00:04:38,133
+so maybe you put a whole bunch of particles in a box
+
+116
+00:04:38,233 --> 00:04:41,866
+and you look at the distribution
+
+117
+00:04:41,866 --> 00:04:43,666
+of where the particles are going to be in that box
+
+118
+00:04:43,666 --> 00:04:44,700
+and maybe all the particles
+
+119
+00:04:44,700 --> 00:04:46,300
+start off on one side of the box
+
+120
+00:04:46,333 --> 00:04:47,833
+but you like let the system settle
+
+121
+00:04:47,833 --> 00:04:49,800
+the particles like flow back and forth
+
+122
+00:04:49,933 --> 00:04:51,400
+like the gas fills the box
+
+123
+00:04:51,400 --> 00:04:54,100
+and and you get some like equilibrium distribution
+
+124
+00:04:55,233 --> 00:04:57,333
+non equilibrium system mechanics
+
+125
+00:04:57,533 --> 00:05:03,666
+is when you you model systems that haven't settled yet
+
+126
+00:05:03,666 --> 00:05:05,666
+yeah. and maybe they haven't settled yet
+
+127
+00:05:05,666 --> 00:05:07,333
+because they're constantly getting new inputs
+
+128
+00:05:07,333 --> 00:05:07,933
+and outputs
+
+129
+00:05:07,933 --> 00:05:10,033
+or maybe they haven't settled yet because you're
+
+130
+00:05:10,200 --> 00:05:13,066
+like seeing them early in time instead of really
+
+131
+00:05:13,066 --> 00:05:14,333
+really late in time
+
+132
+00:05:14,333 --> 00:05:18,400
+yeah, and it's kind of like
+
+133
+00:05:19,733 --> 00:05:22,300
+there was there's at least no in correspondences
+
+134
+00:05:22,666 --> 00:05:23,833
+between
+
+135
+00:05:24,200 --> 00:05:26,600
+equilibrium statistical mechanics
+
+136
+00:05:26,833 --> 00:05:30,433
+and a lot of concepts in machine learning
+
+137
+00:05:30,666 --> 00:05:33,900
+there's like a class of like
+
+138
+00:05:34,000 --> 00:05:36,433
+models of machine learning called energy based models
+
+139
+00:05:36,466 --> 00:05:40,700
+and these in fact map directly onto like
+
+140
+00:05:42,866 --> 00:05:45,866
+energy based probabilistic models in in statmech
+
+141
+00:05:46,033 --> 00:05:48,000
+and, and even more than that
+
+142
+00:05:48,000 --> 00:05:49,200
+like you can map any kind of
+
+143
+00:05:49,200 --> 00:05:50,833
+probabilistic model into energy based model
+
+144
+00:05:50,833 --> 00:05:53,333
+yeah, so we know kind of how to build a connection
+
+145
+00:05:53,666 --> 00:05:57,633
+between equilibrium thermodynamic mechanics and
+
+146
+00:05:57,666 --> 00:05:58,933
+machine learning
+
+147
+00:05:59,933 --> 00:06:01,600
+we do not
+
+148
+00:06:01,600 --> 00:06:04,133
+did not historically know how to build a connection
+
+149
+00:06:04,266 --> 00:06:05,100
+between like non
+
+150
+00:06:05,100 --> 00:06:08,000
+equilibrium systems of mechanics and machine learning
+
+151
+00:06:08,266 --> 00:06:10,900
+and so, and so I can kind of the
+
+152
+00:06:11,600 --> 00:06:12,400
+the
+
+153
+00:06:13,500 --> 00:06:16,400
+motivating question was
+
+154
+00:06:19,033 --> 00:06:20,300
+I kind of had these like
+
+155
+00:06:20,400 --> 00:06:22,133
+thoughts in my head of like all this nanotechnology
+
+156
+00:06:22,133 --> 00:06:23,733
+stuff is really cool
+
+157
+00:06:23,733 --> 00:06:24,933
+and it seems like
+
+158
+00:06:24,933 --> 00:06:27,000
+there's these missing connections to machine learning
+
+159
+00:06:27,000 --> 00:06:29,100
+and I'm really interested in representation learning
+
+160
+00:06:29,100 --> 00:06:31,233
+and and
+
+161
+00:06:31,400 --> 00:06:34,433
+kind of combined them and somehow ended up
+
+162
+00:06:35,466 --> 00:06:39,466
+like writing the first diffusion models. paper. yeah
+
+163
+00:06:39,700 --> 00:06:42,666
+one thing that I wanted to ask about specifically is
+
+164
+00:06:42,666 --> 00:06:43,866
+you know, so in that paper
+
+165
+00:06:43,866 --> 00:06:46,400
+you mentioned two other papers as inspiration
+
+166
+00:06:46,400 --> 00:06:48,866
+so one of them is this paper by (Christopher) Jarzynski
+
+167
+00:06:48,866 --> 00:06:52,600
+and I think there's other paper by Radford M. Neal
+
+168
+00:06:52,600 --> 00:06:54,933
+yeah, and so Jarzynski is a businessman
+
+169
+00:06:54,933 --> 00:06:57,466
+you know, Neal is a statistician
+
+170
+00:06:57,666 --> 00:06:59,000
+and both of these papers
+
+171
+00:06:59,000 --> 00:07:01,600
+don't seem like they're about something in image
+
+172
+00:07:01,600 --> 00:07:02,666
+generation, you know
+
+173
+00:07:02,666 --> 00:07:03,400
+they're about
+
+174
+00:07:03,400 --> 00:07:05,833
+sort of transforming one distribution into another
+
+175
+00:07:05,833 --> 00:07:06,466
+yeah
+
+176
+00:07:06,466 --> 00:07:08,833
+especially when one of those distributions is kind of
+
+177
+00:07:08,833 --> 00:07:11,266
+you know, intractable or sort of devil to compute
+
+178
+00:07:11,400 --> 00:07:13,733
+so how did you look at that and say like
+
+179
+00:07:13,833 --> 00:07:15,466
+this is probably gonna be pretty good
+
+180
+00:07:15,466 --> 00:07:16,600
+for image generation
+
+181
+00:07:16,600 --> 00:07:18,266
+like where did that idea come from
+
+182
+00:07:18,800 --> 00:07:19,133
+so maybe
+
+183
+00:07:19,133 --> 00:07:20,733
+let me just talk about those papers for a moment
+
+184
+00:07:20,733 --> 00:07:21,000
+yes
+
+185
+00:07:21,000 --> 00:07:23,066
+because those are those are those papers are awesome
+
+186
+00:07:23,066 --> 00:07:27,066
+and maybe there's two ways in which those papers like
+
+187
+00:07:27,266 --> 00:07:30,633
+were really kind of exciting. maybe maybe
+
+188
+00:07:32,266 --> 00:07:34,600
+one of them is
+
+189
+00:07:36,400 --> 00:07:38,500
+there are these like laws of thermodynamics
+
+190
+00:07:38,500 --> 00:07:40,600
+and there's this like second law of thermodynamics
+
+191
+00:07:40,600 --> 00:07:43,333
+and the second law of thermodynamics is an inequality
+
+192
+00:07:43,600 --> 00:07:46,200
+it says that it
+
+193
+00:07:46,633 --> 00:07:49,866
+says that that free energy is always going to
+
+194
+00:07:49,866 --> 00:07:52,666
+to decrease or that entropy is always going to
+
+195
+00:07:52,666 --> 00:07:53,533
+to increase
+
+196
+00:07:55,900 --> 00:07:59,500
+whereas there's this like
+
+197
+00:08:00,433 --> 00:08:04,266
+paper by groszinsky was in I want to say like 94
+
+198
+00:08:04,266 --> 00:08:07,800
+it was like, yes, this might be yeah, yeah, maybe 97
+
+199
+00:08:07,933 --> 00:08:10,233
+it's quite old, but it was like
+
+200
+00:08:10,666 --> 00:08:12,300
+it's interesting
+
+201
+00:08:12,300 --> 00:08:13,533
+because that paper shows that
+
+202
+00:08:13,533 --> 00:08:15,066
+you can rewrite the second law of
+
+203
+00:08:15,066 --> 00:08:16,066
+thermodynamics
+
+204
+00:08:16,266 --> 00:08:18,900
+as an Equality rather than an inequality
+
+205
+00:08:18,900 --> 00:08:23,500
+yeah, you can rewrite it as
+
+206
+00:08:24,433 --> 00:08:28,433
+the, so 2nd law of thermodynamics says that
+
+207
+00:08:28,500 --> 00:08:29,400
+the change in
+
+208
+00:08:29,400 --> 00:08:31,533
+free energy is always less than the work you put in
+
+209
+00:08:32,600 --> 00:08:38,600
+the, this, this paper shows that you can write this as
+
+210
+00:08:41,900 --> 00:08:44,333
+E to the, the
+
+211
+00:08:45,066 --> 00:08:46,733
+E to the change in the free energy
+
+212
+00:08:46,833 --> 00:08:49,666
+is equal to the expectation of E to the work you put in
+
+213
+00:08:50,000 --> 00:08:52,500
+so it's, it's amazing because this
+
+214
+00:08:52,500 --> 00:08:54,733
+like foundational relationship in
+
+215
+00:08:54,733 --> 00:08:55,733
+in physics
+
+216
+00:08:56,900 --> 00:08:58,833
+was like written with an inequality
+
+217
+00:08:58,833 --> 00:09:00,733
+when it could have been written with inequality
+
+218
+00:09:00,800 --> 00:09:03,433
+for like many, many, many decades
+
+219
+00:09:03,466 --> 00:09:07,066
+and the math that is used
+
+220
+00:09:07,333 --> 00:09:10,800
+is actually quite simple, like
+
+221
+00:09:10,800 --> 00:09:11,266
+like
+
+222
+00:09:11,266 --> 00:09:13,533
+you know, high school or early college level level math
+
+223
+00:09:13,533 --> 00:09:14,733
+so this is like
+
+224
+00:09:14,900 --> 00:09:17,266
+super low hanging fruit that just no one noticed
+
+225
+00:09:17,266 --> 00:09:19,200
+and that's always kind of exciting because, yeah, like
+
+226
+00:09:19,200 --> 00:09:20,433
+maybe there's more of this
+
+227
+00:09:20,433 --> 00:09:21,233
+the
+
+228
+00:09:21,233 --> 00:09:24,933
+the Radford Neal's paper is kind of interesting because
+
+229
+00:09:26,466 --> 00:09:28,800
+it discovered the same relationship
+
+230
+00:09:28,800 --> 00:09:30,700
+but framed in a totally different way
+
+231
+00:09:30,700 --> 00:09:32,033
+like Jerzinsky had
+
+232
+00:09:33,100 --> 00:09:36,133
+like written down this relationship in terms of like
+
+233
+00:09:36,133 --> 00:09:39,700
+work and energy and like physical quantities
+
+234
+00:09:39,733 --> 00:09:42,533
+and they even used some like in the original paper
+
+235
+00:09:42,533 --> 00:09:44,733
+some like super physicsy
+
+236
+00:09:45,100 --> 00:09:47,933
+um, um, like Liouville's theorem style, like
+
+237
+00:09:47,933 --> 00:09:51,000
+like math and like constraints and whatnot
+
+238
+00:09:51,000 --> 00:09:53,100
+whereas like Radford Neal was like
+
+239
+00:09:53,300 --> 00:09:55,133
+proving something about machine learning
+
+240
+00:09:55,133 --> 00:10:01,600
+he was like, showing that, um, here is a way that you can
+
+241
+00:10:03,066 --> 00:10:04,733
+estimate normalizing constants
+
+242
+00:10:04,733 --> 00:10:06,233
+by sampling trajectories
+
+243
+00:10:06,233 --> 00:10:07,800
+between two different distributions
+
+244
+00:10:07,800 --> 00:10:12,200
+yeah. and it turned out that that like
+
+245
+00:10:12,433 --> 00:10:14,900
+his work mapped exactly onto the physics work
+
+246
+00:10:15,033 --> 00:10:18,833
+it also his paper came out just a few years later
+
+247
+00:10:18,833 --> 00:10:20,333
+it would have been like
+
+248
+00:10:20,566 --> 00:10:22,300
+utterly in some way satisfying
+
+249
+00:10:22,300 --> 00:10:24,066
+if we live in the alternate universe where
+
+250
+00:10:24,066 --> 00:10:26,066
+where the machine learning result was first and like
+
+251
+00:10:26,333 --> 00:10:27,900
+prove something basic about physics
+
+252
+00:10:27,900 --> 00:10:30,200
+you could actually kind of almost read the point in
+
+253
+00:10:30,200 --> 00:10:31,233
+in Radford Neal's paper
+
+254
+00:10:31,233 --> 00:10:32,100
+where he realizes that
+
+255
+00:10:32,100 --> 00:10:33,600
+it was already noticed in physics
+
+256
+00:10:33,700 --> 00:10:36,800
+but, but so those are both very cool papers
+
+257
+00:10:36,800 --> 00:10:37,733
+and they're also very exciting
+
+258
+00:10:37,733 --> 00:10:39,300
+because they're like discovering
+
+259
+00:10:39,600 --> 00:10:41,833
+fundamental new relationships, like
+
+260
+00:10:42,833 --> 00:10:44,833
+really quite late that should be unfound
+
+261
+00:10:44,933 --> 00:10:45,933
+long time before
+
+262
+00:10:47,266 --> 00:10:48,133
+in terms of
+
+263
+00:10:49,466 --> 00:10:53,733
+why I thought that this would work for images, yeah
+
+264
+00:10:55,433 --> 00:10:57,000
+I mean, I had some like
+
+265
+00:10:57,533 --> 00:10:59,666
+intuitions, but I think
+
+266
+00:10:59,900 --> 00:11:01,333
+I also have to admit that
+
+267
+00:11:01,333 --> 00:11:03,300
+it worked far better than I probably guessed
+
+268
+00:11:03,300 --> 00:11:05,100
+it would when I started playing with it
+
+269
+00:11:05,466 --> 00:11:08,900
+I think kind of the intuition is
+
+270
+00:11:11,700 --> 00:11:13,633
+the way in which diffusion models work
+
+271
+00:11:13,900 --> 00:11:14,900
+is
+
+272
+00:11:15,033 --> 00:11:17,000
+you start with your data distribution
+
+273
+00:11:17,066 --> 00:11:19,666
+you start with like clean images
+
+274
+00:11:20,200 --> 00:11:24,066
+and you slowly corrupt that image with noise
+
+275
+00:11:25,433 --> 00:11:25,600
+you
+
+276
+00:11:25,600 --> 00:11:28,300
+you slowly
+
+277
+00:11:28,333 --> 00:11:31,933
+allow that image to undergo a diffusion process and
+
+278
+00:11:32,100 --> 00:11:35,733
+and look more and more like either a
+
+279
+00:11:36,100 --> 00:11:39,033
+draw from a Gaussian or a draw from like a horrendous
+
+280
+00:11:39,100 --> 00:11:40,400
+well, yeah, on
+
+281
+00:11:41,300 --> 00:11:45,266
+and then rather than trying to map from
+
+282
+00:11:45,266 --> 00:11:47,300
+noise back to an image
+
+283
+00:11:47,400 --> 00:11:48,533
+in one go
+
+284
+00:11:48,666 --> 00:11:51,733
+you instead get to break it apart into lots of very
+
+285
+00:11:51,733 --> 00:11:52,666
+very small pieces
+
+286
+00:11:52,666 --> 00:11:54,900
+so like your generative process is like
+
+287
+00:11:54,900 --> 00:11:57,233
+let's start with the noisiest case and very
+
+288
+00:11:57,233 --> 00:11:58,466
+very, very slowly
+
+289
+00:12:00,033 --> 00:12:02,200
+predict the image that had a little bit less noise
+
+290
+00:12:02,200 --> 00:12:03,066
+and a little bit less noise
+
+291
+00:12:03,066 --> 00:12:04,233
+a little bit less noise
+
+292
+00:12:04,433 --> 00:12:06,833
+and I think it's this like
+
+293
+00:12:07,200 --> 00:12:11,433
+ability to take many, many, many steps that that
+
+294
+00:12:12,800 --> 00:12:14,333
+makes the problem a lot easier
+
+295
+00:12:14,333 --> 00:12:15,533
+yeah, I mean
+
+296
+00:12:15,533 --> 00:12:16,666
+so from the outside
+
+297
+00:12:16,666 --> 00:12:19,200
+the thing that seems sort of surprising to me is like
+
+298
+00:12:19,200 --> 00:12:20,800
+so like on a very small time scale
+
+299
+00:12:20,800 --> 00:12:22,266
+I sort of believe that you could sort of
+
+300
+00:12:22,266 --> 00:12:23,433
+reverse the diffusion problem
+
+301
+00:12:23,433 --> 00:12:25,033
+like it sort of looks roughly the same
+
+302
+00:12:25,033 --> 00:12:26,500
+forwards as it does backwards on like
+
+303
+00:12:26,500 --> 00:12:27,600
+really small time scale
+
+304
+00:12:27,600 --> 00:12:28,500
+but like, you know
+
+305
+00:12:28,500 --> 00:12:29,666
+the thing that's surprising is that
+
+306
+00:12:29,666 --> 00:12:31,100
+you can go all the way back
+
+307
+00:12:31,100 --> 00:12:31,600
+in these like
+
+308
+00:12:31,600 --> 00:12:32,833
+solid iterative steps
+
+309
+00:12:32,833 --> 00:12:34,066
+like, you know, the
+
+310
+00:12:34,100 --> 00:12:36,500
+glass breaks and you can sort of run time backwards
+
+311
+00:12:36,500 --> 00:12:38,533
+so like put the glass together and like
+
+312
+00:12:38,633 --> 00:12:40,933
+that's the thing that seems super surprising to me
+
+313
+00:12:40,933 --> 00:12:42,033
+yes. yeah
+
+314
+00:12:42,033 --> 00:12:44,500
+did you did you look at these papers and say like
+
+315
+00:12:44,500 --> 00:12:46,600
+well, this is the thing that we could use to like
+
+316
+00:12:46,600 --> 00:12:49,200
+recover the true data distribution
+
+317
+00:12:49,200 --> 00:12:51,300
+like this is this is sort of like the right
+
+318
+00:12:51,533 --> 00:12:53,066
+tool to use for that problem
+
+319
+00:12:53,066 --> 00:12:54,800
+or is it kind of surprising
+
+320
+00:13:00,200 --> 00:13:01,133
+I, I
+
+321
+00:13:01,533 --> 00:13:03,800
+think I thought it should work from the start
+
+322
+00:13:04,066 --> 00:13:04,433
+but I'm
+
+323
+00:13:04,433 --> 00:13:08,133
+always unreasonably optimistic about my own ideas
+
+324
+00:13:08,133 --> 00:13:09,133
+and my own projects
+
+325
+00:13:09,133 --> 00:13:11,433
+yeah. and 90% of them don't work at all
+
+326
+00:13:11,433 --> 00:13:13,866
+so, so you should like, like
+
+327
+00:13:14,100 --> 00:13:15,633
+calibrate that however you like
+
+328
+00:13:15,633 --> 00:13:16,466
+yeah
+
+329
+00:13:17,200 --> 00:13:18,866
+I definitely had a lot of conversations
+
+330
+00:13:18,866 --> 00:13:21,200
+especially early on the project where
+
+331
+00:13:21,200 --> 00:13:23,466
+where, where people were like
+
+332
+00:13:23,733 --> 00:13:25,866
+slightly aghast that had a
+
+333
+00:13:27,733 --> 00:13:29,800
+like, like in the same way you can unmix pudding
+
+334
+00:13:29,800 --> 00:13:31,633
+yeah. yeah. yeah
+
+335
+00:13:31,900 --> 00:13:33,266
+yeah. it does seem quite surprising
+
+336
+00:13:33,266 --> 00:13:34,933
+but it sounds like it wasn't surprising
+
+337
+00:13:35,033 --> 00:13:36,933
+yeah, I mean, I think it's, it's
+
+338
+00:13:37,033 --> 00:13:37,833
+it's
+
+339
+00:13:38,033 --> 00:13:40,266
+maybe the key is that
+
+340
+00:13:44,000 --> 00:13:45,666
+you're training a model to do this, right
+
+341
+00:13:45,666 --> 00:13:46,733
+you're not just like
+
+342
+00:13:46,733 --> 00:13:50,266
+running the sequence and hoping it happens to like
+
+343
+00:13:50,266 --> 00:13:51,400
+go back to where it started
+
+344
+00:13:51,400 --> 00:13:54,866
+you're like training a model to like
+
+345
+00:13:58,000 --> 00:13:59,666
+decrease the entropy and like
+
+346
+00:13:59,666 --> 00:14:02,466
+like push it towards, towards a known distribution. yeah
+
+347
+00:14:03,200 --> 00:14:06,133
+we're, I feel like there were these
+
+348
+00:14:07,033 --> 00:14:08,266
+like early
+
+349
+00:14:08,666 --> 00:14:10,700
+there were some niceties about getting diffusion
+
+350
+00:14:10,700 --> 00:14:11,600
+models to work
+
+351
+00:14:11,600 --> 00:14:12,900
+that are sort of a little surprising
+
+352
+00:14:12,900 --> 00:14:16,000
+so like, you know, you remove a lot of data
+
+353
+00:14:17,133 --> 00:14:18,400
+you know, by default
+
+354
+00:14:18,400 --> 00:14:21,066
+if you sort of like try to predict an image
+
+355
+00:14:21,066 --> 00:14:22,666
+that sort of would have generated that data
+
+356
+00:14:22,666 --> 00:14:24,066
+you necessarily have like
+
+357
+00:14:24,066 --> 00:14:25,533
+a more diffuse distribution than like
+
+358
+00:14:25,533 --> 00:14:27,400
+the single point that you started with
+
+359
+00:14:27,400 --> 00:14:29,266
+so that's why you get these sort of like fuzzy images
+
+360
+00:14:29,266 --> 00:14:31,000
+and you try to go backwards
+
+361
+00:14:31,033 --> 00:14:34,100
+and I kind of imagine those problems as seeming like
+
+362
+00:14:34,100 --> 00:14:35,533
+intractable things
+
+363
+00:14:35,533 --> 00:14:37,300
+but it seems like it worked quite well
+
+364
+00:14:37,300 --> 00:14:38,933
+you know, even in this initial paper
+
+365
+00:14:39,233 --> 00:14:42,833
+yeah, yeah, it worked. it worked certainly for the for the
+
+366
+00:14:43,400 --> 00:14:44,633
+for the year which was published
+
+367
+00:14:44,633 --> 00:14:46,400
+it worked, it worked quite well. yeah
+
+368
+00:14:47,933 --> 00:14:50,300
+were you surprised when you saw those initial like
+
+369
+00:14:50,300 --> 00:14:52,266
+seafar images that you generated
+
+370
+00:14:52,433 --> 00:14:53,000
+you know, when
+
+371
+00:14:53,000 --> 00:14:55,233
+when you read those thermodynamic mechanics papers
+
+372
+00:14:55,266 --> 00:14:57,000
+and you sort of saw this general machinery
+
+373
+00:14:57,000 --> 00:14:57,500
+yeah
+
+374
+00:14:57,500 --> 00:15:00,200
+I still think it's like quite a leap to go from like
+
+375
+00:15:00,200 --> 00:15:02,900
+okay, we're gonna go from that to like image generation
+
+376
+00:15:02,900 --> 00:15:04,600
+because I sort of have in my head like
+
+377
+00:15:04,700 --> 00:15:07,000
+yeah, we have these sort of particle models
+
+378
+00:15:07,000 --> 00:15:09,100
+and, you know, it sort of makes sense that
+
+379
+00:15:09,100 --> 00:15:10,300
+maybe we should be able to sort of
+
+380
+00:15:10,300 --> 00:15:12,233
+transform between these two distributions
+
+381
+00:15:12,233 --> 00:15:12,533
+but
+
+382
+00:15:12,533 --> 00:15:15,100
+many people wouldn't have made the leap to saying like
+
+383
+00:15:15,100 --> 00:15:17,066
+this is going to be really good for generating like
+
+384
+00:15:17,066 --> 00:15:18,733
+samples from the data distribution
+
+385
+00:15:18,733 --> 00:15:21,733
+yeah, you know, so like intuition for why that
+
+386
+00:15:21,733 --> 00:15:24,500
+happened or why that was true are really interesting
+
+387
+00:15:24,633 --> 00:15:25,800
+maybe, I mean
+
+388
+00:15:26,100 --> 00:15:30,600
+so a lot of the work in non equilibrium stat mech
+
+389
+00:15:32,433 --> 00:15:33,833
+looks at
+
+390
+00:15:36,433 --> 00:15:40,066
+the trajectories and the process of like locally
+
+391
+00:15:40,133 --> 00:15:41,400
+reversing entropy
+
+392
+00:15:41,400 --> 00:15:41,933
+yeah
+
+393
+00:15:41,933 --> 00:15:47,466
+so, so maybe maybe from some point of view, it wasn't
+
+394
+00:15:48,466 --> 00:15:50,733
+like they weren't thinking about images
+
+395
+00:15:50,800 --> 00:15:53,900
+but they were thinking about like Maxwell's demons
+
+396
+00:15:53,900 --> 00:15:55,500
+like
+
+397
+00:15:55,600 --> 00:15:58,000
+sorting air particles and putting the fast moving air
+
+398
+00:15:58,000 --> 00:15:59,700
+particles on the right and the
+
+399
+00:15:59,800 --> 00:16:01,333
+slow moving air particles on the left
+
+400
+00:16:01,333 --> 00:16:03,133
+so you have a hot side and a cold side
+
+401
+00:16:03,300 --> 00:16:04,400
+or
+
+402
+00:16:04,400 --> 00:16:07,333
+they were thinking about kind of these processes that
+
+403
+00:16:07,600 --> 00:16:08,466
+could
+
+404
+00:16:10,100 --> 00:16:13,266
+exchange information for entropy
+
+405
+00:16:13,266 --> 00:16:16,133
+so Maxwell demon me an example of this, right where
+
+406
+00:16:16,633 --> 00:16:17,433
+where
+
+407
+00:16:17,633 --> 00:16:21,100
+the sorting process itself requires like
+
+408
+00:16:21,100 --> 00:16:23,266
+information processing and storage in it
+
+409
+00:16:23,266 --> 00:16:26,600
+and like that has a has a cost that compensates for the
+
+410
+00:16:26,866 --> 00:16:27,066
+you know
+
+411
+00:16:27,066 --> 00:16:29,933
+benefit that you get of like sorting the particles
+
+412
+00:16:29,933 --> 00:16:31,900
+but there was a lot of this kind of like
+
+413
+00:16:32,866 --> 00:16:35,233
+idea of there being like
+
+414
+00:16:36,466 --> 00:16:38,900
+crossover between like
+
+415
+00:16:40,033 --> 00:16:44,900
+ideas and information and ideas in thermodynamics
+
+416
+00:16:44,900 --> 00:16:47,000
+and so maybe that was
+
+417
+00:16:47,000 --> 00:16:49,733
+that was maybe useful for thinking that you could
+
+418
+00:16:50,100 --> 00:16:51,833
+you could pump entropy out of the system
+
+419
+00:16:51,833 --> 00:16:52,833
+yeah, you could recover this
+
+420
+00:16:52,833 --> 00:16:54,866
+like very complicated distribution
+
+421
+00:16:54,866 --> 00:16:57,900
+yeah. well, one thing I want to ask about is
+
+422
+00:16:57,900 --> 00:16:59,700
+so like around this time
+
+423
+00:16:59,700 --> 00:17:03,100
+and this is as a sort of outside perspective
+
+424
+00:17:03,100 --> 00:17:05,200
+the way that it seems is that I think
+
+425
+00:17:05,200 --> 00:17:08,000
+Gans came out sort of right before
+
+426
+00:17:08,000 --> 00:17:09,333
+this first diffusion barrier
+
+427
+00:17:09,333 --> 00:17:12,833
+and then but they were also it was still very early
+
+428
+00:17:12,833 --> 00:17:14,133
+they didn't work that well
+
+429
+00:17:14,133 --> 00:17:16,500
+and then I think
+
+430
+00:17:16,500 --> 00:17:18,600
+Alec Grafford had the DC Gan paper
+
+431
+00:17:18,600 --> 00:17:19,900
+that came out a little bit after
+
+432
+00:17:19,900 --> 00:17:20,700
+it was a bit later
+
+433
+00:17:20,700 --> 00:17:22,800
+yeah. and then there was this era where, you know
+
+434
+00:17:22,800 --> 00:17:24,200
+it seems from the outside that like
+
+435
+00:17:24,200 --> 00:17:25,600
+for the next five years
+
+436
+00:17:25,600 --> 00:17:28,700
+most of the emphasis in Abbot generation was in Gan
+
+437
+00:17:28,700 --> 00:17:30,533
+so we kind of went through this
+
+438
+00:17:30,700 --> 00:17:33,000
+mini ice age for diffusion models
+
+439
+00:17:33,100 --> 00:17:35,233
+is that true? was there interesting research
+
+440
+00:17:35,233 --> 00:17:36,666
+that was happening in diffusion
+
+441
+00:17:36,666 --> 00:17:38,600
+that was sort of less well appreciated
+
+442
+00:17:38,600 --> 00:17:39,900
+or just less advanced
+
+443
+00:17:40,000 --> 00:17:42,700
+it was it was mostly mostly forgotten
+
+444
+00:17:42,700 --> 00:17:43,033
+yeah
+
+445
+00:17:43,033 --> 00:17:46,033
+and there's probably okay, so there probably like GANs
+
+446
+00:17:46,900 --> 00:17:47,900
+which which
+
+447
+00:17:47,900 --> 00:17:48,533
+which were the
+
+448
+00:17:48,533 --> 00:17:50,533
+the one that everyone is most excited about
+
+449
+00:17:50,533 --> 00:17:52,666
+or yeah, at least enjoyed working the most
+
+450
+00:17:53,266 --> 00:17:55,300
+there were very small new hers
+
+451
+00:17:55,500 --> 00:17:59,633
+and there were also like flow based models
+
+452
+00:17:59,833 --> 00:18:01,700
+and those all came out
+
+453
+00:18:01,700 --> 00:18:03,333
+and then there were diffusion models
+
+454
+00:18:03,333 --> 00:18:06,400
+and those all came out in a very, very short time
+
+455
+00:18:06,533 --> 00:18:07,233
+relative to each other
+
+456
+00:18:07,233 --> 00:18:08,400
+I think they probably
+
+457
+00:18:08,533 --> 00:18:09,600
+I suspect that
+
+458
+00:18:10,000 --> 00:18:11,933
+I know this is true for like
+
+459
+00:18:12,066 --> 00:18:14,466
+the diffusion models and my GANs and the AES
+
+460
+00:18:14,466 --> 00:18:16,300
+but I suspect for you there's also that
+
+461
+00:18:16,300 --> 00:18:17,400
+probably everyone was like
+
+462
+00:18:17,400 --> 00:18:18,800
+developing ideas in parallel
+
+463
+00:18:18,800 --> 00:18:19,833
+and the whole
+
+464
+00:18:19,866 --> 00:18:20,733
+occasion times just
+
+465
+00:18:20,933 --> 00:18:21,933
+didn't quite line up
+
+466
+00:18:23,933 --> 00:18:25,333
+the
+
+467
+00:18:26,233 --> 00:18:29,833
+diffusion models had a small number of follow up papers
+
+468
+00:18:29,833 --> 00:18:30,633
+and then
+
+469
+00:18:32,200 --> 00:18:35,300
+ended up like kind of I think mostly being forgotten
+
+470
+00:18:35,300 --> 00:18:39,900
+I including I should say I probably
+
+471
+00:18:40,833 --> 00:18:42,466
+I moved on to work on other things
+
+472
+00:18:42,466 --> 00:18:43,600
+that I also thought were exciting
+
+473
+00:18:43,600 --> 00:18:45,600
+and yeah, and and you know, probably
+
+474
+00:18:45,700 --> 00:18:46,466
+in a different world
+
+475
+00:18:46,466 --> 00:18:48,333
+I like pushed on that for another few papers
+
+476
+00:18:48,333 --> 00:18:49,733
+and maybe yeah
+
+477
+00:18:50,066 --> 00:18:51,933
+but I think they also weren't
+
+478
+00:18:53,200 --> 00:18:54,633
+diffusion models
+
+479
+00:18:54,700 --> 00:18:57,333
+have some advantages over other techniques
+
+480
+00:18:59,600 --> 00:19:00,133
+they
+
+481
+00:19:00,133 --> 00:19:02,733
+might have an advantage image quality that's debatable
+
+482
+00:19:02,733 --> 00:19:04,400
+but they have an advantage
+
+483
+00:19:04,466 --> 00:19:06,000
+in that they're very, very guideable
+
+484
+00:19:06,000 --> 00:19:09,333
+yes. so you control very, very well
+
+485
+00:19:10,200 --> 00:19:12,066
+what they generate
+
+486
+00:19:12,233 --> 00:19:16,500
+and they also are like very nicely
+
+487
+00:19:16,500 --> 00:19:17,800
+like it's kind of the same thing
+
+488
+00:19:17,800 --> 00:19:18,466
+but they're like invisible
+
+489
+00:19:18,466 --> 00:19:21,066
+like if you want to do in painting or you want to
+
+490
+00:19:21,066 --> 00:19:23,400
+combine them with a classifier or
+
+491
+00:19:23,466 --> 00:19:24,633
+you want to control them some other ways
+
+492
+00:19:24,633 --> 00:19:25,800
+they work very well for that
+
+493
+00:19:26,000 --> 00:19:28,333
+they are more expensive
+
+494
+00:19:28,500 --> 00:19:30,733
+so I think at the time, like
+
+495
+00:19:30,900 --> 00:19:32,833
+we were like pushing the compute limits
+
+496
+00:19:32,833 --> 00:19:34,833
+we had to like generate
+
+497
+00:19:34,900 --> 00:19:36,233
+ugly CIFAR images
+
+498
+00:19:36,233 --> 00:19:38,033
+yeah. and like, I think
+
+499
+00:19:38,033 --> 00:19:40,600
+saying that people should spend 1,000 x to compute
+
+500
+00:19:40,600 --> 00:19:42,866
+to like generate CIFAR images was not a
+
+501
+00:19:42,866 --> 00:19:44,866
+it wasn't like a winning. yeah
+
+502
+00:19:44,866 --> 00:19:46,700
+and that was because of the number of reverse steps
+
+503
+00:19:46,700 --> 00:19:47,633
+as you see that
+
+504
+00:19:47,633 --> 00:19:48,933
+because you have to like
+
+505
+00:19:49,466 --> 00:19:51,433
+run many reverse steps in order to do it
+
+506
+00:19:51,600 --> 00:19:52,266
+did you
+
+507
+00:19:52,266 --> 00:19:55,033
+during this era where sort of view is like the GAN
+
+508
+00:19:55,033 --> 00:19:55,833
+VAE era
+
+509
+00:19:55,833 --> 00:19:59,133
+did you have the intuition at the time that like, okay
+
+510
+00:19:59,133 --> 00:19:59,333
+you know
+
+511
+00:19:59,333 --> 00:20:01,533
+in the long run, it's going to be diffusion models
+
+512
+00:20:01,533 --> 00:20:01,833
+because like
+
+513
+00:20:01,833 --> 00:20:04,700
+I think that's sort of where it's come around to today
+
+514
+00:20:04,700 --> 00:20:08,133
+and sort of most of the best commercial
+
+515
+00:20:08,466 --> 00:20:08,633
+you know
+
+516
+00:20:08,633 --> 00:20:10,333
+image generation and generates out through that
+
+517
+00:20:10,333 --> 00:20:12,600
+at least it seems to me that like for maybe
+
+518
+00:20:12,600 --> 00:20:14,300
+2021 until now
+
+519
+00:20:14,333 --> 00:20:15,300
+everything has been diffusion
+
+520
+00:20:15,300 --> 00:20:17,133
+yes. during that like six year period
+
+521
+00:20:17,133 --> 00:20:18,700
+did you have the intuition of like, well
+
+522
+00:20:18,700 --> 00:20:20,100
+obviously diffusion models are right
+
+523
+00:20:20,100 --> 00:20:21,000
+and all this like again
+
+524
+00:20:21,000 --> 00:20:22,033
+and yeah, you style is not
+
+525
+00:20:22,033 --> 00:20:25,433
+no, I still don't have that intuition actually. I, I
+
+526
+00:20:27,933 --> 00:20:29,233
+there are many different things
+
+527
+00:20:29,233 --> 00:20:31,200
+which determine model quality
+
+528
+00:20:31,466 --> 00:20:33,133
+there's like quality of the training data
+
+529
+00:20:33,133 --> 00:20:34,933
+there's quantity, the training data
+
+530
+00:20:35,000 --> 00:20:36,233
+there's like the
+
+531
+00:20:36,233 --> 00:20:38,433
+architecture that you're using to build the model
+
+532
+00:20:38,500 --> 00:20:40,433
+so like what what machine
+
+533
+00:20:40,433 --> 00:20:42,466
+how you're wiring the neurons together, essentially
+
+534
+00:20:42,633 --> 00:20:45,400
+and then there's a framework like
+
+535
+00:20:45,400 --> 00:20:46,433
+objective function
+
+536
+00:20:46,433 --> 00:20:47,600
+and like training process
+
+537
+00:20:47,600 --> 00:20:49,866
+like GAN or diffusion or whatever
+
+538
+00:20:49,933 --> 00:20:53,200
+and then there's like things like the optimizer
+
+539
+00:20:53,466 --> 00:20:55,733
+and I think that
+
+540
+00:20:58,800 --> 00:21:01,733
+there are many tasks currently
+
+541
+00:21:01,733 --> 00:21:02,866
+I think most image video
+
+542
+00:21:02,866 --> 00:21:03,600
+audio tasks
+
+543
+00:21:03,600 --> 00:21:06,100
+where the diffusion models seem to be the best choice
+
+544
+00:21:06,100 --> 00:21:07,333
+right now. yeah
+
+545
+00:21:07,333 --> 00:21:09,133
+but the gap is not that huge
+
+546
+00:21:09,133 --> 00:21:11,333
+yeah, like you
+
+547
+00:21:11,600 --> 00:21:13,933
+could train an auto regressive model to do
+
+548
+00:21:13,933 --> 00:21:15,433
+any of those tasks
+
+549
+00:21:16,600 --> 00:21:18,666
+and you could train it as well
+
+550
+00:21:18,666 --> 00:21:22,933
+and it would probably cost you more compute
+
+551
+00:21:23,100 --> 00:21:25,033
+and it would be like
+
+552
+00:21:25,033 --> 00:21:26,733
+you'd have to do more awkward things
+
+553
+00:21:26,733 --> 00:21:28,333
+in order to guide the generation
+
+554
+00:21:28,333 --> 00:21:29,666
+but yeah, but
+
+555
+00:21:30,600 --> 00:21:33,666
+all of these model classes are capable of
+
+556
+00:21:34,000 --> 00:21:35,466
+up doing the same task
+
+557
+00:21:35,466 --> 00:21:37,633
+it's just like kind of trade off at the margin
+
+558
+00:21:37,633 --> 00:21:38,433
+maybe. yeah
+
+559
+00:21:38,900 --> 00:21:41,000
+makes sense. maybe, you know
+
+560
+00:21:41,000 --> 00:21:41,833
+one other paper
+
+561
+00:21:41,833 --> 00:21:44,900
+I want to ask you about is to the DDPM paper
+
+562
+00:21:44,900 --> 00:21:46,233
+yes. so yeah, yeah
+
+563
+00:21:46,233 --> 00:21:48,233
+what was your reaction when that came out
+
+564
+00:21:48,233 --> 00:21:49,566
+like, what did you think when you
+
+565
+00:21:49,566 --> 00:21:51,700
+I added a super cool sign like drop
+
+566
+00:21:51,700 --> 00:21:55,466
+then Ho shared a draft with me and I, I was excited
+
+567
+00:21:55,466 --> 00:21:57,500
+I was like, oh, you found that paper. that's great
+
+568
+00:21:57,500 --> 00:21:58,300
+that
+
+569
+00:21:58,433 --> 00:22:02,500
+built on it. I'm super happy he wrote that paper
+
+570
+00:22:02,500 --> 00:22:06,233
+and it was very gracious of him to like give
+
+571
+00:22:06,233 --> 00:22:08,666
+give credit back to the the original diffusion word to
+
+572
+00:22:10,133 --> 00:22:12,466
+I, I think when I read the paper, I did
+
+573
+00:22:12,466 --> 00:22:15,266
+I still did not realize how transformative it would be
+
+574
+00:22:15,266 --> 00:22:15,733
+I think I had
+
+575
+00:22:15,733 --> 00:22:17,800
+have had this picture in my head that like
+
+576
+00:22:19,100 --> 00:22:21,800
+there are lots of generic bottling approaches
+
+577
+00:22:21,800 --> 00:22:23,400
+and if you push on any of them
+
+578
+00:22:23,400 --> 00:22:25,433
+you can get them into roughly the same bar
+
+579
+00:22:25,433 --> 00:22:26,533
+ballparker quality
+
+580
+00:22:26,533 --> 00:22:27,700
+yeah. and so I was like, oh
+
+581
+00:22:27,700 --> 00:22:29,233
+diffusion models are in the same class
+
+582
+00:22:29,233 --> 00:22:29,900
+as everything else
+
+583
+00:22:29,900 --> 00:22:31,000
+yeah, I didn't
+
+584
+00:22:31,000 --> 00:22:34,600
+I didn't expect them to take off to the way they have
+
+585
+00:22:34,600 --> 00:22:35,833
+acted mostly for their
+
+586
+00:22:36,933 --> 00:22:40,666
+like non, non purely loss based advantages
+
+587
+00:22:40,666 --> 00:22:41,266
+yeah
+
+588
+00:22:41,266 --> 00:22:43,100
+I should also say
+
+589
+00:22:43,133 --> 00:22:47,033
+in parallel, the Yang Song at Stanford was
+
+590
+00:22:47,033 --> 00:22:48,333
+after the same time as Jonathan
+
+591
+00:22:48,333 --> 00:22:49,600
+I was writing this paper
+
+592
+00:22:50,700 --> 00:22:53,333
+he was pursuing like score based
+
+593
+00:22:53,333 --> 00:22:53,833
+yeah
+
+594
+00:22:53,833 --> 00:22:56,200
+he's like score based approaches where he was like
+
+595
+00:22:56,266 --> 00:22:59,700
+doing Langevin Sampling
+
+596
+00:22:59,933 --> 00:23:03,266
+while annealing, annealing the temperature
+
+597
+00:23:04,866 --> 00:23:06,833
+which looks a lot
+
+598
+00:23:07,266 --> 00:23:10,400
+I think it was like experiencing conversion
+
+599
+00:23:10,400 --> 00:23:11,500
+evolution towards
+
+600
+00:23:11,500 --> 00:23:13,333
+towards like the diffusion based
+
+601
+00:23:13,633 --> 00:23:14,866
+generative models
+
+602
+00:23:15,600 --> 00:23:16,133
+and I don't think
+
+603
+00:23:16,133 --> 00:23:18,033
+he wasn't initially aware of the diffusion stuff
+
+604
+00:23:18,033 --> 00:23:20,666
+so I think, I think probably like
+
+605
+00:23:22,666 --> 00:23:24,733
+like Jonathon Ho published this paper
+
+606
+00:23:24,733 --> 00:23:25,000
+I think
+
+607
+00:23:25,000 --> 00:23:27,200
+the Song would have gotten very similar results in
+
+608
+00:23:27,200 --> 00:23:28,500
+like a year or two
+
+609
+00:23:28,600 --> 00:23:29,466
+probably means there were like
+
+610
+00:23:29,466 --> 00:23:30,933
+three other labs that were also like
+
+611
+00:23:30,933 --> 00:23:32,200
+working on it. but yeah
+
+612
+00:23:32,466 --> 00:23:34,666
+yeah, that's my maybe the last thing I'd love to
+
+613
+00:23:34,666 --> 00:23:35,833
+give your thoughts on is like
+
+614
+00:23:35,833 --> 00:23:36,733
+so, you know
+
+615
+00:23:36,733 --> 00:23:38,800
+Sander has this blog post that's like
+
+616
+00:23:38,800 --> 00:23:41,300
+here's 20 different interpretations of what's going on
+
+617
+00:23:41,433 --> 00:23:42,633
+in diffusion models
+
+618
+00:23:42,633 --> 00:23:43,133
+and, you know
+
+619
+00:23:43,133 --> 00:23:45,300
+you can sort of pick each of those papers out of it
+
+620
+00:23:45,300 --> 00:23:45,833
+like, you know
+
+621
+00:23:45,833 --> 00:23:47,933
+sort of here's the DDPM interpretation I've had
+
+622
+00:23:47,933 --> 00:23:49,800
+and sort of here's some ways of looking at
+
+623
+00:23:49,800 --> 00:23:51,600
+the sort of the original score based
+
+624
+00:23:51,600 --> 00:23:52,933
+playing out dynamics thing
+
+625
+00:23:52,933 --> 00:23:55,333
+here's how like the flow based Mad Yang give you
+
+626
+00:23:55,333 --> 00:23:56,633
+this is all like
+
+627
+00:23:57,100 --> 00:23:58,733
+these are riffs on the same idea
+
+628
+00:23:58,733 --> 00:24:01,066
+and it's sort of a convergent evolution story
+
+629
+00:24:01,066 --> 00:24:03,666
+do you think that some of these ideas are sort of
+
+630
+00:24:04,200 --> 00:24:05,733
+you know, meaningfully different? and we sort of
+
+631
+00:24:05,733 --> 00:24:05,900
+you know
+
+632
+00:24:05,900 --> 00:24:08,300
+if we pushed further in that tech tree direction
+
+633
+00:24:08,300 --> 00:24:09,800
+we could get to a different place
+
+634
+00:24:11,866 --> 00:24:13,466
+maybe both
+
+635
+00:24:13,466 --> 00:24:17,200
+yeah, I think it's like the fact that we can
+
+636
+00:24:17,533 --> 00:24:19,833
+tell the story of this model class
+
+637
+00:24:19,833 --> 00:24:21,900
+from so many starting points
+
+638
+00:24:21,933 --> 00:24:24,866
+I think is very suggestive that there's like
+
+639
+00:24:25,233 --> 00:24:27,900
+it's like somehow like a convergence evolution, like
+
+640
+00:24:27,900 --> 00:24:29,433
+yeah, that we were gonna get to
+
+641
+00:24:31,133 --> 00:24:34,000
+I, I do think different
+
+642
+00:24:34,500 --> 00:24:37,233
+perspectives are
+
+643
+00:24:38,066 --> 00:24:38,733
+likely
+
+644
+00:24:38,733 --> 00:24:39,833
+to
+
+645
+00:24:40,833 --> 00:24:43,200
+provide different capabilities and trade offs
+
+646
+00:24:43,200 --> 00:24:46,000
+if you use the like kind of propeller graphical model
+
+647
+00:24:46,600 --> 00:24:47,533
+perspective on it
+
+648
+00:24:47,533 --> 00:24:49,800
+then that like suggests
+
+649
+00:24:49,800 --> 00:24:52,300
+some accelerated sampling techniques
+
+650
+00:24:52,300 --> 00:24:53,800
+which you probably wouldn't get to otherwise
+
+651
+00:24:53,800 --> 00:24:55,233
+which are really, really nice
+
+652
+00:24:55,933 --> 00:24:57,733
+similarly, consistency models. yeah
+
+653
+00:24:57,733 --> 00:25:00,933
+yeah. and the consistency models are, are, are
+
+654
+00:25:00,933 --> 00:25:02,800
+are again, Yang Song be amazing
+
+655
+00:25:02,800 --> 00:25:04,633
+but, but, but are
+
+656
+00:25:04,866 --> 00:25:07,900
+are another like, like
+
+657
+00:25:08,066 --> 00:25:08,466
+kind of
+
+658
+00:25:08,466 --> 00:25:10,800
+thinking about it from the flow based perspective
+
+659
+00:25:10,800 --> 00:25:13,100
+yeah, like you wouldn't
+
+660
+00:25:13,100 --> 00:25:14,000
+you wouldn't get to those
+
+661
+00:25:14,000 --> 00:25:15,833
+if you weren't thinking about kind of the flow based
+
+662
+00:25:15,833 --> 00:25:16,700
+version of it
+
+663
+00:25:16,900 --> 00:25:17,700
+yeah
+
+664
+00:25:18,533 --> 00:25:20,466
+I think, I think there's
+
+665
+00:25:20,533 --> 00:25:22,333
+there's always it's always useful
+
+666
+00:25:22,333 --> 00:25:23,800
+they'll think about a problem from
+
+667
+00:25:23,800 --> 00:25:25,200
+from multiple perspectives
+
+668
+00:25:25,200 --> 00:25:26,200
+yes. I guess
+
+669
+00:25:26,200 --> 00:25:28,233
+like another thing I'd be curious about is like
+
+670
+00:25:28,333 --> 00:25:31,800
+this probably seems like a unusual
+
+671
+00:25:31,800 --> 00:25:35,433
+maybe somewhat weird research area in Cirque 2015
+
+672
+00:25:36,733 --> 00:25:39,466
+there's probably things like that now
+
+673
+00:25:39,466 --> 00:25:42,333
+I sort of thunk at, you know, if
+
+674
+00:25:42,466 --> 00:25:43,900
+you had infinite time to sort of like
+
+675
+00:25:43,900 --> 00:25:45,933
+pull ideas like this from physics
+
+676
+00:25:45,933 --> 00:25:48,833
+specifically for maybe image or video generation
+
+677
+00:25:48,833 --> 00:25:50,533
+sort of in the neighborhood of diffusion models
+
+678
+00:25:50,533 --> 00:25:52,533
+yeah. are there things that you think are, you know
+
+679
+00:25:52,533 --> 00:25:54,700
+equally weird, but maybe underdeveloped
+
+680
+00:25:54,700 --> 00:25:57,200
+like I sort of feel because you wrote this landmark PR
+
+681
+00:25:57,333 --> 00:25:59,433
+you know, the tech tree, there's like a big trunk
+
+682
+00:25:59,433 --> 00:25:59,666
+yeah
+
+683
+00:25:59,666 --> 00:26:01,666
+you know, that goes like in the direction of that paper
+
+684
+00:26:01,666 --> 00:26:03,466
+yeah. but maybe you would have written, you know
+
+685
+00:26:03,466 --> 00:26:04,733
+three different papers if you had
+
+686
+00:26:04,733 --> 00:26:06,400
+sort of got pulled in different directions
+
+687
+00:26:06,400 --> 00:26:08,733
+it would have led us on to different development paths
+
+688
+00:26:08,733 --> 00:26:09,833
+yeah, I think
+
+689
+00:26:09,833 --> 00:26:11,800
+I think the diffusion models have like grown to a thicket
+
+690
+00:26:11,800 --> 00:26:15,000
+like I can't even read every paper like it
+
+691
+00:26:15,500 --> 00:26:17,300
+I think people are exploring
+
+692
+00:26:17,300 --> 00:26:19,600
+a neighboring space quite densely
+
+693
+00:26:21,333 --> 00:26:23,433
+I do though think that like
+
+694
+00:26:23,433 --> 00:26:26,000
+if I was going to work on something
+
+695
+00:26:26,000 --> 00:26:27,466
+that I hope would be impactful
+
+696
+00:26:27,833 --> 00:26:30,000
+today, and I was gonna make it weird
+
+697
+00:26:30,200 --> 00:26:33,633
+yeah, I wouldn't be in the space of modeling images
+
+698
+00:26:33,633 --> 00:26:35,066
+yeah, but
+
+699
+00:26:35,400 --> 00:26:40,333
+there are I can riff on this tiny bit and
+
+700
+00:26:40,500 --> 00:26:44,333
+and but the ideas I have are like
+
+701
+00:26:44,633 --> 00:26:46,866
+like someone who's like a grad student now
+
+702
+00:26:46,866 --> 00:26:47,733
+is gonna have like
+
+703
+00:26:47,733 --> 00:26:49,266
+much fresher, better ideas
+
+704
+00:26:49,266 --> 00:26:51,266
+yeah, but like, okay, so a few examples
+
+705
+00:26:51,533 --> 00:26:53,666
+maybe one of them is
+
+706
+00:26:53,900 --> 00:26:58,500
+we built this like deep tech tree on top of like
+
+707
+00:26:58,500 --> 00:26:59,433
+turing machines
+
+708
+00:26:59,433 --> 00:27:04,300
+yeah, but now, but we're using most of that compute for
+
+709
+00:27:04,633 --> 00:27:07,500
+is like non-turing computation
+
+710
+00:27:07,866 --> 00:27:13,000
+like we need systems that take inputs
+
+711
+00:27:13,700 --> 00:27:16,033
+and then produce outputs
+
+712
+00:27:16,133 --> 00:27:18,666
+in a non linear fashion from those inputs
+
+713
+00:27:18,800 --> 00:27:23,300
+and with some kind of like
+
+714
+00:27:25,400 --> 00:27:27,800
+statistical properties of the input output mapping
+
+715
+00:27:28,666 --> 00:27:29,633
+you should probably like
+
+716
+00:27:29,633 --> 00:27:32,500
+look at some of the like infinite width literature
+
+717
+00:27:32,500 --> 00:27:33,333
+if you want to like
+
+718
+00:27:33,333 --> 00:27:34,100
+characterize what
+
+719
+00:27:34,100 --> 00:27:35,700
+maybe those statistical properties should be
+
+720
+00:27:35,700 --> 00:27:37,300
+but there's like some like
+
+721
+00:27:37,600 --> 00:27:38,433
+statistical properties
+
+722
+00:27:38,433 --> 00:27:40,733
+we believe are important for the input output mapping
+
+723
+00:27:40,933 --> 00:27:42,533
+and it needs to be non linear
+
+724
+00:27:42,533 --> 00:27:43,900
+and it needs to have a lot of knobs
+
+725
+00:27:43,900 --> 00:27:45,666
+you can turn to change the mapping
+
+726
+00:27:45,666 --> 00:27:48,666
+yeah, it doesn't need to like
+
+727
+00:27:48,666 --> 00:27:51,466
+run if else statements or for looped or anything
+
+728
+00:27:51,466 --> 00:27:54,000
+it just needs to be a complicated
+
+729
+00:27:54,200 --> 00:27:56,233
+non linear adjustable system
+
+730
+00:27:56,500 --> 00:27:58,300
+and I
+
+731
+00:27:59,100 --> 00:28:02,466
+think that we're implementing these systems using
+
+732
+00:28:02,600 --> 00:28:04,800
+like logic gates
+
+733
+00:28:05,066 --> 00:28:06,433
+because we have this deep tech tree
+
+734
+00:28:06,433 --> 00:28:08,600
+but you could imagine like a
+
+735
+00:28:09,100 --> 00:28:11,300
+taking a very non turing kind of approach
+
+736
+00:28:11,500 --> 00:28:12,266
+and
+
+737
+00:28:12,266 --> 00:28:14,800
+that could be that could be super fun and super cool
+
+738
+00:28:15,033 --> 00:28:15,600
+there's yeah
+
+739
+00:28:15,600 --> 00:28:18,733
+well, that was like a sort of analog computing idea
+
+740
+00:28:18,733 --> 00:28:20,200
+or what do you mean by sort of non lunch
+
+741
+00:28:20,200 --> 00:28:20,266
+yeah
+
+742
+00:28:20,266 --> 00:28:22,233
+yeah, I mean, there's a few ways you could do it. right
+
+743
+00:28:22,233 --> 00:28:26,700
+so, so analog computing would be would be one like
+
+744
+00:28:26,800 --> 00:28:28,866
+I mean, one version of this is you find like
+
+745
+00:28:28,866 --> 00:28:30,866
+a physical substrate
+
+746
+00:28:31,033 --> 00:28:35,200
+that that you can just directly use
+
+747
+00:28:37,233 --> 00:28:41,233
+another way to do it would be to
+
+748
+00:28:41,600 --> 00:28:44,466
+we a lot of the complexity around our current training
+
+749
+00:28:44,600 --> 00:28:47,466
+has to do with implementing back prop
+
+750
+00:28:47,733 --> 00:28:53,866
+and if you could find a way to train your model
+
+751
+00:28:54,066 --> 00:29:01,133
+based only on on forward props, then that might
+
+752
+00:29:01,900 --> 00:29:02,466
+hmm
+
+753
+00:29:02,466 --> 00:29:06,300
+yeah, like allow you to throw away just a lot of the
+
+754
+00:29:06,733 --> 00:29:13,133
+supporting complexity and hardware and by time. and yeah
+
+755
+00:29:14,400 --> 00:29:17,200
+there's like maybe another one is
+
+756
+00:29:17,800 --> 00:29:21,233
+okay, so machine learning has this like character that
+
+757
+00:29:25,066 --> 00:29:26,900
+it's an idea that people had tried
+
+758
+00:29:26,900 --> 00:29:28,933
+in the like 60s and the 80s
+
+759
+00:29:28,933 --> 00:29:30,233
+and maybe especially in the 80s
+
+760
+00:29:30,233 --> 00:29:30,733
+they tried
+
+761
+00:29:30,733 --> 00:29:32,866
+architectures very similar to what we're doing today
+
+762
+00:29:33,066 --> 00:29:34,100
+and it didn't work
+
+763
+00:29:34,233 --> 00:29:37,533
+and the reason it didn't work is because
+
+764
+00:29:38,133 --> 00:29:39,000
+it was a good idea
+
+765
+00:29:39,000 --> 00:29:40,233
+but we didn't have enough compute
+
+766
+00:29:40,233 --> 00:29:41,433
+and we didn't have enough data
+
+767
+00:29:41,433 --> 00:29:42,666
+yeah, you
+
+768
+00:29:43,533 --> 00:29:44,433
+can maybe think about
+
+769
+00:29:44,433 --> 00:29:46,333
+what other ideas have that same character
+
+770
+00:29:46,633 --> 00:29:50,533
+and and one one example, I think actually Andrej Karpathy
+
+771
+00:29:50,533 --> 00:29:51,933
+Karpathy suggested this
+
+772
+00:29:51,933 --> 00:29:54,466
+but I think one example is like evolutionary computing
+
+773
+00:29:54,466 --> 00:29:56,700
+yeah, so in evolutionary computing
+
+774
+00:29:57,833 --> 00:30:00,666
+we know it works. we know evolution works over yet
+
+775
+00:30:00,733 --> 00:30:02,466
+but when people have
+
+776
+00:30:02,700 --> 00:30:04,400
+tried to do evolutionary computing
+
+777
+00:30:04,400 --> 00:30:06,300
+it's mostly failed historically
+
+778
+00:30:06,533 --> 00:30:07,333
+and
+
+779
+00:30:07,900 --> 00:30:10,400
+a very likely reason that is mostly scaled
+
+780
+00:30:10,400 --> 00:30:11,700
+failed is that
+
+781
+00:30:11,800 --> 00:30:13,466
+is that it just hasn't had
+
+782
+00:30:13,533 --> 00:30:17,233
+the scale of like compute or training data necessary
+
+783
+00:30:17,233 --> 00:30:18,933
+to make it work. yeah
+
+784
+00:30:20,000 --> 00:30:21,533
+yeah. so it's sort of like all of these
+
+785
+00:30:21,533 --> 00:30:22,700
+all this work that was done on it
+
+786
+00:30:22,700 --> 00:30:24,600
+like 30 years ago or something like that
+
+787
+00:30:24,600 --> 00:30:27,666
+you know, the fact that it looks like a dead tree
+
+788
+00:30:27,666 --> 00:30:28,733
+is mostly because like
+
+789
+00:30:28,733 --> 00:30:30,200
+it was so start for compute
+
+790
+00:30:30,200 --> 00:30:32,666
+yeah. and in fact, maybe we should be tried again now
+
+791
+00:30:32,666 --> 00:30:35,100
+yeah, maybe, maybe, maybe go back to that and make it work
+
+792
+00:30:36,333 --> 00:30:38,333
+meta-learning has that same character maybe
+
+793
+00:30:38,733 --> 00:30:42,300
+where where we know that given
+
+794
+00:30:42,500 --> 00:30:44,100
+enough compute and enough data
+
+795
+00:30:44,100 --> 00:30:44,433
+learned
+
+796
+00:30:44,433 --> 00:30:46,866
+functions always outperform hand designed functions
+
+797
+00:30:46,866 --> 00:30:48,633
+but we still hand designer optimizers
+
+798
+00:30:48,633 --> 00:30:50,033
+and hand designer loss functions
+
+799
+00:30:50,033 --> 00:30:51,600
+and hand designer architectures
+
+800
+00:30:51,700 --> 00:30:54,866
+and there's like some work in meta-learning, but I
+
+801
+00:30:55,133 --> 00:30:58,300
+I think it hasn't nearly lived up to the like
+
+802
+00:30:59,000 --> 00:31:01,133
+I think there's a lot of room for a webinar papers
+
+803
+00:31:01,133 --> 00:31:02,700
+yeah, they're super interesting
+
+804
+00:31:02,866 --> 00:31:03,000
+well
+
+805
+00:31:03,000 --> 00:31:05,533
+maybe, maybe just one closing gush now to ask you is
+
+806
+00:31:05,600 --> 00:31:07,866
+so you, you write this
+
+807
+00:31:08,200 --> 00:31:09,700
+you know, very famous paper
+
+808
+00:31:09,900 --> 00:31:10,500
+in 2015
+
+809
+00:31:10,500 --> 00:31:12,900
+and sort of creates like the modern diffusion paradigm
+
+810
+00:31:12,900 --> 00:31:14,866
+I think maybe some of the things that happened
+
+811
+00:31:14,866 --> 00:31:15,666
+subsequent to that
+
+812
+00:31:15,666 --> 00:31:16,733
+were not surprising to
+
+813
+00:31:16,733 --> 00:31:19,233
+I'll sort of regard them as things that
+
+814
+00:31:19,466 --> 00:31:21,466
+you know, there's not a big belief update for them
+
+815
+00:31:21,466 --> 00:31:23,933
+yeah, but probably some things were quite surprising
+
+816
+00:31:23,933 --> 00:31:24,666
+that are the next
+
+817
+00:31:24,666 --> 00:31:25,600
+you know, 10 years
+
+818
+00:31:25,600 --> 00:31:26,933
+I'm curious as you look back
+
+819
+00:31:26,933 --> 00:31:28,433
+what was most surprising to you
+
+820
+00:31:28,433 --> 00:31:29,533
+where you think of like
+
+821
+00:31:29,633 --> 00:31:31,866
+I would not have predicted this when I read this paper
+
+822
+00:31:31,866 --> 00:31:35,066
+and oh man. yeah, I, I, um
+
+823
+00:31:38,066 --> 00:31:39,400
+in 2015
+
+824
+00:31:40,133 --> 00:31:45,700
+we were modeling 32 by 32 image patches poorly. yeah
+
+825
+00:31:46,233 --> 00:31:48,233
+I would
+
+826
+00:31:48,700 --> 00:31:51,133
+not have predicted then
+
+827
+00:31:51,600 --> 00:31:56,433
+that in less than 10 years, we would be generating like
+
+828
+00:31:56,933 --> 00:31:59,033
+video and audio
+
+829
+00:31:59,133 --> 00:32:03,866
+that was nearly indistinguishable from, from reality
+
+830
+00:32:03,866 --> 00:32:05,866
+yeah, I think just the raw
+
+831
+00:32:06,266 --> 00:32:11,066
+capabilities of these models has been
+
+832
+00:32:11,433 --> 00:32:13,900
+has been utterly surprising to me. amazing
+
+833
+00:32:14,400 --> 00:32:16,100
+awesome. well, thanks so much for doing this
+
+834
+00:32:16,100 --> 00:32:17,033
+really enjoyed our conversation
+
+835
+00:32:17,033 --> 00:32:18,133
+it was a pleasure. thanks, Aria
+
