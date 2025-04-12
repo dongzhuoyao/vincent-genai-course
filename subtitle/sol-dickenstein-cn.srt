@@ -36,15 +36,15 @@
 
 10
 00:00:29,600 --> 00:00:31,800
-hi, I'm Slater with Bain Capital Ventures
+你好，我是贝恩资本创投的Slater
 
 11
 00:00:31,800 --> 00:00:33,900
-and today we're talking with Yasha Soldickstein
+今天我们要和Yasha Soldickstein对话
 
 12
 00:00:34,300 --> 00:00:36,800
-Yasha is best known for inventing diffusion models
+Yasha以发明扩散模型而闻名
 
 13
 00:00:36,800 --> 00:00:36,900
@@ -60,7 +60,7 @@ Yasha is best known for inventing diffusion models
 
 16
 00:00:40,333 --> 00:00:43,033
-so if you've used a text to image gen model
+如果你使用过文本生成图像模型
 
 17
 00:00:43,033 --> 00:00:46,533
@@ -72,7 +72,7 @@ Dali stable Diffusion, Black Forest Labs
 
 19
 00:00:49,700 --> 00:00:50,933
-Imagen from Google
+谷歌的Imagen
 
 20
 00:00:51,200 --> 00:00:54,433
@@ -92,7 +92,7 @@ Imagen from Google
 
 24
 00:01:00,033 --> 00:01:02,733
-Yasha's interpretation of all of the diffusion
+Yasha对扩散模型的所有解释
 
 25
 00:01:02,733 --> 00:01:04,300
@@ -112,7 +112,7 @@ Yasha's interpretation of all of the diffusion
 
 29
 00:01:09,666 --> 00:01:11,600
-and LED to many of the key insights
+并导致了原始论文中的许多关键见解
 
 30
 00:01:11,600 --> 00:01:12,733
@@ -136,7 +136,7 @@ and LED to many of the key insights
 
 35
 00:01:19,133 --> 00:01:21,400
-using non equilibrium thermodynamics
+使用非平衡热力学
 
 36
 00:01:21,400 --> 00:01:22,900
@@ -160,7 +160,7 @@ using non equilibrium thermodynamics
 
 41
 00:01:28,633 --> 00:01:31,933
-I think that this was a couple of years after Alex Net
+我想这是在AlexNet之后的几年
 
 42
 00:01:31,933 --> 00:01:34,666
@@ -208,7 +208,7 @@ I think that this was a couple of years after Alex Net
 
 53
 00:01:57,066 --> 00:01:59,033
-PhD in computational neuroscience
+计算神经科学的博士学位
 
 54
 00:01:59,200 --> 00:02:03,466
@@ -220,7 +220,7 @@ PhD in computational neuroscience
 
 56
 00:02:06,600 --> 00:02:09,533
-Learned the representations that that it Learned
+学习它所学到的表征
 
 57
 00:02:09,833 --> 00:02:16,866
