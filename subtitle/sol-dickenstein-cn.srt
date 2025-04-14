@@ -352,7 +352,7 @@ Yasha对扩散模型的所有解释
 
 89
 00:03:32,533 --> 00:03:34,733
-the same representations that were Learned
+世界模型内部学习到的相同表征
 
 90
 00:03:34,733 --> 00:03:36,000
@@ -644,7 +644,7 @@ statmech中基于能量的概率模型
 
 162
 00:06:35,466 --> 00:06:39,466
-like writing the First Division models. paper. yeah
+写下了第一篇扩散模型的论文
 
 163
 00:06:39,700 --> 00:06:42,666
@@ -660,19 +660,19 @@ like writing the First Division models. paper. yeah
 
 166
 00:06:46,400 --> 00:06:48,866
-so one of them is this paper by Gerschensky
+其中一篇是Gerschensky的论文
 
 167
 00:06:48,866 --> 00:06:52,600
-and I think there's other paper by Radford Neal
+还有一篇是Radford Neal的论文
 
 168
 00:06:52,600 --> 00:06:54,933
-yeah, and so Jerszinski is a businessman
+是的，Gerszinski是一位商人
 
 169
 00:06:54,933 --> 00:06:57,466
-you know, Neal is a statistician
+Neal是一位统计学家
 
 170
 00:06:57,666 --> 00:06:59,000
@@ -680,11 +680,11 @@ you know, Neal is a statistician
 
 171
 00:06:59,000 --> 00:07:01,600
-看起来不像是图像上的东西
+看起来不像是关于图像生成的东西
 
 172
 00:07:01,600 --> 00:07:02,666
-一代，你知道
+你知道
 
 173
 00:07:02,666 --> 00:07:03,400
@@ -692,7 +692,7 @@ you know, Neal is a statistician
 
 174
 00:07:03,400 --> 00:07:05,833
-将一种发行版转换为另一种发行版
+将一种分布转换为另一种分布
 
 175
 00:07:05,833 --> 00:07:06,466
@@ -704,7 +704,7 @@ you know, Neal is a statistician
 
 177
 00:07:08,833 --> 00:07:11,266
-你知道，难以处理或有点难以计算。
+你知道，难以处理或有点难以计算
 
 178
 00:07:11,400 --> 00:07:13,733
@@ -736,7 +736,7 @@ you know, Neal is a statistician
 
 185
 00:07:21,000 --> 00:07:23,066
-因为那些是那些是那些论文太棒了
+因为那些论文太棒了
 
 186
 00:07:23,066 --> 00:07:27,066
@@ -744,7 +744,7 @@ you know, Neal is a statistician
 
 187
 00:07:27,266 --> 00:07:30,633
-真的有点令人兴奋。也许也许
+真的有点令人兴奋
 
 188
 00:07:32,266 --> 00:07:34,600
@@ -908,7 +908,7 @@ E到自由能的变化
 
 228
 00:09:21,233 --> 00:09:24,933
-the Radford Kneepaper is kind of interesting because
+Radford Neal的论文很有趣，因为
 
 229
 00:09:26,466 --> 00:09:28,800
@@ -940,7 +940,7 @@ the Radford Kneepaper is kind of interesting because
 
 236
 00:09:45,100 --> 00:09:47,933
-um, um, like Louisville theorem style, like
+嗯，嗯，就像路易斯维尔定理风格一样
 
 237
 00:09:47,933 --> 00:09:51,000
@@ -948,7 +948,7 @@ um, um, like Louisville theorem style, like
 
 238
 00:09:51,000 --> 00:09:53,100
-whereas like Radford Neal was like
+而Radford Neal则是
 
 239
 00:09:53,300 --> 00:09:55,133
@@ -956,7 +956,7 @@ whereas like Radford Neal was like
 
 240
 00:09:55,133 --> 00:10:01,600
-他就像，展示了，嗯，有一种方法你可以
+他展示了，嗯，有一种方法你可以
 
 241
 00:10:03,066 --> 00:10:04,733
@@ -1496,7 +1496,7 @@ in Redford Neil's paper
 
 375
 00:15:00,200 --> 00:15:02,900
-好的，我们要从那个开始到生成喜欢的图像
+好的，我们要从那个开始到生成图像
 
 376
 00:15:02,900 --> 00:15:04,600
@@ -1716,7 +1716,7 @@ GAN之前就出来了
 
 430
 00:17:16,500 --> 00:17:18,600
-Alec Grafford had the DCGan paper
+Alec Grafford发表了DCGan论文
 
 431
 00:17:18,600 --> 00:17:19,900
@@ -1740,7 +1740,7 @@ Alec Grafford had the DCGan paper
 
 436
 00:17:25,600 --> 00:17:28,700
-most of the emphasis in image generation was in GAN
+图像生成的大部分重点都在GAN上
 
 437
 00:17:28,700 --> 00:17:30,533
@@ -1832,7 +1832,7 @@ and there's probably okay, so there probably like Gans
 
 459
 00:18:12,066 --> 00:18:14,466
-the diffusion models and my Gans and the AES
+扩散模型和GAN以及自编码器
 
 460
 00:18:14,466 --> 00:18:16,300
@@ -1992,11 +1992,11 @@ ugly CIFAR images
 
 499
 00:19:38,033 --> 00:19:40,600
-说人们应该花1,000 x来计算
+说人们应该花1,000倍的计算量
 
 500
 00:19:40,600 --> 00:19:42,866
-to like generate CIFAR images was not a
+来生成CIFAR图像不是一个
 
 501
 00:19:42,866 --> 00:19:44,866
@@ -2168,7 +2168,7 @@ like GAN or diffusion or whatever
 
 543
 00:21:03,600 --> 00:21:06,100
-where the diffusion models seem to be the best choice
+扩散模型似乎是最佳选择
 
 544
 00:21:06,100 --> 00:21:07,333
@@ -2240,7 +2240,7 @@ where the diffusion models seem to be the best choice
 
 561
 00:21:41,833 --> 00:21:44,900
-I want to ask you about is to the DDPM paper
+我想问你关于DDPM论文的事
 
 562
 00:21:44,900 --> 00:21:46,233
@@ -2376,7 +2376,7 @@ in parallel, the Yang Song at Stanford was
 
 595
 00:22:56,266 --> 00:22:59,700
-doing longitudinal sampling
+做纵向采样
 
 596
 00:22:59,933 --> 00:23:03,266
@@ -2408,7 +2408,7 @@ doing longitudinal sampling
 
 603
 00:23:16,133 --> 00:23:18,033
-he wasn't initially aware of the diffusion stuff
+他最初并没有意识到扩散相关的内容
 
 604
 00:23:18,033 --> 00:23:20,666
@@ -2416,7 +2416,7 @@ he wasn't initially aware of the diffusion stuff
 
 605
 00:23:22,666 --> 00:23:24,733
-like drawing Ho published this paper
+当Ho发表这篇论文时
 
 606
 00:23:24,733 --> 00:23:25,000
@@ -2424,7 +2424,7 @@ like drawing Ho published this paper
 
 607
 00:23:25,000 --> 00:23:27,200
-the Song would have gotten very similar results in
+Song在一两年内也会得到非常相似的结果
 
 608
 00:23:27,200 --> 00:23:28,500
@@ -2604,35 +2604,35 @@ here's how like the flow based Mad Yang give you
 
 652
 00:24:55,933 --> 00:24:57,733
-similarly, consistency models. yeah
+同样地，一致性模型也是
 
 653
 00:24:57,733 --> 00:25:00,933
-是的。一致性模型是，是，是
+是的，一致性模型是
 
 654
 00:25:00,933 --> 00:25:02,800
-are again, Yang song be amazing
+又是杨松的杰作
 
 655
 00:25:02,800 --> 00:25:04,633
-但是，但是，但是是
+但是，但是，但是
 
 656
 00:25:04,866 --> 00:25:07,900
-是另一个喜欢的，喜欢的
+这是另一个很好的例子
 
 657
 00:25:08,066 --> 00:25:08,466
-有点
+从
 
 658
 00:25:08,466 --> 00:25:10,800
-从基于流的角度思考它
+基于流的角度来思考
 
 659
 00:25:10,800 --> 00:25:13,100
-是啊就像你不会那样
+是的，就像你不会那样
 
 660
 00:25:13,100 --> 00:25:14,000
